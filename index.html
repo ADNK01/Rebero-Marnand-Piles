@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebero Marnand Piles - Luxury Living in Kigali</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .gold-accent {
+            color: #d4af37;
+        }
+        
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-item:hover {
+            color: #d4af37;
+        }
+        
+        .nav-item.active {
+            color: #d4af37;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        
+        .image-card {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .image-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background: linear-gradient(45deg, #128c7e, #25d366);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+        
+        .price-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .price-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #d4af37, #f7e98e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .mobile-menu.active {
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+            }
+        }
+        
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://sohnne.com/wp-content/uploads/2025/01/d32ed079-579d-4038-93a8-7860b1972e4c-scaled.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Guide pour les images - À MODIFIER ICI */
+        /*
+        GUIDE POUR MODIFIER LES IMAGES:
+        
+        1. HERO SECTION (Image de fond principale):
+           Ligne 116: background: url('VOTRE_URL_IMAGE_ICI');
+           
+        2. APPARTEMENTS (3 images):
+           Ligne 315: src="URL_IMAGE_APPARTEMENT_1"
+           Ligne 319: src="URL_IMAGE_APPARTEMENT_2"
+           Ligne 323: src="URL_IMAGE_APPARTEMENT_3"
+           
+        3. SALLE DE SPORT (3 images):
+           Ligne 410: src="URL_IMAGE_GYM_1"
+           Ligne 414: src="URL_IMAGE_GYM_2"
+           Ligne 418: src="URL_IMAGE_GYM_3"
+           
+        4. SAUNA (3 images):
+           Ligne 505: src="URL_IMAGE_SAUNA_1"
+           Ligne 509: src="URL_IMAGE_SAUNA_2"
+           Ligne 513: src="URL_IMAGE_SAUNA_3"
+           
+        5. MASSAGE (3 images):
+           Ligne 600: src="URL_IMAGE_MASSAGE_1"
+           Ligne 604: src="URL_IMAGE_MASSAGE_2"
+           Ligne 608: src="URL_IMAGE_MASSAGE_3"
+           
+        6. RESTAURANT ROOFTOP (3 images):
+           Ligne 695: src="URL_IMAGE_RESTAURANT_1"
+           Ligne 699: src="URL_IMAGE_RESTAURANT_2"
+           Ligne 703: src="URL_IMAGE_RESTAURANT_3"
+           
+        7. LOGOS:
+           Ligne 153: src="URL_LOGO_TRANSPARENT"
+           Ligne 160: src="URL_LOGO_TRANSPARENT"
+           
+        Remplacez simplement les URLs par vos propres images !
+        */
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" class="h-12">
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 desktop-menu">
+                    <a href="#" class="nav-item active" onclick="showPage('home')" data-fr="Accueil" data-en="Home" data-rw="Inyubakwa">Accueil</a>
+                    <a href="#" class="nav-item" onclick="showPage('apartments')" data-fr="Appartements" data-en="Apartments" data-rw="Amafenetre">Appartements</a>
+                    <a href="#" class="nav-item" onclick="showPage('gym')" data-fr="Salle de Sport" data-en="Gym" data-rw="Ikigo cy'imyitozo">Salle de Sport</a>
+                    <a href="#" class="nav-item" onclick="showPage('sauna')" data-fr="Sauna" data-en="Sauna" data-rw="Sauna">Sauna</a>
+                    <a href="#" class="nav-item" onclick="showPage('massage')" data-fr="Massage" data-en="Massage" data-rw="Gukandagira">Massage</a>
+                    <a href="#" class="nav-item" onclick="showPage('restaurant')" data-fr="Restaurant" data-en="Restaurant" data-rw="Restoran">Restaurant</a>
+                    <a href="#" class="nav-item" onclick="showPage('contact')" data-fr="Contact" data-en="Contact" data-rw="Twandikire">Contact</a>
+                </div>
+                
+                <!-- Language & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <select id="language-selector" class="text-sm border rounded px-2 py-1" onchange="changeLanguage()">
+                        <option value="fr">FR</option>
+                        <option value="en">EN</option>
+                        <option value="rw">RW</option>
+                    </select>
+                    <button class="md:hidden" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden mobile-menu" style="display: none;">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('home')">Accueil</a>
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('apartments')">Appartements</a>
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('gym')">Salle de Sport</a>
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('sauna')">Sauna</a>
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('massage')">Massage</a>
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('restaurant')">Restaurant</a>
+                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('contact')">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page-section active">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="text-center">
+                <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" class="h-24 mx-auto mb-6">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4" data-fr="Rebero Marnand Piles" data-en="Rebero Marnand Piles" data-rw="Rebero Marnand Piles">Rebero Marnand Piles</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-fr="Vivez l'expérience du luxe à Kigali" data-en="Experience Luxury Living in Kigali" data-rw="Wumve uburyohe bwo gutura muri Kigali">Vivez l'expérience du luxe à Kigali</p>
+                <a href="https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span data-fr="Réserver Maintenant" data-en="Book Now" data-rw="Kubana Ubu">Réserver Maintenant</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Features Section -->
+        <div class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4" data-fr="Nos Services Premium" data-en="Our Premium Services" data-rw="Serivise zacu nziza">Nos Services Premium</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto" data-fr="Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel" data-en="Discover all premium services available in our residential complex" data-rw="Menya serivise zose zo hejuru ziboneka mu kigo cyacu">Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-home text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Appartements & Chambres" data-en="Apartments & Rooms" data-rw="Amafenetre n'Ibyumba">Appartements & Chambres</h3>
+                        <p class="text-gray-600" data-fr="Logements équipés avec connexion 5G" data-en="Fully equipped accommodations with 5G" data-rw="Amafenetre yuzuye na 5G">Logements équipés avec connexion 5G</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Salle de Sport" data-en="Fitness Center" data-rw="Ikigo cy'imyitozo">Salle de Sport</h3>
+                        <p class="text-gray-600" data-fr="Équipements modernes de fitness" data-en="Modern fitness equipment" data-rw="Ibikoresho by'imyitozo bigezweho">Équipements modernes de fitness</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-fire text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Sauna & Spa" data-en="Sauna & Spa" data-rw="Sauna & Spa">Sauna & Spa</h3>
+                        <p class="text-gray-600" data-fr="Détente et bien-être" data-en="Relaxation and wellness" data-rw="Kuruhuka no kwisuzuma">Détente et bien-être</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-hands text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Massage" data-en="Massage" data-rw="Gukandagira">Massage</h3>
+                        <p class="text-gray-600" data-fr="Soins thérapeutiques professionnels" data-en="Professional therapeutic treatments" data-rw="Ubuvuzi bw'abahanga">Soins thérapeutiques professionnels</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Restaurant Rooftop" data-en="Rooftop Restaurant" data-rw="Restoran yo hejuru">Restaurant Rooftop</h3>
+                        <p class="text-gray-600" data-fr="Dining avec vue panoramique" data-en="Dining with panoramic views" data-rw="Kurya ufite amashusho meza">Dining avec vue panoramique</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-car text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Parking Gratuit" data-en="Free Parking" data-rw="Aho gushyingura ubusa">Parking Gratuit</h3>
+                        <p class="text-gray-600" data-fr="Parking sécurisé pour résidents" data-en="Secure parking for residents" data-rw="Aho gushyingura gifite umutekano">Parking sécurisé pour résidents</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- APARTMENTS PAGE -->
+    <div id="apartments" class="page-section">
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-fr="Appartements & Chambres" data-en="Apartments & Rooms" data-rw="Amafenetre n'Ibyumba">Appartements & Chambres</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Nos logements modernes et entièrement équipés offrent tout le confort nécessaire avec connexion 5G, service de nettoyage inclus et parking gratuit pour les résidents." data-en="Our modern and fully equipped accommodations offer all necessary comfort with 5G connection, cleaning service included and free parking for residents." data-rw="Amafenetre yacu agezweho kandi yuzuye ibikoresho atanga uburyohe bukomeye hamwe na 5G, serivise yo gusukura harimo n'aho gushyingura kubusa.">Nos logements modernes et entièrement équipés offrent tout le confort nécessaire avec connexion 5G, service de nettoyage inclus et parking gratuit pour les résidents.</p>
+                </div>
+                
+                <!-- Pricing Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="price-card">
+                        <i class="fas fa-home text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2" data-fr="Appartements Équipés" data-en="Equipped Apartments" data-rw="Amafenetre yuzuye">Appartements Équipés</h3>
+                        <div class="text-4xl font-bold gold-accent mb-2">$300</div>
+                        <p class="mb-4" data-fr="par mois" data-en="per month" data-rw="buri kwezi">par mois</p>
+                        <ul class="text-left mb-6 space-y-2">
+                            <li data-fr="✓ Location mensuelle uniquement" data-en="✓ Monthly rental only" data-rw="✓ Gukodesha ukwezi gusa">✓ Location mensuelle uniquement</li>
+                            <li data-fr="✓ Entièrement équipé" data-en="✓ Fully equipped" data-rw="✓ Yuzuye ibikoresho">✓ Entièrement équipé</li>
+                            <li data-fr="✓ Connexion 5G incluse" data-en="✓ 5G connection included" data-rw="✓ 5G harimo">✓ Connexion 5G incluse</li>
+                            <li data-fr="✓ Service de nettoyage" data-en="✓ Cleaning service" data-rw="✓ Serivise yo gusukura">✓ Service de nettoyage</li>
+                            <li data-fr="✓ Parking gratuit" data-en="✓ Free parking" data-rw="✓ Aho gushyingura ubusa">✓ Parking gratuit</li>
+                        </ul>
+                        <a href="https://wa.me/250788881346?text=Bonjour, je souhaite réserver un appartement équipé à 300$ par mois" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-fr="Réserver" data-en="Book Now" data-rw="Kubana">Réserver</span>
+                        </a>
+                    </div>
+                    
+                    <div class="price-card">
+                        <i class="fas fa-bed text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2" data-fr="Chambres" data-en="Rooms" data-rw="Ibyumba">Chambres</h3>
+                        <div class="text-2xl font-bold gold-accent mb-2">$200<span class="text-sm">/mois</span> <span data-fr="ou" data-en="or" data-rw="cyangwa">ou</span> $30<span class="text-sm">/nuit</span></div>
+                        <p class="mb-4" data-fr="Location flexible" data-en="Flexible rental" data-rw="Gukodesha bishya">Location flexible</p>
+                        <ul class="text-left mb-6 space-y-2">
+                            <li data-fr="✓ Location mensuelle ou nuitée" data-en="✓ Monthly or nightly rental" data-rw="✓ Gukodesha ukwezi cyangwa ijoro">✓ Location mensuelle ou nuitée</li>
+                            <li data-fr="✓ Chambre confortable" data-en="✓ Comfortable room" data-rw="✓ Icyumba gikwiriye">✓ Chambre confortable</li>
+                            <li data-fr="✓ Connexion 5G incluse" data-en="✓ 5G connection included" data-rw="✓ 5G harimo">✓ Connexion 5G incluse</li>
+                            <li data-fr="✓ Service de nettoyage" data-en="✓ Cleaning service" data-rw="✓ Serivise yo gusukura">✓ Service de nettoyage</li>
+                            <li data-fr="✓ Parking gratuit" data-en="✓ Free parking" data-rw="✓ Aho gushyingura ubusa">✓ Parking gratuit</li>
+                        </ul>
+                        <a href="https://wa.me/250788881346?text=Bonjour, je souhaite réserver une chambre (200$/mois ou 30$/nuit)" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-fr="Réserver" data-en="Book Now" data-rw="Kubana">Réserver</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Image Gallery -->
+                <div class="image-gallery mb-8">
+                    <div class="image-card">
+                        <img src="https://sohnne.com/wp-content/uploads/2025/01/d32ed079-579d-4038-93a8-7860b1972e4c-scaled.jpeg" alt="Appartement moderne">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Appartement Moderne" data-en="Modern Apartment" data-rw="Ifenetre rigezweho">Appartement Moderne</h3>
+                            <p class="text-sm text-gray-600" data-fr="Design contemporain avec tout le confort" data-en="Contemporary design with all comforts" data-rw="Igishushanyo gishya hamwe n'uburyohe">Design contemporain avec tout le confort</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://thumbs.dreamstime.com/b/luxury-hotel-bedroom-suite-city-view-teal-decor-modern-design-ai-generated-luxurious-boasts-stunning-accents-furniture-347154535.jpg" alt="Chambre avec vue">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Chambre avec Vue" data-en="Room with View" data-rw="Icyumba gifite amashusho">Chambre avec Vue</h3>
+                            <p class="text-sm text-gray-600" data-fr="Vue magnifique sur la ville de Kigali" data-en="Beautiful view of Kigali city" data-rw="Amashusho meza ya Kigali">Vue magnifique sur la ville de Kigali</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://thumbs.dreamstime.com/b/luxury-bedroom-night-city-view-modern-apartment-floor-to-ceiling-windows-overlooking-urban-skyline-interior-design-features-385668063.jpg" alt="Appartement de luxe">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Appartement de Luxe" data-en="Luxury Apartment" data-rw="Ifenetre ryiza">Appartement de Luxe</h3>
+                            <p class="text-sm text-gray-600" data-fr="Finitions haut de gamme et équipements modernes" data-en="High-end finishes and modern equipment" data-rw="Ibikoresho byiza kandi bigezweho">Finitions haut de gamme et équipements modernes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Services Included -->
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-fr="Services Inclus" data-en="Included Services" data-rw="Serivise zirimo">Services Inclus</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <i class="fas fa-wifi text-3xl gold-accent mb-3"></i>
+                            <h4 class="font-semibold" data-fr="Connexion 5G" data-en="5G Connection" data-rw="Umuyoboro 5G">Connexion 5G</h4>
+                            <p class="text-sm text-gray-600" data-fr="Internet haute vitesse" data-en="High-speed internet" data-rw="Interineti y'umuvuduko">Internet haute vitesse</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-broom text-3xl gold-accent mb-3"></i>
+                            <h4 class="font-semibold" data-fr="Nettoyage" data-en="Cleaning" data-rw="Gusukura">Nettoyage</h4>
+                            <p class="text-sm text-gray-600" data-fr="Service de nettoyage régulier" data-en="Regular cleaning service" data-rw="Gusukura buri gihe">Service de nettoyage régulier</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-car text-3xl gold-accent mb-3"></i>
+                            <h4 class="font-semibold" data-fr="Parking" data-en="Parking" data-rw="Aho gushyingura">Parking</h4>
+                            <p class="text-sm text-gray-600" data-fr="Parking gratuit sécurisé" data-en="Free secure parking" data-rw="Aho gushyingura ubusa">Parking gratuit sécurisé</p>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-concierge-bell text-3xl gold-accent mb-3"></i>
+                            <h4 class="font-semibold" data-fr="Conciergerie" data-en="Concierge" data-rw="Serivise z'ubufasha">Conciergerie</h4>
+                            <p class="text-sm text-gray-600" data-fr="Service client 24/7" data-en="24/7 customer service" data-rw="Serivise 24/7">Service client 24/7</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GYM PAGE -->
+    <div id="gym" class="page-section">
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-fr="Salle de Sport" data-en="Fitness Center" data-rw="Ikigo cy'imyitozo">Salle de Sport</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Notre salle de sport moderne est équipée des derniers équipements de fitness pour vous aider à maintenir votre forme physique. Accessible 24h/24 pour tous les résidents." data-en="Our modern fitness center is equipped with the latest fitness equipment to help you maintain your physical fitness. Accessible 24/7 for all residents." data-rw="Ikigo cyacu gishya cy'imyitozo gifite ibikoresho bigezweho byo kwimenyereza kugira ngo bikagufashe kubungabunga imbaraga. Kibonetse 24/7 ku baba muri RMP.">Notre salle de sport moderne est équipée des derniers équipements de fitness pour vous aider à maintenir votre forme physique. Accessible 24h/24 pour tous les résidents.</p>
+                </div>
+                
+                <!-- Image Gallery -->
+                <div class="image-gallery mb-8">
+                    <div class="image-card">
+                        <img src="https://www.styku.com/hubfs/3d-rendering-modern-loft-gym-fitness.jpg" alt="Salle de sport moderne">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Espace Cardio" data-en="Cardio Area" data-rw="Ahantu ho kwimenyereza">Espace Cardio</h3>
+                            <p class="text-sm text-gray-600" data-fr="Équipements cardio-vasculaires dernier cri" data-en="State-of-the-art cardiovascular equipment" data-rw="Ibikoresho byo kwimenyereza bigezweho">Équipements cardio-vasculaires dernier cri</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://www.ironcompany.com/media/magefan_blog/multi-housing-fitness-center-gym-equipment-flooring-min.jpg" alt="Zone de musculation">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Zone de Musculation" data-en="Weight Training Area" data-rw="Ahantu ho kwimenyereza imbaraga">Zone de Musculation</h3>
+                            <p class="text-sm text-gray-600" data-fr="Poids libres et machines de musculation" data-en="Free weights and strength training machines" data-rw="Amashanyaguro n'imashini yo kwimenyereza">Poids libres et machines de musculation</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://advantagefitness.com/wp-content/uploads/2024/01/C81I0252.jpg" alt="Espace fitness">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Espace Fitness" data-en="Fitness Area" data-rw="Ahantu ho kwimenyereza">Espace Fitness</h3>
+                            <p class="text-sm text-gray-600" data-fr="Zone d'entraînement fonctionnel" data-en="Functional training area" data-rw="Ahantu ho kwimenyereza neza">Zone d'entraînement fonctionnel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-dumbbell text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Équipements Modernes" data-en="Modern Equipment" data-rw="Ibikoresho bigezweho">Équipements Modernes</h3>
+                        <p class="text-gray-600" data-fr="Machines dernier cri pour tous types d'entraînement" data-en="State-of-the-art machines for all training types" data-rw="Imashini zigezweho z'imyitozo yose">Machines dernier cri pour tous types d'entraînement</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-clock text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Accès 24h/24" data-en="24/7 Access" data-rw="Kwinjira 24/7">Accès 24h/24</h3>
+                        <p class="text-gray-600" data-fr="Accessible à tout moment pour votre confort" data-en="Accessible anytime for your convenience" data-rw="Ushobora kwinjira igihe cyose">Accessible à tout moment pour votre confort</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-users text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Coaching Personnel" data-en="Personal Training" data-rw="Mwalimu w'imyitozo">Coaching Personnel</h3>
+                        <p class="text-gray-600" data-fr="Entraîneurs professionnels disponibles sur demande" data-en="Professional trainers available on request" data-rw="Abarimu b'imyitozo baboneka">Entraîneurs professionnels disponibles sur demande</p>
+                    </div>
+                </div>
+                
+                <!-- Equipment List -->
+                <div class="bg-gray-100 p-8 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-fr="Équipements Disponibles" data-en="Available Equipment" data-rw="Ibikoresho biboneka">Équipements Disponibles</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Cardio" data-en="Cardio" data-rw="Imyitozo y'umutima">Cardio</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Tapis de course" data-en="• Treadmills" data-rw="• Imashini zo kuyiruka">• Tapis de course</li>
+                                <li data-fr="• Vélos elliptiques" data-en="• Elliptical bikes" data-rw="• Amagare y'imyitozo">• Vélos elliptiques</li>
+                                <li data-fr="• Vélos stationnaires" data-en="• Stationary bikes" data-rw="• Amagare ahagaritse">• Vélos stationnaires</li>
+                                <li data-fr="• Rameurs" data-en="• Rowing machines" data-rw="• Imashini zo gukoga">• Rameurs</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Musculation" data-en="Strength Training" data-rw="Kwimenyereza imbaraga">Musculation</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Poids libres" data-en="• Free weights" data-rw="• Amashanyaguro">• Poids libres</li>
+                                <li data-fr="• Machines guidées" data-en="• Weight machines" data-rw="• Imashini z'amashanyaguro">• Machines guidées</li>
+                                <li data-fr="• Bancs de musculation" data-en="• Weight benches" data-rw="• Intebe z'imyitozo">• Bancs de musculation</li>
+                                <li data-fr="• Barres et haltères" data-en="• Barbells and dumbbells" data-rw="• Imipira n'amashanyaguro">• Barres et haltères</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Section -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4" data-fr="Réservez Votre Séance" data-en="Book Your Session" data-rw="Hitamo igihe cy'imyitozo">Réservez Votre Séance</h3>
+                    <p class="text-gray-600 mb-6" data-fr="Contactez-nous pour plus d'informations sur nos services de fitness" data-en="Contact us for more information about our fitness services" data-rw="Duhamagare kugira ngo ubone amakuru yerekeye serivise zacu">Contactez-nous pour plus d'informations sur nos services de fitness</p>
+                    <a href="https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur la salle de sport" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-fr="Contacter" data-en="Contact" data-rw="Duhamagare">Contacter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SAUNA PAGE -->
+    <div id="sauna" class="page-section">
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-fr="Sauna & Spa" data-en="Sauna & Spa" data-rw="Sauna & Spa">Sauna & Spa</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Découvrez notre sauna traditionnel et nos espaces de bien-être conçus pour vous offrir une expérience de relaxation unique. Un havre de paix au cœur de Kigali." data-en="Discover our traditional sauna and wellness spaces designed to offer you a unique relaxation experience. A haven of peace in the heart of Kigali." data-rw="Menya sauna yacu gakondo n'amazu yo kwisuzuma yateguriwe kukuha ubunyangamugayo bwihariye bwo kuruhuka. Ahantu ho kuruhuka hagati ya Kigali.">Découvrez notre sauna traditionnel et nos espaces de bien-être conçus pour vous offrir une expérience de relaxation unique. Un havre de paix au cœur de Kigali.</p>
+                </div>
+                
+                <!-- Image Gallery -->
+                <div class="image-gallery mb-8">
+                    <div class="image-card">
+                        <img src="https://www.finnleo.com/hubfs/Imported_Blog_Media/jpgSauna-4-3.jpg" alt="Sauna traditionnel">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Sauna Traditionnel" data-en="Traditional Sauna" data-rw="Sauna ya gakondo">Sauna Traditionnel</h3>
+                            <p class="text-sm text-gray-600" data-fr="Sauna en bois authentique avec ambiance chaleureuse" data-en="Authentic wooden sauna with warm ambiance" data-rw="Sauna y'ibiti ynyangamugayo ifite ubugishi">Sauna en bois authentique avec ambiance chaleureuse</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://www.finnleo.com/hs-fs/hubfs/Imported_Blog_Media/jpgSauna-2-Nov-28-2023-02-51-08-6556-PM.jpg" alt="Intérieur du sauna">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Intérieur Luxueux" data-en="Luxurious Interior" data-rw="Imbere yiza">Intérieur Luxueux</h3>
+                            <p class="text-sm text-gray-600" data-fr="Design moderne avec finitions en bois noble" data-en="Modern design with noble wood finishes" data-rw="Igishushanyo gishya hamwe n'ibiti byiza">Design moderne avec finitions en bois noble</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://theoakroomspa.com/wp-content/uploads/2023/11/DSC_7618copy2-scaled-e1701211588565.jpg" alt="Espace détente">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Espace Détente" data-en="Relaxation Area" data-rw="Ahantu ho kuruhuka">Espace Détente</h3>
+                            <p class="text-sm text-gray-600" data-fr="Zone de relaxation après sauna" data-en="Post-sauna relaxation area" data-rw="Ahantu ho kuruhuka nyuma ya sauna">Zone de relaxation après sauna</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Benefits -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-heart text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Santé Cardiovasculaire" data-en="Cardiovascular Health" data-rw="Ubuzima bw'umutima">Santé Cardiovasculaire</h3>
+                        <p class="text-gray-600" data-fr="Améliore la circulation sanguine et la santé cardiaque" data-en="Improves blood circulation and heart health" data-rw="Itera imbere amaraso n'ubuzima bw'umutima">Améliore la circulation sanguine et la santé cardiaque</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-leaf text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Détoxification" data-en="Detoxification" data-rw="Gukuramo ubumara">Détoxification</h3>
+                        <p class="text-gray-600" data-fr="Élimination des toxines par la transpiration" data-en="Elimination of toxins through sweating" data-rw="Gukuramo ubumara binyuze mu gusuka">Élimination des toxines par la transpiration</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-moon text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Relaxation" data-en="Relaxation" data-rw="Kuruhuka">Relaxation</h3>
+                        <p class="text-gray-600" data-fr="Réduction du stress et amélioration du sommeil" data-en="Stress reduction and improved sleep" data-rw="Kugabanya imihangayiko no kuryama neza">Réduction du stress et amélioration du sommeil</p>
+                    </div>
+                </div>
+                
+                <!-- Sauna Features -->
+                <div class="bg-gray-100 p-8 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-fr="Caractéristiques du Sauna" data-en="Sauna Features" data-rw="Ibimenyetso bya Sauna">Caractéristiques du Sauna</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Équipements" data-en="Equipment" data-rw="Ibikoresho">Équipements</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Sauna traditionnel finlandais" data-en="• Traditional Finnish sauna" data-rw="• Sauna ya gakondo ya Finlande">• Sauna traditionnel finlandais</li>
+                                <li data-fr="• Température contrôlée" data-en="• Controlled temperature" data-rw="• Ubushyuhe bwakemuye">• Température contrôlée</li>
+                                <li data-fr="• Ventilation optimale" data-en="• Optimal ventilation" data-rw="• Ubusabane bwiza">• Ventilation optimale</li>
+                                <li data-fr="• Bancs en bois de cèdre" data-en="• Cedar wood benches" data-rw="• Intebe z'ibiti">• Bancs en bois de cèdre</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Services" data-en="Services" data-rw="Serivise">Services</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Serviettes fournies" data-en="• Towels provided" data-rw="• Imyenda itanzwe">• Serviettes fournies</li>
+                                <li data-fr="• Douches privées" data-en="• Private showers" data-rw="• Kwioga bwihariye">• Douches privées</li>
+                                <li data-fr="• Espace relaxation" data-en="• Relaxation area" data-rw="• Ahantu ho kuruhuka">• Espace relaxation</li>
+                                <li data-fr="• Boissons détox" data-en="• Detox drinks" data-rw="• Ibinyobwa byo gukuramo ubumara">• Boissons détox</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Section -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4" data-fr="Réservez Votre Séance" data-en="Book Your Session" data-rw="Hitamo igihe cyanyu">Réservez Votre Séance</h3>
+                    <p class="text-gray-600 mb-6" data-fr="Contactez-nous pour réserver votre moment de détente au sauna" data-en="Contact us to book your relaxation time at the sauna" data-rw="Duhamagare kugira ngo uhitemo igihe cyo kuruhuka muri sauna">Contactez-nous pour réserver votre moment de détente au sauna</p>
+                    <a href="https://wa.me/250788881346?text=Bonjour, je souhaite réserver une séance de sauna" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-fr="Réserver" data-en="Book Now" data-rw="Kubana">Réserver</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MASSAGE PAGE -->
+    <div id="massage" class="page-section">
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-fr="Massage & Spa" data-en="Massage & Spa" data-rw="Gukandagira & Spa">Massage & Spa</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Offrez-vous une expérience de massage thérapeutique dans nos salles de traitement professionnelles. Nos masseurs qualifiés vous proposent une gamme complète de soins pour votre bien-être." data-en="Treat yourself to a therapeutic massage experience in our professional treatment rooms. Our qualified masseurs offer you a complete range of treatments for your well-being." data-rw="Wiyugurishe ubunyangamugayo bwo gukandagira mu byumba byacu by'ubuvuzi. Abavuzi bacu b'impeta bakuha ubuvuzi bwuzuye ku buzima bwawe.">Offrez-vous une expérience de massage thérapeutique dans nos salles de traitement professionnelles. Nos masseurs qualifiés vous proposent une gamme complète de soins pour votre bien-être.</p>
+                </div>
+                
+                <!-- Image Gallery -->
+                <div class="image-gallery mb-8">
+                    <div class="image-card">
+                        <img src="https://cdn.marriottnetwork.com/uploads/sites/23/2021/01/the-phoenician-luxury-collection-resort-spa-treatment-room-1440x900.jpg" alt="Salle de massage">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Salle de Massage" data-en="Massage Room" data-rw="Icyumba cyo gukandagira">Salle de Massage</h3>
+                            <p class="text-sm text-gray-600" data-fr="Ambiance relaxante avec éclairage tamisé" data-en="Relaxing atmosphere with soft lighting" data-rw="Ubugishi bwo kuruhuka hamwe n'urumuri rworoshye">Ambiance relaxante avec éclairage tamisé</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://www.waldorfastoriaorlando.com/wp-content/uploads/2024/03/Signia_BonnetCreekOrlando_WaldorfSpa-Treatment-Room-V_0006_FINAL.jpg" alt="Salle de traitement">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Salle de Traitement" data-en="Treatment Room" data-rw="Icyumba cy'ubuvuzi">Salle de Traitement</h3>
+                            <p class="text-sm text-gray-600" data-fr="Équipements professionnels pour soins premium" data-en="Professional equipment for premium treatments" data-rw="Ibikoresho by'abahanga ku bivuzo byiza">Équipements professionnels pour soins premium</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://thumbs.dreamstime.com/z/image-elegantly-arranged-spa-treatment-room-featuring-comfortable-massage-table-set-amidst-tranquil-luxurious-302685822.jpg" alt="Espace wellness">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Espace Wellness" data-en="Wellness Space" data-rw="Ahantu ho kwisuzuma">Espace Wellness</h3>
+                            <p class="text-sm text-gray-600" data-fr="Décoration élégante pour votre confort" data-en="Elegant decoration for your comfort" data-rw="Imitako myiza yo kubaryohereza">Décoration élégante pour votre confort</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Massage Types -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-spa text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Massage Relaxant" data-en="Relaxing Massage" data-rw="Gukandagira kwo kuruhuka">Massage Relaxant</h3>
+                        <p class="text-gray-600" data-fr="Massage doux pour évacuer le stress et les tensions" data-en="Gentle massage to release stress and tension" data-rw="Gukandagira kworoshye kugira ngo ugabanye imihangayiko">Massage doux pour évacuer le stress et les tensions</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-dumbbell text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Massage Sportif" data-en="Sports Massage" data-rw="Gukandagira kw'imyitozo">Massage Sportif</h3>
+                        <p class="text-gray-600" data-fr="Massage thérapeutique pour récupération musculaire" data-en="Therapeutic massage for muscle recovery" data-rw="Gukandagira kw'ubuvuzi kugira ngo imitsi igaruke">Massage thérapeutique pour récupération musculaire</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-leaf text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Massage Aromatique" data-en="Aromatherapy Massage" data-rw="Gukandagira kw'impumuro">Massage Aromatique</h3>
+                        <p class="text-gray-600" data-fr="Massage avec huiles essentielles pour bien-être total" data-en="Massage with essential oils for total well-being" data-rw="Gukandagira hamwe n'amavuta y'impumuro">Massage avec huiles essentielles pour bien-être total</p>
+                    </div>
+                </div>
+                
+                <!-- Services & Pricing -->
+                <div class="bg-gray-100 p-8 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-fr="Nos Services de Massage" data-en="Our Massage Services" data-rw="Serivise zacu zo gukandagira">Nos Services de Massage</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Massages Thérapeutiques" data-en="Therapeutic Massages" data-rw="Gukandagira kw'ubuvuzi">Massages Thérapeutiques</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Massage suédois classique" data-en="• Classic Swedish massage" data-rw="• Gukandagira gya kera">• Massage suédois classique</li>
+                                <li data-fr="• Massage deep tissue" data-en="• Deep tissue massage" data-rw="• Gukandagira ku mitsi">• Massage deep tissue</li>
+                                <li data-fr="• Massage hot stone" data-en="• Hot stone massage" data-rw="• Gukandagira n'amabuye ashyushye">• Massage hot stone</li>
+                                <li data-fr="• Réflexologie plantaire" data-en="• Foot reflexology" data-rw="• Gukandagira amaguru">• Réflexologie plantaire</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Soins Spécialisés" data-en="Specialized Treatments" data-rw="Ubuvuzi bwihariye">Soins Spécialisés</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Massage pour couples" data-en="• Couple's massage" data-rw="• Gukandagira kw'ababyeyi">• Massage pour couples</li>
+                                <li data-fr="• Massage prénatal" data-en="• Prenatal massage" data-rw="• Gukandagira kw'abatwite">• Massage prénatal</li>
+                                <li data-fr="• Massage anti-stress" data-en="• Anti-stress massage" data-rw="• Gukandagira kugira ngo ugabanye imihangayiko">• Massage anti-stress</li>
+                                <li data-fr="• Drainage lymphatique" data-en="• Lymphatic drainage" data-rw="• Gukuramo amaraso">• Drainage lymphatique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="text-center">
+                        <i class="fas fa-user-md text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Thérapeutes Certifiés" data-en="Certified Therapists" data-rw="Abavuzi b'impeta">Thérapeutes Certifiés</h4>
+                        <p class="text-sm text-gray-600" data-fr="Professionnels expérimentés" data-en="Experienced professionals" data-rw="Abahanga b'uburambe">Professionnels expérimentés</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-oil-can text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Huiles Premium" data-en="Premium Oils" data-rw="Amavuta yiza">Huiles Premium</h4>
+                        <p class="text-sm text-gray-600" data-fr="Huiles de qualité supérieure" data-en="Superior quality oils" data-rw="Amavuta y'ubwiza">Huiles de qualité supérieure</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-calendar-alt text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Réservation Flexible" data-en="Flexible Booking" data-rw="Kubana bishya">Réservation Flexible</h4>
+                        <p class="text-sm text-gray-600" data-fr="Horaires adaptés" data-en="Flexible schedules" data-rw="Amasaha acika">Horaires adaptés</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Hygiène Parfaite" data-en="Perfect Hygiene" data-rw="Isuku ryiza">Hygiène Parfaite</h4>
+                        <p class="text-sm text-gray-600" data-fr="Normes sanitaires strictes" data-en="Strict sanitary standards" data-rw="Amahame makaze y'isuku">Normes sanitaires strictes</p>
+                    </div>
+                </div>
+                
+                <!-- Booking Section -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4" data-fr="Réservez Votre Massage" data-en="Book Your Massage" data-rw="Hitamo igihe cyo gukandagira">Réservez Votre Massage</h3>
+                    <p class="text-gray-600 mb-6" data-fr="Contactez-nous pour réserver votre séance de massage personnalisée" data-en="Contact us to book your personalized massage session" data-rw="Duhamagare kugira ngo uhitemo igihe cyo gukandagira">Contactez-nous pour réserver votre séance de massage personnalisée</p>
+                    <a href="https://wa.me/250788881346?text=Bonjour, je souhaite réserver une séance de massage" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-fr="Réserver" data-en="Book Now" data-rw="Kubana">Réserver</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESTAURANT PAGE -->
+    <div id="restaurant" class="page-section">
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-fr="Restaurant Rooftop" data-en="Rooftop Restaurant" data-rw="Restoran yo hejuru">Restaurant Rooftop</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Savourez une expérience culinaire unique dans notre restaurant rooftop avec vue panoramique sur Kigali. Cuisine internationale et locale, bar à cocktails et ambiance exceptionnelle." data-en="Enjoy a unique culinary experience in our rooftop restaurant with panoramic views of Kigali. International and local cuisine, cocktail bar and exceptional atmosphere." data-rw="Wumve ubunyangamugayo bwo kurya mu restoran yacu yo hejuru ufite amashusho ya Kigali. Ibiryo mpuzamahanga n'iby'aha, bar ya cocktail n'ikirere kidasanzwe.">Savourez une expérience culinaire unique dans notre restaurant rooftop avec vue panoramique sur Kigali. Cuisine internationale et locale, bar à cocktails et ambiance exceptionnelle.</p>
+                </div>
+                
+                <!-- Image Gallery -->
+                <div class="image-gallery mb-8">
+                    <div class="image-card">
+                        <img src="https://media.architecturaldigest.com/photos/55e78fb8302ba71f3017e0c0/4:3/w_800,h_600,c_limit/dam-images-travel-rooftop-bars-and-restaurants-rooftop-restaurants-bars-01-juvia-miami.jpg" alt="Restaurant rooftop">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Vue Panoramique" data-en="Panoramic View" data-rw="Amashusho menshi">Vue Panoramique</h3>
+                            <p class="text-sm text-gray-600" data-fr="Vue imprenable sur la ville de Kigali" data-en="Stunning view of Kigali city" data-rw="Amashusho atangaje ya Kigali">Vue imprenable sur la ville de Kigali</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://ca-times.brightspotcdn.com/dims4/default/cf7cb53/2147483647/strip/true/crop/4443x2962+415+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F35%2F26%2Fa88d10294c74a993f08ae2b2c0a9%2F1285674-wk-rooftop-bars-cara-cara-brv-013.jpg" alt="Terrasse restaurant">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Terrasse Élégante" data-en="Elegant Terrace" data-rw="Terrace nziza">Terrasse Élégante</h3>
+                            <p class="text-sm text-gray-600" data-fr="Espace extérieur sophistiqué" data-en="Sophisticated outdoor space" data-rw="Ahantu ho hanze heza">Espace extérieur sophistiqué</p>
+                        </div>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://10thandterrace.agencydominion.net/uploads/2024/04/10th-and-terrace-cheers-800x800.jpg" alt="Bar cocktails">
+                        <div class="p-4">
+                            <h3 class="font-semibold" data-fr="Bar à Cocktails" data-en="Cocktail Bar" data-rw="Bar ya cocktail">Bar à Cocktails</h3>
+                            <p class="text-sm text-gray-600" data-fr="Cocktails créatifs et boissons premium" data-en="Creative cocktails and premium drinks" data-rw="Cocktail zishya n'ibinyobwa byiza">Cocktails créatifs et boissons premium</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Menu Highlights -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-utensils text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Cuisine Internationale" data-en="International Cuisine" data-rw="Ibiryo mpuzamahanga">Cuisine Internationale</h3>
+                        <p class="text-gray-600" data-fr="Plats raffinés du monde entier préparés par nos chefs" data-en="Refined dishes from around the world prepared by our chefs" data-rw="Ibiryo byiza byo ku isi bitegurwa n'abacheka bacu">Plats raffinés du monde entier préparés par nos chefs</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-wine-glass-alt text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Bar Premium" data-en="Premium Bar" data-rw="Bar nziza">Bar Premium</h3>
+                        <p class="text-gray-600" data-fr="Large sélection de vins, champagnes et cocktails" data-en="Wide selection of wines, champagnes and cocktails" data-rw="Ibinyobwa byinshi by'ubwiza">Large sélection de vins, champagnes et cocktails</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <i class="fas fa-moon text-4xl gold-accent mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2" data-fr="Ambiance Nocturne" data-en="Night Atmosphere" data-rw="Ikirere cy'ijoro">Ambiance Nocturne</h3>
+                        <p class="text-gray-600" data-fr="Éclairage d'ambiance et musique lounge" data-en="Ambient lighting and lounge music" data-rw="Urumuri rw'ikirere n'umuziki">Éclairage d'ambiance et musique lounge</p>
+                    </div>
+                </div>
+                
+                <!-- Menu Categories -->
+                <div class="bg-gray-100 p-8 rounded-lg mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-fr="Notre Menu" data-en="Our Menu" data-rw="Imbuga yacu">Notre Menu</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Plats Principaux" data-en="Main Dishes" data-rw="Ibiryo by'ingenzi">Plats Principaux</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Grillades premium" data-en="• Premium grilled meats" data-rw="• Inyama zocyewe neza">• Grillades premium</li>
+                                <li data-fr="• Poissons frais" data-en="• Fresh fish" data-rw="• Amafi mashya">• Poissons frais</li>
+                                <li data-fr="• Cuisine rwandaise authentique" data-en="• Authentic Rwandan cuisine" data-rw="• Ibiryo by'u Rwanda byukuri">• Cuisine rwandaise authentique</li>
+                                <li data-fr="• Plats végétariens" data-en="• Vegetarian dishes" data-rw="• Ibiryo by'imbuto">• Plats végétariens</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-3 gold-accent" data-fr="Boissons" data-en="Beverages" data-rw="Ibinyobwa">Boissons</h4>
+                            <ul class="space-y-2">
+                                <li data-fr="• Cocktails signature" data-en="• Signature cocktails" data-rw="• Cocktail zidasanzwe">• Cocktails signature</li>
+                                <li data-fr="• Vins sélectionnés" data-en="• Selected wines" data-rw="• Vini zatoranijwe">• Vins sélectionnés</li>
+                                <li data-fr="• Champagnes" data-en="• Champagnes" data-rw="• Champagne">• Champagnes</li>
+                                <li data-fr="• Boissons sans alcool" data-en="• Non-alcoholic beverages" data-rw="• Ibinyobwa bidafite alcool">• Boissons sans alcool</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Features -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="text-center">
+                        <i class="fas fa-eye text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Vue 360°" data-en="360° View" data-rw="Amashusho ya 360°">Vue 360°</h4>
+                        <p class="text-sm text-gray-600" data-fr="Panorama complet de Kigali" data-en="Complete Kigali panorama" data-rw="Amashusho yose ya Kigali">Panorama complet de Kigali</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-sun text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Coucher de Soleil" data-en="Sunset" data-rw="Iziko">Coucher de Soleil</h4>
+                        <p class="text-sm text-gray-600" data-fr="Vue spectaculaire le soir" data-en="Spectacular evening view" data-rw="Amashusho atangaje mu joro">Vue spectaculaire le soir</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-music text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="Musique Live" data-en="Live Music" data-rw="Umuziki ubuze">Musique Live</h4>
+                        <p class="text-sm text-gray-600" data-fr="Concerts et événements" data-en="Concerts and events" data-rw="Ibirori n'ibyabaye">Concerts et événements</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-wifi text-3xl gold-accent mb-3"></i>
+                        <h4 class="font-semibold" data-fr="WiFi 5G" data-en="5G WiFi" data-rw="WiFi 5G">WiFi 5G</h4>
+                        <p class="text-sm text-gray-600" data-fr="Connexion ultra-rapide" data-en="Ultra-fast connection" data-rw="Umuyoboro wihuse">Connexion ultra-rapide</p>
+                    </div>
+                </div>
+                
+                <!-- Booking Section -->
+                <div class="text-center">
+                    <h3 class="text-2xl font-bold mb-4" data-fr="Réservez Votre Table" data-en="Book Your Table" data-rw="Hitamo ameza yanyu">Réservez Votre Table</h3>
+                    <p class="text-gray-600 mb-6" data-fr="Contactez-nous pour réserver votre table avec vue sur Kigali" data-en="Contact us to book your table with Kigali view" data-rw="Duhamagare kugira ngo uhitemo ameza yanyu ufite amashusho ya Kigali">Contactez-nous pour réserver votre table avec vue sur Kigali</p>
+                    <a href="https://wa.me/250788881346?text=Bonjour, je souhaite réserver une table au restaurant rooftop" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-fr="Réserver" data-en="Book Now" data-rw="Kubana">Réserver</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page-section">
+        <div class="pt-20 pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4" data-fr="Contact & Localisation" data-en="Contact & Location" data-rw="Twandikire & Aho duhagaze">Contact & Localisation</h1>
+                    <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Contactez-nous pour toute information ou réservation. Nous sommes situés au cœur de Kigali dans un emplacement privilégié." data-en="Contact us for any information or booking. We are located in the heart of Kigali in a prime location." data-rw="Duhamagare kugira ngo ubone amakuru cyangwa kubana. Turiho hagati ya Kigali mu hantu heza.">Contactez-nous pour toute information ou réservation. Nous sommes situés au cœur de Kigali dans un emplacement privilégié.</p>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6" data-fr="Informations de Contact" data-en="Contact Information" data-rw="Amakuru yo gutugira">Informations de Contact</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Téléphone" data-en="Phone" data-rw="Telefoni">Téléphone</h4>
+                                    <p class="text-gray-600">+250 788 881 346</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fab fa-whatsapp text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">WhatsApp</h4>
+                                    <p class="text-gray-600">+250 788 881 346</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Adresse" data-en="Address" data-rw="Aho tubarizwa">Adresse</h4>
+                                    <p class="text-gray-600">Rebero Marnand Piles, Kigali, Rwanda</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-wifi text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Connexion" data-en="Connection" data-rw="Umuyoboro">Connexion</h4>
+                                    <p class="text-gray-600" data-fr="5G incluse" data-en="5G included" data-rw="5G harimo">5G incluse</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6" data-fr="Services Inclus" data-en="Included Services" data-rw="Serivise zirimo">Services Inclus</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-broom text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Service de Nettoyage" data-en="Cleaning Service" data-rw="Serivise yo gusukura">Service de Nettoyage</h4>
+                                    <p class="text-gray-600" data-fr="Pour appartements et chambres" data-en="For apartments and rooms" data-rw="Ku mafenetre n'ibyumba">Pour appartements et chambres</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-car text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Parking Gratuit" data-en="Free Parking" data-rw="Aho gushyingura ubusa">Parking Gratuit</h4>
+                                    <p class="text-gray-600" data-fr="Sécurisé pour tous les résidents" data-en="Secure for all residents" data-rw="Gifite umutekano ku baturage bose">Sécurisé pour tous les résidents</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-dumbbell text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Accès Salle de Sport" data-en="Gym Access" data-rw="Kinjira mu kigo cy'imyitozo">Accès Salle de Sport</h4>
+                                    <p class="text-gray-600" data-fr="24h/24 pour les résidents" data-en="24/7 for residents" data-rw="24/7 ku baturage">24h/24 pour les résidents</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-concierge-bell text-2xl gold-accent mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold" data-fr="Service Client" data-en="Customer Service" data-rw="Serivise z'abakiriya">Service Client</h4>
+                                    <p class="text-gray-600" data-fr="Assistance 24h/24" data-en="24/7 assistance" data-rw="Ubufasha 24/7">Assistance 24h/24</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center" data-fr="Notre Localisation" data-en="Our Location" data-rw="Aho duhagaze">Notre Localisation</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4849384704257!2d30.0485206!3d-1.9971879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcafbb6eec8895%3A0xf7cc4de2a0eda34b!2sREBERO%20MARNAND%20PILES!5e0!3m2!1sen!2s!4v1234567890123"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="https://www.google.com/maps/place/REBERO+MARNAND+PILES/@-1.9971879,30.0510953,885m/data=!3m1!1e3!4m14!1m7!3m6!1s0x19dcafbb6eec8895:0xf7cc4de2a0eda34b!2sREBERO+MARNAND+PILES!8m2!3d-1.9971879!4d30.0510953!16s%2Fg%2F11tfn04wxc!3m5!1s0x19dcafbb6eec8895:0xf7cc4de2a0eda34b!8m2!3d-1.9971879!4d30.0510953!16s%2Fg%2F11tfn04wxc?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" 
+                           target="_blank" 
+                           class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            <span data-fr="Voir sur Google Maps" data-en="View on Google Maps" data-rw="Reba kuri Google Maps">Voir sur Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact CTA -->
+                <div class="text-center bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-lg text-white">
+                    <h3 class="text-2xl font-bold mb-4" data-fr="Contactez-nous Maintenant" data-en="Contact Us Now" data-rw="Duhamagare Ubu">Contactez-nous Maintenant</h3>
+                    <p class="mb-6" data-fr="Nous sommes disponibles 24h/24 pour répondre à toutes vos questions" data-en="We are available 24/7 to answer all your questions" data-rw="Turaboneka 24/7 kugira ngo tusubize ibibazo byanyu byose">Nous sommes disponibles 24h/24 pour répondre à toutes vos questions</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-fr="WhatsApp" data-en="WhatsApp" data-rw="WhatsApp">WhatsApp</span>
+                        </a>
+                        <a href="tel:+250788881346" class="inline-flex items-center px-6 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-100 transition-colors">
+                            <i class="fas fa-phone mr-2"></i>
+                            <span data-fr="Appeler" data-en="Call" data-rw="Hamagara">Appeler</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" class="h-16 mx-auto mb-4">
+            <p class="mb-2" data-fr="© 2024 Rebero Marnand Piles. Tous droits réservés." data-en="© 2024 Rebero Marnand Piles. All rights reserved." data-rw="© 2024 Rebero Marnand Piles. Uburenganzira bwose burabitswe.">© 2024 Rebero Marnand Piles. Tous droits réservés.</p>
+            <p class="text-gray-400" data-fr="Luxury Living in Kigali" data-en="Luxury Living in Kigali" data-rw="Ubuzima bwiza muri Kigali">Luxury Living in Kigali</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language translations
+        const translations = {
+            fr: {
+                // Navigation
+                "Accueil": "Accueil",
+                "Appartements": "Appartements",
+                "Salle de Sport": "Salle de Sport",
+                "Sauna": "Sauna",
+                "Massage": "Massage",
+                "Restaurant": "Restaurant",
+                "Contact": "Contact",
+                
+                // Home page
+                "Rebero Marnand Piles": "Rebero Marnand Piles",
+                "Vivez l'expérience du luxe à Kigali": "Vivez l'expérience du luxe à Kigali",
+                "Réserver Maintenant": "Réserver Maintenant",
+                "Nos Services Premium": "Nos Services Premium",
+                "Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel": "Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel",
+                
+                // Services
+                "Appartements & Chambres": "Appartements & Chambres",
+                "Logements équipés avec connexion 5G": "Logements équipés avec connexion 5G",
+                "Salle de Sport": "Salle de Sport",
+                "Équipements modernes de fitness": "Équipements modernes de fitness",
+                "Sauna & Spa": "Sauna & Spa",
+                "Détente et bien-être": "Détente et bien-être",
+                "Massage": "Massage",
+                "Soins thérapeutiques professionnels": "Soins thérapeutiques professionnels",
+                "Restaurant Rooftop": "Restaurant Rooftop",
+                "Dining avec vue panoramique": "Dining avec vue panoramique",
+                "Parking Gratuit": "Parking Gratuit",
+                "Parking sécurisé pour résidents": "Parking sécurisé pour résidents"
+            },
+            en: {
+                // Navigation
+                "Accueil": "Home",
+                "Appartements": "Apartments",
+                "Salle de Sport": "Gym",
+                "Sauna": "Sauna",
+                "Massage": "Massage",
+                "Restaurant": "Restaurant",
+                "Contact": "Contact",
+                
+                // Home page
+                "Rebero Marnand Piles": "Rebero Marnand Piles",
+                "Vivez l'expérience du luxe à Kigali": "Experience Luxury Living in Kigali",
+                "Réserver Maintenant": "Book Now",
+                "Nos Services Premium": "Our Premium Services",
+                "Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel": "Discover all premium services available in our residential complex",
+                
+                // Services
+                "Appartements & Chambres": "Apartments & Rooms",
+                "Logements équipés avec connexion 5G": "Fully equipped accommodations with 5G",
+                "Salle de Sport": "Fitness Center",
+                "Équipements modernes de fitness": "Modern fitness equipment",
+                "Sauna & Spa": "Sauna & Spa",
+                "Détente et bien-être": "Relaxation and wellness",
+                "Massage": "Massage",
+                "Soins thérapeutiques professionnels": "Professional therapeutic treatments",
+                "Restaurant Rooftop": "Rooftop Restaurant",
+                "Dining avec vue panoramique": "Dining with panoramic views",
+                "Parking Gratuit": "Free Parking",
+                "Parking sécurisé pour résidents": "Secure parking for residents"
+            },
+            rw: {
+                // Navigation
+                "Accueil": "Inyubakwa",
+                "Appartements": "Amafenetre",
+                "Salle de Sport": "Ikigo cy'imyitozo",
+                "Sauna": "Sauna",
+                "Massage": "Gukandagira",
+                "Restaurant": "Restoran",
+                "Contact": "Twandikire",
+                
+                // Home page
+                "Rebero Marnand Piles": "Rebero Marnand Piles",
+                "Vivez l'expérience du luxe à Kigali": "Wumve uburyohe bwo gutura muri Kigali",
+                "Réserver Maintenant": "Kubana Ubu",
+                "Nos Services Premium": "Serivise zacu nziza",
+                "Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel": "Menya serivise zose zo hejuru ziboneka mu kigo cyacu",
+                
+                // Services
+                "Appartements & Chambres": "Amafenetre n'Ibyumba",
+                "Logements équipés avec connexion 5G": "Amafenetre yuzuye na 5G",
+                "Salle de Sport": "Ikigo cy'imyitozo",
+                "Équipements modernes de fitness": "Ibikoresho by'imyitozo bigezweho",
+                "Sauna & Spa": "Sauna & Spa",
+                "Détente et bien-être": "Kuruhuka no kwisuzuma",
+                "Massage": "Gukandagira",
+                "Soins thérapeutiques professionnels": "Ubuvuzi bw'abahanga",
+                "Restaurant Rooftop": "Restoran yo hejuru",
+                "Dining avec vue panoramique": "Kurya ufite amashusho meza",
+                "Parking Gratuit": "Aho gushyingura ubusa",
+                "Parking sécurisé pour résidents": "Aho gushyingura gifite umutekano"
+            }
+        };
+
+        // Navigation functions
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation active state
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Close mobile menu
+            document.getElementById('mobile-menu').style.display = 'none';
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Language change function
+        function changeLanguage() {
+            const selectedLang = document.getElementById('language-selector').value;
+            const elements = document.querySelectorAll('[data-' + selectedLang + ']');
+            
+            elements.forEach(element => {
+                element.textContent = element.getAttribute('data-' + selectedLang);
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set default language
+            changeLanguage();
+            
+            // Handle mobile menu clicks
+            document.querySelectorAll('#mobile-menu .nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    document.getElementById('mobile-menu').style.display = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
