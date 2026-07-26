@@ -1,0 +1,1183 @@
+{
+  "settings": {
+    "title": "Rebero Marnand Piles - Luxury Living in Kigali",
+    "description": "Rebero Marnand Piles — appartements et chambres equipes, salle de sport, sauna, massage et restaurant rooftop au coeur de Kigali."
+  },
+  "texts": {
+    "nav.t1": {
+      "fr": "Accueil",
+      "en": "Home",
+      "rw": "Inyubakwa"
+    },
+    "nav.t2": {
+      "fr": "Appartements",
+      "en": "Apartments",
+      "rw": "Amafenetre"
+    },
+    "nav.t3": {
+      "fr": "Salle de Sport",
+      "en": "Gym",
+      "rw": "Ikigo cy'imyitozo"
+    },
+    "nav.t4": {
+      "fr": "Sauna",
+      "en": "Sauna",
+      "rw": "Sauna"
+    },
+    "nav.t5": {
+      "fr": "Massage",
+      "en": "Massage",
+      "rw": "Gukandagira"
+    },
+    "nav.t6": {
+      "fr": "Restaurant",
+      "en": "Restaurant",
+      "rw": "Restoran"
+    },
+    "nav.t7": {
+      "fr": "Contact",
+      "en": "Contact",
+      "rw": "Twandikire"
+    },
+    "nav.t8": {
+      "fr": "Accueil",
+      "en": "Accueil",
+      "rw": "Accueil"
+    },
+    "nav.t9": {
+      "fr": "Appartements",
+      "en": "Appartements",
+      "rw": "Appartements"
+    },
+    "nav.t10": {
+      "fr": "Salle de Sport",
+      "en": "Salle de Sport",
+      "rw": "Salle de Sport"
+    },
+    "nav.t11": {
+      "fr": "Sauna",
+      "en": "Sauna",
+      "rw": "Sauna"
+    },
+    "nav.t12": {
+      "fr": "Massage",
+      "en": "Massage",
+      "rw": "Massage"
+    },
+    "nav.t13": {
+      "fr": "Restaurant",
+      "en": "Restaurant",
+      "rw": "Restaurant"
+    },
+    "nav.t14": {
+      "fr": "Contact",
+      "en": "Contact",
+      "rw": "Contact"
+    },
+    "home.t1": {
+      "fr": "Rebero Marnand Piles",
+      "en": "Rebero Marnand Piles",
+      "rw": "Rebero Marnand Piles"
+    },
+    "home.t2": {
+      "fr": "Vivez l'expérience du luxe à Kigali",
+      "en": "Experience Luxury Living in Kigali",
+      "rw": "Wumve uburyohe bwo gutura muri Kigali"
+    },
+    "home.t3": {
+      "fr": "Réserver Maintenant",
+      "en": "Book Now",
+      "rw": "Kubana Ubu"
+    },
+    "home.t4": {
+      "fr": "Découvrez Rebero Marnand Piles",
+      "en": "Discover Rebero Marnand Piles",
+      "rw": "Menya Rebero Marnand Piles"
+    },
+    "home.t5": {
+      "fr": "Vivez l'expérience du luxe au cœur de Kigali",
+      "en": "Experience luxury living in the heart of Kigali",
+      "rw": "Wumve uburyohe muri Kigali"
+    },
+    "home.t6": {
+      "fr": "Nos Services Premium",
+      "en": "Our Premium Services",
+      "rw": "Serivise zacu nziza"
+    },
+    "home.t7": {
+      "fr": "Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel",
+      "en": "Discover all premium services available in our residential complex",
+      "rw": "Menya serivise zose zo hejuru ziboneka mu kigo cyacu"
+    },
+    "home.t8": {
+      "fr": "Appartements & Chambres",
+      "en": "Apartments & Rooms",
+      "rw": "Amafenetre n'Ibyumba"
+    },
+    "home.t9": {
+      "fr": "Logements équipés avec connexion 5G",
+      "en": "Fully equipped accommodations with 5G",
+      "rw": "Amafenetre yuzuye na 5G"
+    },
+    "home.t10": {
+      "fr": "Salle de Sport",
+      "en": "Fitness Center",
+      "rw": "Ikigo cy'imyitozo"
+    },
+    "home.t11": {
+      "fr": "Équipements modernes de fitness",
+      "en": "Modern fitness equipment",
+      "rw": "Ibikoresho by'imyitozo bigezweho"
+    },
+    "home.t12": {
+      "fr": "Sauna & Spa",
+      "en": "Sauna & Spa",
+      "rw": "Sauna & Spa"
+    },
+    "home.t13": {
+      "fr": "Détente et bien-être",
+      "en": "Relaxation and wellness",
+      "rw": "Kuruhuka no kwisuzuma"
+    },
+    "home.t14": {
+      "fr": "Massage",
+      "en": "Massage",
+      "rw": "Gukandagira"
+    },
+    "home.t15": {
+      "fr": "Soins thérapeutiques professionnels",
+      "en": "Professional therapeutic treatments",
+      "rw": "Ubuvuzi bw'abahanga"
+    },
+    "home.t16": {
+      "fr": "Restaurant Rooftop",
+      "en": "Rooftop Restaurant",
+      "rw": "Restoran yo hejuru"
+    },
+    "home.t17": {
+      "fr": "Dining avec vue panoramique",
+      "en": "Dining with panoramic views",
+      "rw": "Kurya ufite amashusho meza"
+    },
+    "home.t18": {
+      "fr": "Parking Gratuit",
+      "en": "Free Parking",
+      "rw": "Aho gushyingura ubusa"
+    },
+    "home.t19": {
+      "fr": "Parking sécurisé pour résidents",
+      "en": "Secure parking for residents",
+      "rw": "Aho gushyingura gifite umutekano"
+    },
+    "apartments.t1": {
+      "fr": "Appartements & Chambres",
+      "en": "Apartments & Rooms",
+      "rw": "Amafenetre n'Ibyumba"
+    },
+    "apartments.t2": {
+      "fr": "Nos logements modernes et entièrement équipés offrent tout le confort nécessaire avec connexion 5G, service de nettoyage inclus et parking gratuit pour les résidents.",
+      "en": "Our modern and fully equipped accommodations offer all necessary comfort with 5G connection, cleaning service included and free parking for residents.",
+      "rw": "Amafenetre yacu agezweho kandi yuzuye ibikoresho atanga uburyohe bukomeye hamwe na 5G, serivise yo gusukura harimo n'aho gushyingura kubusa."
+    },
+    "apartments.t3": {
+      "fr": "Appartements Équipés",
+      "en": "Equipped Apartments",
+      "rw": "Amafenetre yuzuye"
+    },
+    "apartments.t4": {
+      "fr": "$300",
+      "en": "$300",
+      "rw": "$300"
+    },
+    "apartments.t5": {
+      "fr": "par mois",
+      "en": "per month",
+      "rw": "buri kwezi"
+    },
+    "apartments.t6": {
+      "fr": "✓ Location mensuelle uniquement",
+      "en": "✓ Monthly rental only",
+      "rw": "✓ Gukodesha ukwezi gusa"
+    },
+    "apartments.t7": {
+      "fr": "✓ Entièrement équipé",
+      "en": "✓ Fully equipped",
+      "rw": "✓ Yuzuye ibikoresho"
+    },
+    "apartments.t8": {
+      "fr": "✓ Connexion 5G incluse",
+      "en": "✓ 5G connection included",
+      "rw": "✓ 5G harimo"
+    },
+    "apartments.t9": {
+      "fr": "✓ Service de nettoyage",
+      "en": "✓ Cleaning service",
+      "rw": "✓ Serivise yo gusukura"
+    },
+    "apartments.t10": {
+      "fr": "✓ Parking gratuit",
+      "en": "✓ Free parking",
+      "rw": "✓ Aho gushyingura ubusa"
+    },
+    "apartments.t11": {
+      "fr": "Réserver",
+      "en": "Book Now",
+      "rw": "Kubana"
+    },
+    "apartments.t12": {
+      "fr": "Chambres",
+      "en": "Rooms",
+      "rw": "Ibyumba"
+    },
+    "apartments.t13": {
+      "fr": "$200",
+      "en": "$200",
+      "rw": "$200"
+    },
+    "apartments.t14": {
+      "fr": "/mois",
+      "en": "/mois",
+      "rw": "/mois"
+    },
+    "apartments.t15": {
+      "fr": "ou",
+      "en": "or",
+      "rw": "cyangwa"
+    },
+    "apartments.t16": {
+      "fr": "$30",
+      "en": "$30",
+      "rw": "$30"
+    },
+    "apartments.t17": {
+      "fr": "/nuit",
+      "en": "/nuit",
+      "rw": "/nuit"
+    },
+    "apartments.t18": {
+      "fr": "Location flexible",
+      "en": "Flexible rental",
+      "rw": "Gukodesha bishya"
+    },
+    "apartments.t19": {
+      "fr": "✓ Location mensuelle ou nuitée",
+      "en": "✓ Monthly or nightly rental",
+      "rw": "✓ Gukodesha ukwezi cyangwa ijoro"
+    },
+    "apartments.t20": {
+      "fr": "✓ Chambre confortable",
+      "en": "✓ Comfortable room",
+      "rw": "✓ Icyumba gikwiriye"
+    },
+    "apartments.t21": {
+      "fr": "✓ Connexion 5G incluse",
+      "en": "✓ 5G connection included",
+      "rw": "✓ 5G harimo"
+    },
+    "apartments.t22": {
+      "fr": "✓ Service de nettoyage",
+      "en": "✓ Cleaning service",
+      "rw": "✓ Serivise yo gusukura"
+    },
+    "apartments.t23": {
+      "fr": "✓ Parking gratuit",
+      "en": "✓ Free parking",
+      "rw": "✓ Aho gushyingura ubusa"
+    },
+    "apartments.t24": {
+      "fr": "Réserver",
+      "en": "Book Now",
+      "rw": "Kubana"
+    },
+    "apartments.t25": {
+      "fr": "Appartement Moderne",
+      "en": "Modern Apartment",
+      "rw": "Ifenetre rigezweho"
+    },
+    "apartments.t26": {
+      "fr": "Design contemporain avec tout le confort",
+      "en": "Contemporary design with all comforts",
+      "rw": "Igishushanyo gishya hamwe n'uburyohe"
+    },
+    "apartments.t27": {
+      "fr": "Chambre avec Vue",
+      "en": "Room with View",
+      "rw": "Icyumba gifite amashusho"
+    },
+    "apartments.t28": {
+      "fr": "Vue magnifique sur la ville de Kigali",
+      "en": "Beautiful view of Kigali city",
+      "rw": "Amashusho meza ya Kigali"
+    },
+    "apartments.t29": {
+      "fr": "Appartement de Luxe",
+      "en": "Luxury Apartment",
+      "rw": "Ifenetre ryiza"
+    },
+    "apartments.t30": {
+      "fr": "Finitions haut de gamme et équipements modernes",
+      "en": "High-end finishes and modern equipment",
+      "rw": "Ibikoresho byiza kandi bigezweho"
+    },
+    "apartments.t31": {
+      "fr": "Services Inclus",
+      "en": "Included Services",
+      "rw": "Serivise zirimo"
+    },
+    "apartments.t32": {
+      "fr": "Connexion 5G",
+      "en": "5G Connection",
+      "rw": "Umuyoboro 5G"
+    },
+    "apartments.t33": {
+      "fr": "Internet haute vitesse",
+      "en": "High-speed internet",
+      "rw": "Interineti y'umuvuduko"
+    },
+    "apartments.t34": {
+      "fr": "Nettoyage",
+      "en": "Cleaning",
+      "rw": "Gusukura"
+    },
+    "apartments.t35": {
+      "fr": "Service de nettoyage régulier",
+      "en": "Regular cleaning service",
+      "rw": "Gusukura buri gihe"
+    },
+    "apartments.t36": {
+      "fr": "Parking",
+      "en": "Parking",
+      "rw": "Aho gushyingura"
+    },
+    "apartments.t37": {
+      "fr": "Parking gratuit sécurisé",
+      "en": "Free secure parking",
+      "rw": "Aho gushyingura ubusa"
+    },
+    "apartments.t38": {
+      "fr": "Conciergerie",
+      "en": "Concierge",
+      "rw": "Serivise z'ubufasha"
+    },
+    "apartments.t39": {
+      "fr": "Service client 24/7",
+      "en": "24/7 customer service",
+      "rw": "Serivise 24/7"
+    },
+    "gym.t1": {
+      "fr": "Salle de Sport",
+      "en": "Fitness Center",
+      "rw": "Ikigo cy'imyitozo"
+    },
+    "gym.t2": {
+      "fr": "Notre salle de sport moderne est équipée des derniers équipements de fitness pour vous aider à maintenir votre forme physique. Accessible 24h/24 pour tous les résidents.",
+      "en": "Our modern fitness center is equipped with the latest fitness equipment to help you maintain your physical fitness. Accessible 24/7 for all residents.",
+      "rw": "Ikigo cyacu gishya cy'imyitozo gifite ibikoresho bigezweho byo kwimenyereza kugira ngo bikagufashe kubungabunga imbaraga. Kibonetse 24/7 ku baba muri RMP."
+    },
+    "gym.t3": {
+      "fr": "Espace Cardio",
+      "en": "Cardio Area",
+      "rw": "Ahantu ho kwimenyereza"
+    },
+    "gym.t4": {
+      "fr": "Équipements cardio-vasculaires dernier cri",
+      "en": "State-of-the-art cardiovascular equipment",
+      "rw": "Ibikoresho byo kwimenyereza bigezweho"
+    },
+    "gym.t5": {
+      "fr": "Zone de Musculation",
+      "en": "Weight Training Area",
+      "rw": "Ahantu ho kwimenyereza imbaraga"
+    },
+    "gym.t6": {
+      "fr": "Poids libres et machines de musculation",
+      "en": "Free weights and strength training machines",
+      "rw": "Amashanyaguro n'imashini yo kwimenyereza"
+    },
+    "gym.t7": {
+      "fr": "Espace Fitness",
+      "en": "Fitness Area",
+      "rw": "Ahantu ho kwimenyereza"
+    },
+    "gym.t8": {
+      "fr": "Zone d'entraînement fonctionnel",
+      "en": "Functional training area",
+      "rw": "Ahantu ho kwimenyereza neza"
+    },
+    "gym.t9": {
+      "fr": "Équipements Modernes",
+      "en": "Modern Equipment",
+      "rw": "Ibikoresho bigezweho"
+    },
+    "gym.t10": {
+      "fr": "Machines dernier cri pour tous types d'entraînement",
+      "en": "State-of-the-art machines for all training types",
+      "rw": "Imashini zigezweho z'imyitozo yose"
+    },
+    "gym.t11": {
+      "fr": "Accès 24h/24",
+      "en": "24/7 Access",
+      "rw": "Kwinjira 24/7"
+    },
+    "gym.t12": {
+      "fr": "Accessible à tout moment pour votre confort",
+      "en": "Accessible anytime for your convenience",
+      "rw": "Ushobora kwinjira igihe cyose"
+    },
+    "gym.t13": {
+      "fr": "Coaching Personnel",
+      "en": "Personal Training",
+      "rw": "Mwalimu w'imyitozo"
+    },
+    "gym.t14": {
+      "fr": "Entraîneurs professionnels disponibles sur demande",
+      "en": "Professional trainers available on request",
+      "rw": "Abarimu b'imyitozo baboneka"
+    },
+    "gym.t15": {
+      "fr": "Équipements Disponibles",
+      "en": "Available Equipment",
+      "rw": "Ibikoresho biboneka"
+    },
+    "gym.t16": {
+      "fr": "Cardio",
+      "en": "Cardio",
+      "rw": "Imyitozo y'umutima"
+    },
+    "gym.t17": {
+      "fr": "• Tapis de course",
+      "en": "• Treadmills",
+      "rw": "• Imashini zo kuyiruka"
+    },
+    "gym.t18": {
+      "fr": "• Vélos elliptiques",
+      "en": "• Elliptical bikes",
+      "rw": "• Amagare y'imyitozo"
+    },
+    "gym.t19": {
+      "fr": "• Vélos stationnaires",
+      "en": "• Stationary bikes",
+      "rw": "• Amagare ahagaritse"
+    },
+    "gym.t20": {
+      "fr": "• Rameurs",
+      "en": "• Rowing machines",
+      "rw": "• Imashini zo gukoga"
+    },
+    "gym.t21": {
+      "fr": "Musculation",
+      "en": "Strength Training",
+      "rw": "Kwimenyereza imbaraga"
+    },
+    "gym.t22": {
+      "fr": "• Poids libres",
+      "en": "• Free weights",
+      "rw": "• Amashanyaguro"
+    },
+    "gym.t23": {
+      "fr": "• Machines guidées",
+      "en": "• Weight machines",
+      "rw": "• Imashini z'amashanyaguro"
+    },
+    "gym.t24": {
+      "fr": "• Bancs de musculation",
+      "en": "• Weight benches",
+      "rw": "• Intebe z'imyitozo"
+    },
+    "gym.t25": {
+      "fr": "• Barres et haltères",
+      "en": "• Barbells and dumbbells",
+      "rw": "• Imipira n'amashanyaguro"
+    },
+    "gym.t26": {
+      "fr": "Réservez Votre Séance",
+      "en": "Book Your Session",
+      "rw": "Hitamo igihe cy'imyitozo"
+    },
+    "gym.t27": {
+      "fr": "Contactez-nous pour plus d'informations sur nos services de fitness",
+      "en": "Contact us for more information about our fitness services",
+      "rw": "Duhamagare kugira ngo ubone amakuru yerekeye serivise zacu"
+    },
+    "gym.t28": {
+      "fr": "Contacter",
+      "en": "Contact",
+      "rw": "Duhamagare"
+    },
+    "sauna.t1": {
+      "fr": "Sauna & Spa",
+      "en": "Sauna & Spa",
+      "rw": "Sauna & Spa"
+    },
+    "sauna.t2": {
+      "fr": "Découvrez notre sauna traditionnel et nos espaces de bien-être conçus pour vous offrir une expérience de relaxation unique. Un havre de paix au cœur de Kigali.",
+      "en": "Discover our traditional sauna and wellness spaces designed to offer you a unique relaxation experience. A haven of peace in the heart of Kigali.",
+      "rw": "Menya sauna yacu gakondo n'amazu yo kwisuzuma yateguriwe kukuha ubunyangamugayo bwihariye bwo kuruhuka. Ahantu ho kuruhuka hagati ya Kigali."
+    },
+    "sauna.t3": {
+      "fr": "Sauna Traditionnel",
+      "en": "Traditional Sauna",
+      "rw": "Sauna ya gakondo"
+    },
+    "sauna.t4": {
+      "fr": "Sauna en bois authentique avec ambiance chaleureuse",
+      "en": "Authentic wooden sauna with warm ambiance",
+      "rw": "Sauna y'ibiti ynyangamugayo ifite ubugishi"
+    },
+    "sauna.t5": {
+      "fr": "Intérieur Luxueux",
+      "en": "Luxurious Interior",
+      "rw": "Imbere yiza"
+    },
+    "sauna.t6": {
+      "fr": "Design moderne avec finitions en bois noble",
+      "en": "Modern design with noble wood finishes",
+      "rw": "Igishushanyo gishya hamwe n'ibiti byiza"
+    },
+    "sauna.t7": {
+      "fr": "Espace Détente",
+      "en": "Relaxation Area",
+      "rw": "Ahantu ho kuruhuka"
+    },
+    "sauna.t8": {
+      "fr": "Zone de relaxation après sauna",
+      "en": "Post-sauna relaxation area",
+      "rw": "Ahantu ho kuruhuka nyuma ya sauna"
+    },
+    "sauna.t9": {
+      "fr": "Santé Cardiovasculaire",
+      "en": "Cardiovascular Health",
+      "rw": "Ubuzima bw'umutima"
+    },
+    "sauna.t10": {
+      "fr": "Améliore la circulation sanguine et la santé cardiaque",
+      "en": "Improves blood circulation and heart health",
+      "rw": "Itera imbere amaraso n'ubuzima bw'umutima"
+    },
+    "sauna.t11": {
+      "fr": "Détoxification",
+      "en": "Detoxification",
+      "rw": "Gukuramo ubumara"
+    },
+    "sauna.t12": {
+      "fr": "Élimination des toxines par la transpiration",
+      "en": "Elimination of toxins through sweating",
+      "rw": "Gukuramo ubumara binyuze mu gusuka"
+    },
+    "sauna.t13": {
+      "fr": "Relaxation",
+      "en": "Relaxation",
+      "rw": "Kuruhuka"
+    },
+    "sauna.t14": {
+      "fr": "Réduction du stress et amélioration du sommeil",
+      "en": "Stress reduction and improved sleep",
+      "rw": "Kugabanya imihangayiko no kuryama neza"
+    },
+    "sauna.t15": {
+      "fr": "Caractéristiques du Sauna",
+      "en": "Sauna Features",
+      "rw": "Ibimenyetso bya Sauna"
+    },
+    "sauna.t16": {
+      "fr": "Équipements",
+      "en": "Equipment",
+      "rw": "Ibikoresho"
+    },
+    "sauna.t17": {
+      "fr": "• Sauna traditionnel finlandais",
+      "en": "• Traditional Finnish sauna",
+      "rw": "• Sauna ya gakondo ya Finlande"
+    },
+    "sauna.t18": {
+      "fr": "• Température contrôlée",
+      "en": "• Controlled temperature",
+      "rw": "• Ubushyuhe bwakemuye"
+    },
+    "sauna.t19": {
+      "fr": "• Ventilation optimale",
+      "en": "• Optimal ventilation",
+      "rw": "• Ubusabane bwiza"
+    },
+    "sauna.t20": {
+      "fr": "• Bancs en bois de cèdre",
+      "en": "• Cedar wood benches",
+      "rw": "• Intebe z'ibiti"
+    },
+    "sauna.t21": {
+      "fr": "Services",
+      "en": "Services",
+      "rw": "Serivise"
+    },
+    "sauna.t22": {
+      "fr": "• Serviettes fournies",
+      "en": "• Towels provided",
+      "rw": "• Imyenda itanzwe"
+    },
+    "sauna.t23": {
+      "fr": "• Douches privées",
+      "en": "• Private showers",
+      "rw": "• Kwioga bwihariye"
+    },
+    "sauna.t24": {
+      "fr": "• Espace relaxation",
+      "en": "• Relaxation area",
+      "rw": "• Ahantu ho kuruhuka"
+    },
+    "sauna.t25": {
+      "fr": "• Boissons détox",
+      "en": "• Detox drinks",
+      "rw": "• Ibinyobwa byo gukuramo ubumara"
+    },
+    "sauna.t26": {
+      "fr": "Réservez Votre Séance",
+      "en": "Book Your Session",
+      "rw": "Hitamo igihe cyanyu"
+    },
+    "sauna.t27": {
+      "fr": "Contactez-nous pour réserver votre moment de détente au sauna",
+      "en": "Contact us to book your relaxation time at the sauna",
+      "rw": "Duhamagare kugira ngo uhitemo igihe cyo kuruhuka muri sauna"
+    },
+    "sauna.t28": {
+      "fr": "Réserver",
+      "en": "Book Now",
+      "rw": "Kubana"
+    },
+    "massage.t1": {
+      "fr": "Massage & Spa",
+      "en": "Massage & Spa",
+      "rw": "Gukandagira & Spa"
+    },
+    "massage.t2": {
+      "fr": "Offrez-vous une expérience de massage thérapeutique dans nos salles de traitement professionnelles. Nos masseurs qualifiés vous proposent une gamme complète de soins pour votre bien-être.",
+      "en": "Treat yourself to a therapeutic massage experience in our professional treatment rooms. Our qualified masseurs offer you a complete range of treatments for your well-being.",
+      "rw": "Wiyugurishe ubunyangamugayo bwo gukandagira mu byumba byacu by'ubuvuzi. Abavuzi bacu b'impeta bakuha ubuvuzi bwuzuye ku buzima bwawe."
+    },
+    "massage.t3": {
+      "fr": "Salle de Massage",
+      "en": "Massage Room",
+      "rw": "Icyumba cyo gukandagira"
+    },
+    "massage.t4": {
+      "fr": "Ambiance relaxante avec éclairage tamisé",
+      "en": "Relaxing atmosphere with soft lighting",
+      "rw": "Ubugishi bwo kuruhuka hamwe n'urumuri rworoshye"
+    },
+    "massage.t5": {
+      "fr": "Salle de Traitement",
+      "en": "Treatment Room",
+      "rw": "Icyumba cy'ubuvuzi"
+    },
+    "massage.t6": {
+      "fr": "Équipements professionnels pour soins premium",
+      "en": "Professional equipment for premium treatments",
+      "rw": "Ibikoresho by'abahanga ku bivuzo byiza"
+    },
+    "massage.t7": {
+      "fr": "Espace Wellness",
+      "en": "Wellness Space",
+      "rw": "Ahantu ho kwisuzuma"
+    },
+    "massage.t8": {
+      "fr": "Décoration élégante pour votre confort",
+      "en": "Elegant decoration for your comfort",
+      "rw": "Imitako myiza yo kubaryohereza"
+    },
+    "massage.t9": {
+      "fr": "Massage Relaxant",
+      "en": "Relaxing Massage",
+      "rw": "Gukandagira kwo kuruhuka"
+    },
+    "massage.t10": {
+      "fr": "Massage doux pour évacuer le stress et les tensions",
+      "en": "Gentle massage to release stress and tension",
+      "rw": "Gukandagira kworoshye kugira ngo ugabanye imihangayiko"
+    },
+    "massage.t11": {
+      "fr": "Massage Sportif",
+      "en": "Sports Massage",
+      "rw": "Gukandagira kw'imyitozo"
+    },
+    "massage.t12": {
+      "fr": "Massage thérapeutique pour récupération musculaire",
+      "en": "Therapeutic massage for muscle recovery",
+      "rw": "Gukandagira kw'ubuvuzi kugira ngo imitsi igaruke"
+    },
+    "massage.t13": {
+      "fr": "Massage Aromatique",
+      "en": "Aromatherapy Massage",
+      "rw": "Gukandagira kw'impumuro"
+    },
+    "massage.t14": {
+      "fr": "Massage avec huiles essentielles pour bien-être total",
+      "en": "Massage with essential oils for total well-being",
+      "rw": "Gukandagira hamwe n'amavuta y'impumuro"
+    },
+    "massage.t15": {
+      "fr": "Nos Services de Massage",
+      "en": "Our Massage Services",
+      "rw": "Serivise zacu zo gukandagira"
+    },
+    "massage.t16": {
+      "fr": "Massages Thérapeutiques",
+      "en": "Therapeutic Massages",
+      "rw": "Gukandagira kw'ubuvuzi"
+    },
+    "massage.t17": {
+      "fr": "• Massage suédois classique",
+      "en": "• Classic Swedish massage",
+      "rw": "• Gukandagira gya kera"
+    },
+    "massage.t18": {
+      "fr": "• Massage deep tissue",
+      "en": "• Deep tissue massage",
+      "rw": "• Gukandagira ku mitsi"
+    },
+    "massage.t19": {
+      "fr": "• Massage hot stone",
+      "en": "• Hot stone massage",
+      "rw": "• Gukandagira n'amabuye ashyushye"
+    },
+    "massage.t20": {
+      "fr": "• Réflexologie plantaire",
+      "en": "• Foot reflexology",
+      "rw": "• Gukandagira amaguru"
+    },
+    "massage.t21": {
+      "fr": "Soins Spécialisés",
+      "en": "Specialized Treatments",
+      "rw": "Ubuvuzi bwihariye"
+    },
+    "massage.t22": {
+      "fr": "• Massage pour couples",
+      "en": "• Couple's massage",
+      "rw": "• Gukandagira kw'ababyeyi"
+    },
+    "massage.t23": {
+      "fr": "• Massage prénatal",
+      "en": "• Prenatal massage",
+      "rw": "• Gukandagira kw'abatwite"
+    },
+    "massage.t24": {
+      "fr": "• Massage anti-stress",
+      "en": "• Anti-stress massage",
+      "rw": "• Gukandagira kugira ngo ugabanye imihangayiko"
+    },
+    "massage.t25": {
+      "fr": "• Drainage lymphatique",
+      "en": "• Lymphatic drainage",
+      "rw": "• Gukuramo amaraso"
+    },
+    "massage.t26": {
+      "fr": "Thérapeutes Certifiés",
+      "en": "Certified Therapists",
+      "rw": "Abavuzi b'impeta"
+    },
+    "massage.t27": {
+      "fr": "Professionnels expérimentés",
+      "en": "Experienced professionals",
+      "rw": "Abahanga b'uburambe"
+    },
+    "massage.t28": {
+      "fr": "Huiles Premium",
+      "en": "Premium Oils",
+      "rw": "Amavuta yiza"
+    },
+    "massage.t29": {
+      "fr": "Huiles de qualité supérieure",
+      "en": "Superior quality oils",
+      "rw": "Amavuta y'ubwiza"
+    },
+    "massage.t30": {
+      "fr": "Réservation Flexible",
+      "en": "Flexible Booking",
+      "rw": "Kubana bishya"
+    },
+    "massage.t31": {
+      "fr": "Horaires adaptés",
+      "en": "Flexible schedules",
+      "rw": "Amasaha acika"
+    },
+    "massage.t32": {
+      "fr": "Hygiène Parfaite",
+      "en": "Perfect Hygiene",
+      "rw": "Isuku ryiza"
+    },
+    "massage.t33": {
+      "fr": "Normes sanitaires strictes",
+      "en": "Strict sanitary standards",
+      "rw": "Amahame makaze y'isuku"
+    },
+    "massage.t34": {
+      "fr": "Réservez Votre Massage",
+      "en": "Book Your Massage",
+      "rw": "Hitamo igihe cyo gukandagira"
+    },
+    "massage.t35": {
+      "fr": "Contactez-nous pour réserver votre séance de massage personnalisée",
+      "en": "Contact us to book your personalized massage session",
+      "rw": "Duhamagare kugira ngo uhitemo igihe cyo gukandagira"
+    },
+    "massage.t36": {
+      "fr": "Réserver",
+      "en": "Book Now",
+      "rw": "Kubana"
+    },
+    "restaurant.t1": {
+      "fr": "Restaurant Rooftop",
+      "en": "Rooftop Restaurant",
+      "rw": "Restoran yo hejuru"
+    },
+    "restaurant.t2": {
+      "fr": "Savourez une expérience culinaire unique dans notre restaurant rooftop avec vue panoramique sur Kigali. Cuisine internationale et locale, bar à cocktails et ambiance exceptionnelle.",
+      "en": "Enjoy a unique culinary experience in our rooftop restaurant with panoramic views of Kigali. International and local cuisine, cocktail bar and exceptional atmosphere.",
+      "rw": "Wumve ubunyangamugayo bwo kurya mu restoran yacu yo hejuru ufite amashusho ya Kigali. Ibiryo mpuzamahanga n'iby'aha, bar ya cocktail n'ikirere kidasanzwe."
+    },
+    "restaurant.t3": {
+      "fr": "Vue Panoramique",
+      "en": "Panoramic View",
+      "rw": "Amashusho menshi"
+    },
+    "restaurant.t4": {
+      "fr": "Vue imprenable sur la ville de Kigali",
+      "en": "Stunning view of Kigali city",
+      "rw": "Amashusho atangaje ya Kigali"
+    },
+    "restaurant.t5": {
+      "fr": "Terrasse Élégante",
+      "en": "Elegant Terrace",
+      "rw": "Terrace nziza"
+    },
+    "restaurant.t6": {
+      "fr": "Espace extérieur sophistiqué",
+      "en": "Sophisticated outdoor space",
+      "rw": "Ahantu ho hanze heza"
+    },
+    "restaurant.t7": {
+      "fr": "Bar à Cocktails",
+      "en": "Cocktail Bar",
+      "rw": "Bar ya cocktail"
+    },
+    "restaurant.t8": {
+      "fr": "Cocktails créatifs et boissons premium",
+      "en": "Creative cocktails and premium drinks",
+      "rw": "Cocktail zishya n'ibinyobwa byiza"
+    },
+    "restaurant.t9": {
+      "fr": "Cuisine Internationale",
+      "en": "International Cuisine",
+      "rw": "Ibiryo mpuzamahanga"
+    },
+    "restaurant.t10": {
+      "fr": "Plats raffinés du monde entier préparés par nos chefs",
+      "en": "Refined dishes from around the world prepared by our chefs",
+      "rw": "Ibiryo byiza byo ku isi bitegurwa n'abacheka bacu"
+    },
+    "restaurant.t11": {
+      "fr": "Bar Premium",
+      "en": "Premium Bar",
+      "rw": "Bar nziza"
+    },
+    "restaurant.t12": {
+      "fr": "Large sélection de vins, champagnes et cocktails",
+      "en": "Wide selection of wines, champagnes and cocktails",
+      "rw": "Ibinyobwa byinshi by'ubwiza"
+    },
+    "restaurant.t13": {
+      "fr": "Ambiance Nocturne",
+      "en": "Night Atmosphere",
+      "rw": "Ikirere cy'ijoro"
+    },
+    "restaurant.t14": {
+      "fr": "Éclairage d'ambiance et musique lounge",
+      "en": "Ambient lighting and lounge music",
+      "rw": "Urumuri rw'ikirere n'umuziki"
+    },
+    "restaurant.t15": {
+      "fr": "Notre Menu",
+      "en": "Our Menu",
+      "rw": "Imbuga yacu"
+    },
+    "restaurant.t16": {
+      "fr": "Plats Principaux",
+      "en": "Main Dishes",
+      "rw": "Ibiryo by'ingenzi"
+    },
+    "restaurant.t17": {
+      "fr": "• Grillades premium",
+      "en": "• Premium grilled meats",
+      "rw": "• Inyama zocyewe neza"
+    },
+    "restaurant.t18": {
+      "fr": "• Poissons frais",
+      "en": "• Fresh fish",
+      "rw": "• Amafi mashya"
+    },
+    "restaurant.t19": {
+      "fr": "• Cuisine rwandaise authentique",
+      "en": "• Authentic Rwandan cuisine",
+      "rw": "• Ibiryo by'u Rwanda byukuri"
+    },
+    "restaurant.t20": {
+      "fr": "• Plats végétariens",
+      "en": "• Vegetarian dishes",
+      "rw": "• Ibiryo by'imbuto"
+    },
+    "restaurant.t21": {
+      "fr": "Boissons",
+      "en": "Beverages",
+      "rw": "Ibinyobwa"
+    },
+    "restaurant.t22": {
+      "fr": "• Cocktails signature",
+      "en": "• Signature cocktails",
+      "rw": "• Cocktail zidasanzwe"
+    },
+    "restaurant.t23": {
+      "fr": "• Vins sélectionnés",
+      "en": "• Selected wines",
+      "rw": "• Vini zatoranijwe"
+    },
+    "restaurant.t24": {
+      "fr": "• Champagnes",
+      "en": "• Champagnes",
+      "rw": "• Champagne"
+    },
+    "restaurant.t25": {
+      "fr": "• Boissons sans alcool",
+      "en": "• Non-alcoholic beverages",
+      "rw": "• Ibinyobwa bidafite alcool"
+    },
+    "restaurant.t26": {
+      "fr": "Vue 360°",
+      "en": "360° View",
+      "rw": "Amashusho ya 360°"
+    },
+    "restaurant.t27": {
+      "fr": "Panorama complet de Kigali",
+      "en": "Complete Kigali panorama",
+      "rw": "Amashusho yose ya Kigali"
+    },
+    "restaurant.t28": {
+      "fr": "Coucher de Soleil",
+      "en": "Sunset",
+      "rw": "Iziko"
+    },
+    "restaurant.t29": {
+      "fr": "Vue spectaculaire le soir",
+      "en": "Spectacular evening view",
+      "rw": "Amashusho atangaje mu joro"
+    },
+    "restaurant.t30": {
+      "fr": "Musique Live",
+      "en": "Live Music",
+      "rw": "Umuziki ubuze"
+    },
+    "restaurant.t31": {
+      "fr": "Concerts et événements",
+      "en": "Concerts and events",
+      "rw": "Ibirori n'ibyabaye"
+    },
+    "restaurant.t32": {
+      "fr": "WiFi 5G",
+      "en": "5G WiFi",
+      "rw": "WiFi 5G"
+    },
+    "restaurant.t33": {
+      "fr": "Connexion ultra-rapide",
+      "en": "Ultra-fast connection",
+      "rw": "Umuyoboro wihuse"
+    },
+    "restaurant.t34": {
+      "fr": "Réservez Votre Table",
+      "en": "Book Your Table",
+      "rw": "Hitamo ameza yanyu"
+    },
+    "restaurant.t35": {
+      "fr": "Contactez-nous pour réserver votre table avec vue sur Kigali",
+      "en": "Contact us to book your table with Kigali view",
+      "rw": "Duhamagare kugira ngo uhitemo ameza yanyu ufite amashusho ya Kigali"
+    },
+    "restaurant.t36": {
+      "fr": "Réserver",
+      "en": "Book Now",
+      "rw": "Kubana"
+    },
+    "contact.t1": {
+      "fr": "Contact & Localisation",
+      "en": "Contact & Location",
+      "rw": "Twandikire & Aho duhagaze"
+    },
+    "contact.t2": {
+      "fr": "Contactez-nous pour toute information ou réservation. Nous sommes situés au cœur de Kigali dans un emplacement privilégié.",
+      "en": "Contact us for any information or booking. We are located in the heart of Kigali in a prime location.",
+      "rw": "Duhamagare kugira ngo ubone amakuru cyangwa kubana. Turiho hagati ya Kigali mu hantu heza."
+    },
+    "contact.t3": {
+      "fr": "Informations de Contact",
+      "en": "Contact Information",
+      "rw": "Amakuru yo gutugira"
+    },
+    "contact.t4": {
+      "fr": "Téléphone",
+      "en": "Phone",
+      "rw": "Telefoni"
+    },
+    "contact.t5": {
+      "fr": "+250 788 881 346",
+      "en": "+250 788 881 346",
+      "rw": "+250 788 881 346"
+    },
+    "contact.t6": {
+      "fr": "WhatsApp",
+      "en": "WhatsApp",
+      "rw": "WhatsApp"
+    },
+    "contact.t7": {
+      "fr": "+250 788 881 346",
+      "en": "+250 788 881 346",
+      "rw": "+250 788 881 346"
+    },
+    "contact.t8": {
+      "fr": "Adresse",
+      "en": "Address",
+      "rw": "Aho tubarizwa"
+    },
+    "contact.t9": {
+      "fr": "Rebero Marnand Piles, Kigali, Rwanda",
+      "en": "Rebero Marnand Piles, Kigali, Rwanda",
+      "rw": "Rebero Marnand Piles, Kigali, Rwanda"
+    },
+    "contact.t10": {
+      "fr": "Connexion",
+      "en": "Connection",
+      "rw": "Umuyoboro"
+    },
+    "contact.t11": {
+      "fr": "5G incluse",
+      "en": "5G included",
+      "rw": "5G harimo"
+    },
+    "contact.t12": {
+      "fr": "Services Inclus",
+      "en": "Included Services",
+      "rw": "Serivise zirimo"
+    },
+    "contact.t13": {
+      "fr": "Service de Nettoyage",
+      "en": "Cleaning Service",
+      "rw": "Serivise yo gusukura"
+    },
+    "contact.t14": {
+      "fr": "Pour appartements et chambres",
+      "en": "For apartments and rooms",
+      "rw": "Ku mafenetre n'ibyumba"
+    },
+    "contact.t15": {
+      "fr": "Parking Gratuit",
+      "en": "Free Parking",
+      "rw": "Aho gushyingura ubusa"
+    },
+    "contact.t16": {
+      "fr": "Sécurisé pour tous les résidents",
+      "en": "Secure for all residents",
+      "rw": "Gifite umutekano ku baturage bose"
+    },
+    "contact.t17": {
+      "fr": "Accès Salle de Sport",
+      "en": "Gym Access",
+      "rw": "Kinjira mu kigo cy'imyitozo"
+    },
+    "contact.t18": {
+      "fr": "24h/24 pour les résidents",
+      "en": "24/7 for residents",
+      "rw": "24/7 ku baturage"
+    },
+    "contact.t19": {
+      "fr": "Service Client",
+      "en": "Customer Service",
+      "rw": "Serivise z'abakiriya"
+    },
+    "contact.t20": {
+      "fr": "Assistance 24h/24",
+      "en": "24/7 assistance",
+      "rw": "Ubufasha 24/7"
+    },
+    "contact.t21": {
+      "fr": "Notre Localisation",
+      "en": "Our Location",
+      "rw": "Aho duhagaze"
+    },
+    "contact.t22": {
+      "fr": "Voir sur Google Maps",
+      "en": "View on Google Maps",
+      "rw": "Reba kuri Google Maps"
+    },
+    "contact.t23": {
+      "fr": "Contactez-nous Maintenant",
+      "en": "Contact Us Now",
+      "rw": "Duhamagare Ubu"
+    },
+    "contact.t24": {
+      "fr": "Nous sommes disponibles 24h/24 pour répondre à toutes vos questions",
+      "en": "We are available 24/7 to answer all your questions",
+      "rw": "Turaboneka 24/7 kugira ngo tusubize ibibazo byanyu byose"
+    },
+    "contact.t25": {
+      "fr": "WhatsApp",
+      "en": "WhatsApp",
+      "rw": "WhatsApp"
+    },
+    "contact.t26": {
+      "fr": "Appeler",
+      "en": "Call",
+      "rw": "Hamagara"
+    },
+    "footer.t1": {
+      "fr": "© 2024 Rebero Marnand Piles. Tous droits réservés.",
+      "en": "© 2024 Rebero Marnand Piles. All rights reserved.",
+      "rw": "© 2024 Rebero Marnand Piles. Uburenganzira bwose burabitswe."
+    },
+    "footer.t2": {
+      "fr": "Luxury Living in Kigali",
+      "en": "Luxury Living in Kigali",
+      "rw": "Ubuzima bwiza muri Kigali"
+    }
+  },
+  "images": {
+    "nav.img1": "https://i.imgur.com/T8jS7QJ.png",
+    "home.img1": "images/Logo accueil.webp",
+    "apartments.img1": "images/Livingroom.webp",
+    "apartments.img2": "images/room2.webp",
+    "apartments.img3": "images/livingroom2.webp",
+    "gym.img1": "https://www.styku.com/hubfs/3d-rendering-modern-loft-gym-fitness.jpg",
+    "gym.img2": "https://www.ironcompany.com/media/magefan_blog/multi-housing-fitness-center-gym-equipment-flooring-min.jpg",
+    "gym.img3": "https://advantagefitness.com/wp-content/uploads/2024/01/C81I0252.jpg",
+    "sauna.img1": "https://www.finnleo.com/hubfs/Imported_Blog_Media/jpgSauna-4-3.jpg",
+    "sauna.img2": "https://www.finnleo.com/hs-fs/hubfs/Imported_Blog_Media/jpgSauna-2-Nov-28-2023-02-51-08-6556-PM.jpg",
+    "sauna.img3": "https://theoakroomspa.com/wp-content/uploads/2023/11/DSC_7618copy2-scaled-e1701211588565.jpg",
+    "massage.img1": "https://cdn.marriottnetwork.com/uploads/sites/23/2021/01/the-phoenician-luxury-collection-resort-spa-treatment-room-1440x900.jpg",
+    "massage.img2": "https://www.waldorfastoriaorlando.com/wp-content/uploads/2024/03/Signia_BonnetCreekOrlando_WaldorfSpa-Treatment-Room-V_0006_FINAL.jpg",
+    "massage.img3": "https://thumbs.dreamstime.com/z/image-elegantly-arranged-spa-treatment-room-featuring-comfortable-massage-table-set-amidst-tranquil-luxurious-302685822.jpg",
+    "restaurant.img1": "images/restaurant.webp",
+    "restaurant.img2": "https://ca-times.brightspotcdn.com/dims4/default/cf7cb53/2147483647/strip/true/crop/4443x2962+415+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F35%2F26%2Fa88d10294c74a993f08ae2b2c0a9%2F1285674-wk-rooftop-bars-cara-cara-brv-013.jpg",
+    "restaurant.img3": "https://10thandterrace.agencydominion.net/uploads/2024/04/10th-and-terrace-cheers-800x800.jpg",
+    "footer.img1": "https://i.imgur.com/T8jS7QJ.png"
+  },
+  "links": {
+    "home.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles",
+    "apartments.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver un appartement équipé à 300$ par mois",
+    "apartments.link2": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver une chambre (200$/mois ou 30$/nuit)",
+    "gym.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur la salle de sport",
+    "sauna.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver une séance de sauna",
+    "massage.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver une séance de massage",
+    "restaurant.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver une table au restaurant rooftop",
+    "contact.link1": "https://www.google.com/maps/place/REBERO+MARNAND+PILES/@-1.9971879,30.0510953,885m/data=!3m1!1e3!4m14!1m7!3m6!1s0x19dcafbb6eec8895:0xf7cc4de2a0eda34b!2sREBERO+MARNAND+PILES!8m2!3d-1.9971879!4d30.0510953!16s%2Fg%2F11tfn04wxc!3m5!1s0x19dcafbb6eec8895:0xf7cc4de2a0eda34b!8m2!3d-1.9971879!4d30.0510953!16s%2Fg%2F11tfn04wxc?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D",
+    "contact.link2": "https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles",
+    "contact.link3": "tel:+250788881346"
+  },
+  "embeds": {
+    "contact.embed1": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4849384704257!2d30.0485206!3d-1.9971879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dcafbb6eec8895%3A0xf7cc4de2a0eda34b!2sREBERO%20MARNAND%20PILES!5e0!3m2!1sen!2s!4v1234567890123"
+  }
+}

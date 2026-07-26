@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Administration — Rebero Marnand Piles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --zinc-25:#fcfcfd; --zinc-50:#f7f7f8; --zinc-100:#f1f1f3; --zinc-150:#e8e8ec;
+  --zinc-200:#dededf; --zinc-300:#c4c4c8; --zinc-400:#9a9aa1; --zinc-500:#71717a;
+  --zinc-600:#52525b; --zinc-700:#3f3f46; --zinc-800:#27272a; --zinc-900:#18181b;
+  --accent:#12695a; --accent-hover:#0d5347; --accent-soft:#e8f2ef; --accent-line:#bcd9d1;
+  --danger:#a4362f; --danger-soft:#fbeceb;
+  --warn:#8a6212; --warn-soft:#fdf5e4;
+  --radius:12px; --radius-sm:8px;
+  --shadow-sm:0 1px 2px rgba(24,24,27,.05);
+  --shadow:0 12px 28px -16px rgba(24,24,27,.22);
+  --ease:cubic-bezier(.16,1,.3,1);
+  --sidebar:236px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Outfit',system-ui,-apple-system,sans-serif;
+  background:var(--zinc-50); color:var(--zinc-800);
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:none;cursor:pointer}
+a{color:var(--accent)}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.8em}
+
+/* ---------- connexion ---------- */
+#login{min-height:100dvh;display:grid;grid-template-columns:1fr}
+@media(min-width:900px){#login{grid-template-columns:1.05fr .95fr}}
+.login-brand{
+  background:var(--zinc-900); color:var(--zinc-100);
+  padding:48px 40px; display:flex; flex-direction:column; justify-content:space-between;
+  position:relative; overflow:hidden;
+}
+.login-brand::after{
+  content:''; position:absolute; inset:auto -80px -140px auto; width:340px; height:340px;
+  border-radius:50%; background:radial-gradient(circle at 30% 30%,rgba(18,105,90,.55),transparent 68%);
+  pointer-events:none;
+}
+.login-brand h1{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.login-brand .eyebrow{
+  font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--zinc-400);
+  margin-bottom:18px;font-weight:500;
+}
+.login-brand p{color:var(--zinc-400);max-width:44ch;margin-top:14px;line-height:1.65}
+.login-brand ul{list-style:none;margin-top:30px;display:grid;gap:11px;position:relative;z-index:1}
+.login-brand li{display:flex;gap:11px;align-items:flex-start;color:var(--zinc-300);font-size:.92rem}
+.login-brand li svg{flex:none;margin-top:3px;color:#4fb39c}
+.login-form{display:flex;align-items:center;padding:48px 32px;background:var(--zinc-25)}
+.login-form form{width:100%;max-width:360px}
+.login-form h2{font-size:1.35rem;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}
+.login-form .sub{color:var(--zinc-500);margin-bottom:28px;font-size:.93rem}
+
+/* ---------- champs ---------- */
+.field{display:grid;gap:7px;margin-bottom:16px}
+.field label{font-size:.8rem;font-weight:500;color:var(--zinc-600);letter-spacing:.005em}
+.field .hint{font-size:.76rem;color:var(--zinc-400)}
+input[type=text],input[type=password],input[type=url],input[type=number],textarea,select{
+  width:100%; background:#fff; border:1px solid var(--zinc-200); border-radius:var(--radius-sm);
+  padding:9px 11px; font-size:.9rem; transition:border-color .16s var(--ease),box-shadow .16s var(--ease);
+}
+textarea{resize:vertical;min-height:74px;line-height:1.55}
+input:focus,textarea:focus,select:focus{
+  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);
+}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;padding-right:30px}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  padding:9px 15px;border-radius:var(--radius-sm);font-size:.875rem;font-weight:500;
+  transition:transform .12s var(--ease),background .16s var(--ease),border-color .16s var(--ease);
+  border:1px solid transparent;white-space:nowrap;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-primary:disabled{background:var(--zinc-300);cursor:not-allowed;transform:none}
+.btn-ghost{border-color:var(--zinc-200);background:#fff;color:var(--zinc-700)}
+.btn-ghost:hover{background:var(--zinc-50);border-color:var(--zinc-300)}
+.btn-quiet{color:var(--zinc-500);padding:7px 10px}
+.btn-quiet:hover{color:var(--zinc-800);background:var(--zinc-100)}
+.btn-full{width:100%}
+
+.alert{padding:11px 13px;border-radius:var(--radius-sm);font-size:.86rem;margin-bottom:16px;display:flex;gap:9px;align-items:flex-start}
+.alert svg{flex:none;margin-top:2px}
+.alert-error{background:var(--danger-soft);color:var(--danger)}
+.alert-warn{background:var(--warn-soft);color:var(--warn)}
+.alert-ok{background:var(--accent-soft);color:var(--accent-hover)}
+
+/* ---------- application ---------- */
+#app{display:none;height:100dvh;grid-template-rows:auto 1fr}
+#app.on{display:grid}
+
+.topbar{
+  display:flex;align-items:center;gap:14px;padding:0 18px;height:58px;
+  background:#fff;border-bottom:1px solid var(--zinc-150);
+}
+.topbar .mark{display:flex;align-items:center;gap:9px;font-weight:600;letter-spacing:-.015em;font-size:.95rem}
+.topbar .mark span.dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.topbar .spacer{flex:1}
+.langs{display:flex;background:var(--zinc-100);border-radius:9px;padding:3px;gap:2px}
+.langs button{
+  padding:5px 12px;border-radius:6px;font-size:.78rem;font-weight:600;color:var(--zinc-500);
+  letter-spacing:.04em;transition:background .16s var(--ease),color .16s var(--ease);
+}
+.langs button.on{background:#fff;color:var(--zinc-900);box-shadow:var(--shadow-sm)}
+.status{font-size:.8rem;color:var(--zinc-400);display:flex;align-items:center;gap:7px;min-width:0}
+.status.dirty{color:var(--warn)}
+.status .pip{width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+
+.shell{display:grid;grid-template-columns:var(--sidebar) minmax(360px,1fr) minmax(0,1.05fr);min-height:0}
+@media(max-width:1180px){.shell{grid-template-columns:var(--sidebar) 1fr}.preview-pane{display:none}}
+@media(max-width:760px){
+  .shell{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .sidebar.open{display:block;position:fixed;inset:58px 0 0 0;z-index:40;width:100%}
+}
+
+.sidebar{background:#fff;border-right:1px solid var(--zinc-150);overflow-y:auto;padding:16px 12px 28px}
+.sidebar .group{font-size:.68rem;text-transform:uppercase;letter-spacing:.13em;color:var(--zinc-400);
+  font-weight:600;padding:14px 10px 7px}
+.sidebar button.nav{
+  display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:8px 10px;
+  border-radius:var(--radius-sm);font-size:.885rem;color:var(--zinc-600);
+  transition:background .14s var(--ease),color .14s var(--ease);
+}
+.sidebar button.nav:hover{background:var(--zinc-50);color:var(--zinc-900)}
+.sidebar button.nav.on{background:var(--accent-soft);color:var(--accent-hover);font-weight:500}
+.sidebar button.nav .count{margin-left:auto;font-size:.72rem;color:var(--zinc-400);font-weight:400}
+.sidebar button.nav.on .count{color:var(--accent)}
+
+.editor{overflow-y:auto;padding:26px 26px 90px;min-width:0}
+.editor h2{font-size:1.3rem;font-weight:600;letter-spacing:-.025em}
+.editor .lede{color:var(--zinc-500);font-size:.9rem;margin-top:5px;max-width:62ch}
+.editor .head{padding-bottom:20px;border-bottom:1px solid var(--zinc-150);margin-bottom:22px}
+
+.subhead{
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--zinc-400);
+  font-weight:600;margin:26px 0 12px;padding-top:16px;border-top:1px solid var(--zinc-150);
+}
+.subhead:first-of-type{border-top:none;padding-top:0;margin-top:0}
+
+.row{display:grid;gap:6px;padding:12px 0;border-bottom:1px solid var(--zinc-100)}
+.row:last-child{border-bottom:none}
+.row .meta{display:flex;align-items:baseline;gap:9px}
+.row .tag{
+  font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--zinc-400);background:var(--zinc-100);padding:2px 6px;border-radius:4px;flex:none;
+}
+.row .key{font-size:.7rem;color:var(--zinc-300);margin-left:auto;font-family:'JetBrains Mono',monospace}
+.row .locate{font-size:.72rem;color:var(--zinc-400)}
+.row .locate:hover{color:var(--accent)}
+
+/* design */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px 18px}
+.swatch{display:flex;align-items:center;gap:9px}
+.swatch input[type=color]{
+  width:38px;height:34px;padding:2px;border:1px solid var(--zinc-200);border-radius:7px;
+  background:#fff;cursor:pointer;flex:none;
+}
+.swatch input[type=text]{font-family:'JetBrains Mono',monospace;font-size:.78rem;text-transform:lowercase}
+.slider{display:flex;align-items:center;gap:11px}
+.slider input[type=range]{flex:1;accent-color:var(--accent);height:22px}
+.slider output{font-family:'JetBrains Mono',monospace;font-size:.76rem;color:var(--zinc-500);min-width:56px;text-align:right}
+
+.presets{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.preset{
+  border:1px solid var(--zinc-200);border-radius:var(--radius);padding:12px;text-align:left;
+  transition:border-color .16s var(--ease),transform .12s var(--ease);background:#fff;
+}
+.preset:hover{border-color:var(--zinc-300)}
+.preset:active{transform:translateY(1px)}
+.preset .bar{display:flex;height:22px;border-radius:6px;overflow:hidden;margin-bottom:9px}
+.preset .bar i{flex:1}
+.preset strong{display:block;font-size:.85rem;font-weight:500}
+.preset small{color:var(--zinc-400);font-size:.75rem}
+
+/* images */
+.media{display:grid;grid-template-columns:104px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--zinc-100);align-items:start}
+.media .thumb{
+  width:104px;height:78px;border-radius:var(--radius-sm);overflow:hidden;background:var(--zinc-100);
+  border:1px solid var(--zinc-150);display:flex;align-items:center;justify-content:center;
+}
+.media .thumb img{width:100%;height:100%;object-fit:cover}
+.media .thumb .none{font-size:.68rem;color:var(--zinc-400);text-align:center;padding:6px;line-height:1.3}
+.media .acts{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.media .acts .up{font-size:.78rem}
+
+/* apercu */
+.preview-pane{background:var(--zinc-100);border-left:1px solid var(--zinc-150);display:flex;flex-direction:column;min-width:0}
+.preview-bar{display:flex;align-items:center;gap:9px;padding:9px 14px;border-bottom:1px solid var(--zinc-150);background:#fff}
+.preview-bar .title{font-size:.78rem;color:var(--zinc-500);font-weight:500}
+.preview-bar .spacer{flex:1}
+.devices{display:flex;background:var(--zinc-100);border-radius:8px;padding:3px;gap:2px}
+.devices button{padding:5px 9px;border-radius:5px;color:var(--zinc-500);display:flex;align-items:center}
+.devices button.on{background:#fff;color:var(--zinc-900);box-shadow:var(--shadow-sm)}
+.preview-stage{flex:1;overflow:auto;display:flex;justify-content:center;padding:16px;min-height:0}
+.preview-stage iframe{
+  width:100%;height:100%;border:none;background:#fff;border-radius:var(--radius);
+  box-shadow:var(--shadow);transition:width .3s var(--ease);
+}
+.preview-stage.mobile iframe{width:390px;max-width:100%}
+
+/* barre d'enregistrement */
+.savebar{
+  position:fixed;left:calc(var(--sidebar) + 26px);bottom:20px;z-index:30;
+  display:flex;align-items:center;gap:12px;background:var(--zinc-900);color:#fff;
+  padding:9px 9px 9px 18px;border-radius:14px;box-shadow:0 18px 40px -18px rgba(24,24,27,.6);
+  opacity:0;transform:translateY(14px);pointer-events:none;transition:all .28s var(--ease);
+}
+.savebar.on{opacity:1;transform:none;pointer-events:auto}
+.savebar span{font-size:.85rem}
+.savebar .btn-ghost{background:transparent;border-color:var(--zinc-700);color:var(--zinc-300)}
+.savebar .btn-ghost:hover{background:var(--zinc-800);color:#fff}
+@media(max-width:760px){.savebar{left:16px;right:16px}}
+
+.toast{
+  position:fixed;top:70px;right:20px;z-index:60;max-width:380px;
+  padding:12px 15px;border-radius:var(--radius);font-size:.87rem;box-shadow:var(--shadow);
+  display:flex;gap:10px;align-items:flex-start;opacity:0;transform:translateY(-10px);
+  transition:all .25s var(--ease);pointer-events:none;background:#fff;border:1px solid var(--zinc-200);
+}
+.toast.on{opacity:1;transform:none}
+.toast.ok{border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent-hover)}
+.toast.err{border-color:#eccbc8;background:var(--danger-soft);color:var(--danger)}
+
+.skeleton{background:linear-gradient(90deg,var(--zinc-100) 25%,var(--zinc-150) 37%,var(--zinc-100) 63%);
+  background-size:400% 100%;animation:shimmer 1.4s ease-in-out infinite;border-radius:6px}
+@keyframes shimmer{0%{background-position:100% 0}100%{background-position:0 0}}
+.empty{padding:40px 20px;text-align:center;color:var(--zinc-400);font-size:.88rem}
+
+.spin{animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.menu-toggle{display:none}
+@media(max-width:760px){.menu-toggle{display:inline-flex}}
+</style>
+</head>
+<body>
+
+<!-- ============================ CONNEXION ============================ -->
+<section id="login">
+  <div class="login-brand">
+    <div>
+      <p class="eyebrow">Rebero Marnand Piles</p>
+      <h1>Espace<br>d'administration</h1>
+      <p>Modifiez les textes, les images et l'apparence du site sans toucher au code. Chaque enregistrement publie automatiquement la nouvelle version.</p>
+    </div>
+    <ul>
+      <li>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Textes en francais, anglais et kinyarwanda
+      </li>
+      <li>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Couleurs, polices, arrondis et banniere d'accueil
+      </li>
+      <li>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Apercu en direct avant publication
+      </li>
+    </ul>
+  </div>
+
+  <div class="login-form">
+    <form id="login-form" novalidate>
+      <h2>Connexion</h2>
+      <p class="sub">Saisissez le mot de passe d'administration.</p>
+      <div id="login-alert"></div>
+      <div class="field">
+        <label for="pwd">Mot de passe</label>
+        <input type="password" id="pwd" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-full" id="login-btn">Se connecter</button>
+      <p class="hint" style="margin-top:18px;color:var(--zinc-400);font-size:.78rem">
+        Le mot de passe est defini dans les variables d'environnement Vercel (ADMIN_PASSWORD).
+      </p>
+    </form>
+  </div>
+</section>
+
+<!-- ============================ APPLICATION ============================ -->
+<div id="app">
+  <header class="topbar">
+    <button class="btn btn-quiet menu-toggle" id="menu-toggle" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+    <div class="mark"><span class="dot"></span> Rebero Marnand Piles</div>
+    <div class="spacer"></div>
+    <div class="status" id="status"><span class="pip"></span><span id="status-text">A jour</span></div>
+    <div class="langs" id="langs">
+      <button data-lang="fr" class="on">FR</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="rw">RW</button>
+    </div>
+    <button class="btn btn-ghost" id="reload-btn" title="Recharger depuis le serveur">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 11-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>
+    </button>
+    <a class="btn btn-ghost" href="/" target="_blank" rel="noopener">Voir le site</a>
+  </header>
+
+  <div class="shell">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="editor" id="editor"></main>
+    <aside class="preview-pane">
+      <div class="preview-bar">
+        <span class="title">Apercu en direct</span>
+        <div class="spacer"></div>
+        <div class="devices" id="devices">
+          <button data-device="desktop" class="on" title="Ordinateur">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </button>
+          <button data-device="mobile" title="Telephone">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="preview-stage" id="stage">
+        <iframe id="preview" title="Apercu du site" src="about:blank"></iframe>
+      </div>
+    </aside>
+  </div>
+
+  <div class="savebar" id="savebar">
+    <span id="savebar-text">Modifications non publiees</span>
+    <button class="btn btn-ghost" id="discard-btn">Annuler</button>
+    <button class="btn btn-primary" id="save-btn">Publier</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+'use strict';
+
+/* =============================== etat =============================== */
+
+var S = {
+  password: '',
+  content: null,
+  theme: null,
+  schema: null,
+  baseline: '',
+  lang: 'fr',
+  view: 'settings',
+  previewReady: false,
+  saving: false
+};
+
+var LANGS = { fr:'francais', en:'anglais', rw:'kinyarwanda' };
+
+var FONTS = [
+  { name:'Poppins',            weights:'300;400;500;600;700' },
+  { name:'Outfit',             weights:'300;400;500;600;700' },
+  { name:'Manrope',            weights:'300;400;500;600;700' },
+  { name:'DM Sans',            weights:'300;400;500;700'     },
+  { name:'Montserrat',         weights:'300;400;500;600;700' },
+  { name:'Raleway',            weights:'300;400;500;600;700' },
+  { name:'Jost',               weights:'300;400;500;600;700' },
+  { name:'Sora',               weights:'300;400;500;600;700' },
+  { name:'Playfair Display',   weights:'400;500;600;700'     },
+  { name:'Cormorant Garamond', weights:'400;500;600;700'     },
+  { name:'Lora',               weights:'400;500;600;700'     }
+];
+
+var SHADOWS = {
+  none:   { card:'none', hover:'none', label:'Aucune ombre' },
+  soft:   { card:'0 4px 6px rgba(0, 0, 0, 0.1)',   hover:'0 12px 24px rgba(0, 0, 0, 0.12)', label:'Douce (par defaut)' },
+  medium: { card:'0 8px 20px -8px rgba(0, 0, 0, 0.18)', hover:'0 22px 44px -18px rgba(0, 0, 0, 0.28)', label:'Marquee' },
+  flat:   { card:'0 0 0 1px rgba(0, 0, 0, 0.07)',  hover:'0 0 0 1px rgba(0, 0, 0, 0.16)',   label:'Contour fin' }
+};
+
+var PRESETS = [
+  { id:'or', label:'Or & nuit', note:'Le theme actuel',
+    colors:['#d4af37','#667eea','#1a202c'],
+    values:{ 'color-primary':'#667eea','color-secondary':'#764ba2','color-accent':'#d4af37','color-accent-soft':'#f7e98e',
+             'color-page-bg':'#f9fafb','color-surface':'#ffffff','color-soft':'#f3f4f6','color-dark':'#1a202c',
+             'color-heading':'#1a202c','color-text':'#4a5568','color-muted':'#718096',
+             'color-nav-bg':'#ffffff','color-nav-text':'#2d3748','color-footer-bg':'#2d3748','color-footer-text':'#ffffff' } },
+  { id:'sable', label:'Sable & bronze', note:'Chaleureux, hotelier',
+    colors:['#a8763e','#8c6239','#2b2622'],
+    values:{ 'color-primary':'#8c6239','color-secondary':'#5c4028','color-accent':'#a8763e','color-accent-soft':'#e6cfae',
+             'color-page-bg':'#faf7f2','color-surface':'#ffffff','color-soft':'#f2ece2','color-dark':'#2b2622',
+             'color-heading':'#2b2622','color-text':'#5c5349','color-muted':'#8a7f72',
+             'color-nav-bg':'#fffdf9','color-nav-text':'#3a332c','color-footer-bg':'#2b2622','color-footer-text':'#f5efe6' } },
+  { id:'foret', label:'Foret & cuivre', note:'Naturel, apaisant',
+    colors:['#c08a4a','#1f4d40','#12241f'],
+    values:{ 'color-primary':'#1f4d40','color-secondary':'#12332b','color-accent':'#c08a4a','color-accent-soft':'#e8d3b4',
+             'color-page-bg':'#f6f8f6','color-surface':'#ffffff','color-soft':'#eaf0ed','color-dark':'#12241f',
+             'color-heading':'#12241f','color-text':'#46564f','color-muted':'#7a8a83',
+             'color-nav-bg':'#ffffff','color-nav-text':'#1f4d40','color-footer-bg':'#12241f','color-footer-text':'#e9f1ed' } },
+  { id:'ardoise', label:'Ardoise & ivoire', note:'Sobre, contemporain',
+    colors:['#b08d57','#3d4653','#1b1f26'],
+    values:{ 'color-primary':'#3d4653','color-secondary':'#242a33','color-accent':'#b08d57','color-accent-soft':'#e3d3b6',
+             'color-page-bg':'#f7f7f6','color-surface':'#ffffff','color-soft':'#ededeb','color-dark':'#1b1f26',
+             'color-heading':'#1b1f26','color-text':'#4f545c','color-muted':'#868b93',
+             'color-nav-bg':'#ffffff','color-nav-text':'#2c3138','color-footer-bg':'#1b1f26','color-footer-text':'#f0f0ee' } }
+];
+
+/* =============================== outils =============================== */
+
+var $  = function(sel, ctx){ return (ctx||document).querySelector(sel); };
+var $$ = function(sel, ctx){ return Array.prototype.slice.call((ctx||document).querySelectorAll(sel)); };
+
+function esc(str){
+  return String(str == null ? '' : str)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+var toastTimer;
+function toast(message, kind){
+  var el = $('#toast');
+  el.className = 'toast on ' + (kind || '');
+  el.innerHTML = esc(message);
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.className = 'toast ' + (kind || ''); }, kind === 'err' ? 8000 : 4200);
+}
+
+function api(path, options){
+  options = options || {};
+  options.headers = Object.assign({ 'x-cms-password': S.password }, options.headers || {});
+  if (options.body) options.headers['Content-Type'] = 'application/json';
+  return fetch(path, options).then(function(res){
+    return res.json().catch(function(){ return { ok:false, error:'Reponse illisible du serveur (' + res.status + ').' }; })
+      .then(function(data){
+        if (!res.ok || !data.ok) throw new Error(data.error || ('Erreur ' + res.status));
+        return data;
+      });
+  });
+}
+
+function snapshot(){ return JSON.stringify({ c:S.content, t:S.theme }); }
+function isDirty(){ return snapshot() !== S.baseline; }
+
+function refreshDirty(){
+  var dirty = isDirty();
+  $('#savebar').classList.toggle('on', dirty && !S.saving);
+  $('#status').classList.toggle('dirty', dirty);
+  $('#status-text').textContent = dirty ? 'Modifications non publiees' : 'A jour';
+}
+
+/* ---------- pont vers l'apercu ---------- */
+
+var pushTimer;
+function pushPreview(focusKey){
+  if (!S.previewReady) return;
+  clearTimeout(pushTimer);
+  pushTimer = setTimeout(function(){
+    var page = S.view;
+    if (page === 'design' || page === 'settings' || page === 'nav' || page === 'footer') page = 'home';
+    $('#preview').contentWindow.postMessage({
+      type:'cms:apply', content:S.content, theme:S.theme, lang:S.lang, page:page, focusKey:focusKey || null
+    }, window.location.origin);
+  }, 90);
+}
+
+window.addEventListener('message', function(event){
+  if (event.origin !== window.location.origin) return;
+  var msg = event.data || {};
+  if (msg.type === 'cms:ready'){ S.previewReady = true; pushPreview(); }
+  if (msg.type === 'cms:select' && msg.key){
+    var page = msg.key.split('.')[0];
+    if (S.view !== page){ S.view = page; renderSidebar(); renderEditor(); }
+    var input = $('[data-key="' + msg.key + '"]');
+    if (input){ input.focus(); input.scrollIntoView({ behavior:'smooth', block:'center' }); }
+  }
+});
+
+/* =============================== connexion =============================== */
+
+$('#login-form').addEventListener('submit', function(event){
+  event.preventDefault();
+  var btn = $('#login-btn');
+  var password = $('#pwd').value;
+  if (!password){ return; }
+  btn.disabled = true;
+  btn.textContent = 'Verification...';
+  S.password = password;
+
+  api('/api/auth', { method:'POST', body:'{}' })
+    .then(function(info){
+      if (!info.githubConfigured){
+        throw new Error("Le jeton GitHub n'est pas configure sur Vercel (variable GITHUB_TOKEN). L'enregistrement est impossible.");
+      }
+      try { sessionStorage.setItem('cms-pwd', password); } catch(e){}
+      return loadState();
+    })
+    .then(function(){
+      $('#login').style.display = 'none';
+      $('#app').classList.add('on');
+      startPreview();
+    })
+    .catch(function(err){
+      S.password = '';
+      $('#login-alert').innerHTML =
+        '<div class="alert alert-error">' +
+        '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>' +
+        '<span>' + esc(err.message) + '</span></div>';
+    })
+    .then(function(){
+      btn.disabled = false;
+      btn.textContent = 'Se connecter';
+    });
+});
+
+function loadState(){
+  return api('/api/state').then(function(data){
+    S.content = data.content;
+    S.theme = data.theme;
+    S.schema = data.schema;
+    if (!S.content.settings) S.content.settings = { title:'', description:'' };
+    S.baseline = snapshot();
+    renderSidebar();
+    renderEditor();
+    refreshDirty();
+  });
+}
+
+function startPreview(){
+  S.previewReady = false;
+  $('#preview').src = '/?cms-preview=1&t=' + Date.now();
+}
+
+/* =============================== barre laterale =============================== */
+
+function renderSidebar(){
+  var html = '<div class="group">Reglages</div>';
+  html += navButton('settings', 'Titre & description', null,
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.6 1.6 0 00-1.8-.3 1.6 1.6 0 00-1 1.5V21a2 2 0 11-4 0v-.1A1.6 1.6 0 008 19.4a1.6 1.6 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.6 1.6 0 00.3-1.8 1.6 1.6 0 00-1.5-1H2a2 2 0 110-4h.1A1.6 1.6 0 004.6 8a1.6 1.6 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.6 1.6 0 001.8.3H9a1.6 1.6 0 001-1.5V2a2 2 0 114 0v.1a1.6 1.6 0 001 1.5 1.6 1.6 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.6 1.6 0 00-.3 1.8V9a1.6 1.6 0 001.5 1H22a2 2 0 110 4h-.1a1.6 1.6 0 00-1.5 1z"/></svg>');
+  html += navButton('design', 'Design du site', null,
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="13.5" cy="6.5" r="1.2"/><circle cx="17.5" cy="10.5" r="1.2"/><circle cx="8.5" cy="7.5" r="1.2"/><circle cx="6.5" cy="12.5" r="1.2"/><path d="M12 2a10 10 0 000 20c.9 0 1.7-.7 1.7-1.6 0-.4-.2-.8-.5-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16a5 5 0 005-5c0-5-4-9-9-9z"/></svg>');
+
+  html += '<div class="group">Pages du site</div>';
+  S.schema.pages.forEach(function(page){
+    var count = page.texts.length + page.images.length + page.links.length + page.embeds.length;
+    html += navButton(page.id, page.label, count,
+      '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>');
+  });
+
+  $('#sidebar').innerHTML = html;
+  $$('#sidebar .nav').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      S.view = btn.dataset.view;
+      $('#sidebar').classList.remove('open');
+      renderSidebar();
+      renderEditor();
+      $('#editor').scrollTop = 0;
+      pushPreview();
+    });
+  });
+}
+
+function navButton(id, label, count, icon){
+  return '<button class="nav' + (S.view === id ? ' on' : '') + '" data-view="' + id + '">' +
+    icon + '<span>' + esc(label) + '</span>' +
+    (count != null ? '<span class="count">' + count + '</span>' : '') + '</button>';
+}
+
+/* =============================== editeur =============================== */
+
+function renderEditor(){
+  if (S.view === 'settings') return renderSettings();
+  if (S.view === 'design')   return renderDesign();
+  return renderPage(S.view);
+}
+
+function head(title, lede){
+  return '<div class="head"><h2>' + esc(title) + '</h2><p class="lede">' + esc(lede) + '</p></div>';
+}
+
+/* ---------- reglages generaux ---------- */
+
+function renderSettings(){
+  var s = S.content.settings;
+  $('#editor').innerHTML =
+    head('Titre & description', "Ce que voient Google et les reseaux sociaux quand ils partagent votre site. Ces textes n'apparaissent pas sur la page elle-meme.") +
+    '<div class="field">' +
+      '<label for="set-title">Titre de l\'onglet du navigateur</label>' +
+      '<input type="text" id="set-title" maxlength="70" value="' + esc(s.title) + '">' +
+      '<span class="hint">70 caracteres maximum. Exemple : Rebero Marnand Piles — Appartements de standing a Kigali</span>' +
+    '</div>' +
+    '<div class="field">' +
+      '<label for="set-desc">Description pour les moteurs de recherche</label>' +
+      '<textarea id="set-desc" maxlength="180">' + esc(s.description) + '</textarea>' +
+      '<span class="hint">160 a 180 caracteres. Resume ce que propose l\'etablissement.</span>' +
+    '</div>';
+
+  $('#set-title').addEventListener('input', function(){ s.title = this.value; refreshDirty(); });
+  $('#set-desc').addEventListener('input',  function(){ s.description = this.value; refreshDirty(); });
+}
+
+/* ---------- une page ---------- */
+
+function renderPage(pageId){
+  var page = null;
+  S.schema.pages.forEach(function(p){ if (p.id === pageId) page = p; });
+  if (!page){ $('#editor').innerHTML = '<div class="empty">Section introuvable.</div>'; return; }
+
+  var html = head(page.label,
+    'Textes affiches en ' + LANGS[S.lang] + '. Changez de langue en haut a droite. Cliquez sur un element dans l\'apercu pour aller directement au champ correspondant.');
+
+  if (!page.texts.length && !page.images.length && !page.links.length){
+    html += '<div class="empty">Rien a modifier sur cette section.</div>';
+  }
+
+  var section = null;
+  page.texts.forEach(function(field){
+    if (field.section !== section){
+      section = field.section;
+      html += '<div class="subhead">' + esc(section) + '</div>';
+    }
+    html += textRow(field);
+  });
+
+  if (page.images.length){
+    html += '<div class="subhead">Images</div>';
+    page.images.forEach(function(img){ html += mediaRow(img); });
+  }
+
+  if (page.links.length){
+    html += '<div class="subhead">Liens (WhatsApp, telephone, Google Maps)</div>';
+    page.links.forEach(function(link){ html += linkRow(link); });
+  }
+
+  if (page.embeds.length){
+    html += '<div class="subhead">Carte integree</div>';
+    page.embeds.forEach(function(embed){ html += embedRow(embed); });
+  }
+
+  $('#editor').innerHTML = html;
+  bindPage(page);
+}
+
+function textRow(field){
+  var entry = S.content.texts[field.key] || { fr:'', en:'', rw:'' };
+  var value = entry[S.lang] != null ? entry[S.lang] : '';
+  var missing = S.lang !== 'fr' && !value;
+  var control = field.multiline
+    ? '<textarea data-key="' + field.key + '" data-kind="text">' + esc(value) + '</textarea>'
+    : '<input type="text" data-key="' + field.key + '" data-kind="text" value="' + esc(value) + '">';
+
+  return '<div class="row">' +
+    '<div class="meta">' +
+      '<span class="tag">' + esc(field.tag) + '</span>' +
+      '<button class="locate" data-locate="' + field.key + '">Localiser</button>' +
+      '<span class="key">' + esc(field.key) + '</span>' +
+    '</div>' + control +
+    (missing ? '<span class="hint" style="color:var(--warn)">Traduction ' + LANGS[S.lang] + ' manquante — le texte francais sera utilise.</span>' : '') +
+    (S.lang !== 'fr' ? '<span class="hint">FR : ' + esc(entry.fr || '') + '</span>' : '') +
+  '</div>';
+}
+
+function mediaRow(img){
+  var src = S.content.images[img.key] || '';
+  var broken = /^URL_/.test(src) || !src;
+  return '<div class="media">' +
+    '<div class="thumb">' +
+      (broken ? '<span class="none">Aucune image</span>'
+              : '<img src="' + esc(src) + '" alt="" loading="lazy" onerror="this.parentNode.innerHTML=\'<span class=none>Image introuvable</span>\'">') +
+    '</div>' +
+    '<div>' +
+      '<label style="font-size:.8rem;font-weight:500;color:var(--zinc-600)">' + esc(img.label) + '</label>' +
+      '<input type="text" data-key="' + img.key + '" data-kind="image" value="' + esc(src) + '" style="margin-top:6px" placeholder="images/mon-image.webp ou https://...">' +
+      '<div class="acts">' +
+        '<label class="btn btn-ghost up"><span class="up-label">Televerser une image</span>' +
+          '<input type="file" accept="image/*" data-upload="' + img.key + '" hidden>' +
+        '</label>' +
+        '<span class="hint">JPG, PNG ou WEBP — 3 Mo maximum</span>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+function linkRow(link){
+  return '<div class="row">' +
+    '<div class="meta"><span class="tag">lien</span><span>' + esc(link.label) + '</span>' +
+    '<span class="key">' + esc(link.key) + '</span></div>' +
+    '<input type="text" data-key="' + link.key + '" data-kind="link" value="' + esc(S.content.links[link.key] || '') + '">' +
+  '</div>';
+}
+
+function embedRow(embed){
+  return '<div class="row">' +
+    '<div class="meta"><span class="tag">carte</span><span>' + esc(embed.label) + '</span></div>' +
+    '<textarea data-key="' + embed.key + '" data-kind="embed">' + esc(S.content.embeds[embed.key] || '') + '</textarea>' +
+    '<span class="hint">Sur Google Maps : Partager &rsaquo; Integrer une carte, puis copiez uniquement l\'adresse contenue dans src="...".</span>' +
+  '</div>';
+}
+
+function bindPage(page){
+  $$('#editor [data-kind]').forEach(function(input){
+    input.addEventListener('input', function(){
+      var key = this.dataset.key;
+      var kind = this.dataset.kind;
+      if (kind === 'text'){
+        if (!S.content.texts[key]) S.content.texts[key] = { fr:'', en:'', rw:'' };
+        S.content.texts[key][S.lang] = this.value;
+      } else if (kind === 'image'){
+        S.content.images[key] = this.value;
+      } else if (kind === 'link'){
+        S.content.links[key] = this.value;
+      } else if (kind === 'embed'){
+        S.content.embeds[key] = this.value.trim();
+      }
+      refreshDirty();
+      pushPreview();
+    });
+  });
+
+  $$('#editor [data-locate]').forEach(function(btn){
+    btn.addEventListener('click', function(){ pushPreview(this.dataset.locate); });
+  });
+
+  $$('#editor [data-upload]').forEach(function(input){
+    input.addEventListener('change', function(){ handleUpload(this); });
+  });
+}
+
+function handleUpload(input){
+  var file = input.files && input.files[0];
+  if (!file) return;
+  if (file.size > 3 * 1024 * 1024){
+    toast('Image trop lourde (' + Math.round(file.size / 1024 / 1024 * 10) / 10 + ' Mo). Maximum 3 Mo.', 'err');
+    input.value = '';
+    return;
+  }
+  var key = input.dataset.upload;
+  var label = input.parentNode.querySelector('.up-label');
+  var original = label.textContent;
+  label.textContent = 'Envoi en cours...';
+
+  var reader = new FileReader();
+  reader.onload = function(){
+    api('/api/upload', {
+      method:'POST',
+      body: JSON.stringify({ filename:file.name, data:String(reader.result) })
+    })
+      .then(function(res){
+        S.content.images[key] = res.path;
+        toast('Image ajoutee : ' + res.path, 'ok');
+        renderEditor();
+        refreshDirty();
+        pushPreview();
+      })
+      .catch(function(err){
+        toast(err.message, 'err');
+        label.textContent = original;
+      });
+  };
+  reader.onerror = function(){
+    toast('Lecture du fichier impossible.', 'err');
+    label.textContent = original;
+  };
+  reader.readAsDataURL(file);
+}
+
+/* ---------- design ---------- */
+
+function renderDesign(){
+  var t = S.theme;
+  var html = head('Design du site',
+    "Chaque reglage s'applique instantanement dans l'apercu a droite. Rien n'est publie tant que vous n'avez pas clique sur Publier.");
+
+  html += '<div class="subhead">Themes prets a l\'emploi</div><div class="presets">';
+  PRESETS.forEach(function(preset){
+    html += '<button class="preset" data-preset="' + preset.id + '">' +
+      '<div class="bar">' + preset.colors.map(function(c){ return '<i style="background:' + c + '"></i>'; }).join('') + '</div>' +
+      '<strong>' + esc(preset.label) + '</strong><small>' + esc(preset.note) + '</small></button>';
+  });
+  html += '</div><p class="hint" style="margin-top:10px">Un theme remplace uniquement les couleurs. Les polices, arrondis et la banniere restent inchanges.</p>';
+
+  html += '<div class="subhead">Typographie</div><div class="grid2">' +
+    fontField('font-heading', 'Police des titres') +
+    fontField('font-body', 'Police du texte') +
+    selectField('font-weight-heading', 'Graisse des titres', [['600','Semi-gras'],['700','Gras'],['800','Extra-gras']]) +
+    rangeField('font-size-base', 'Taille du texte', 14, 20, 1, 'px') +
+  '</div>';
+
+  html += '<div class="subhead">Couleurs de marque</div><div class="grid2">' +
+    colorField('color-accent', 'Accent (dore)') +
+    colorField('color-accent-soft', 'Accent clair (degrade des icones)') +
+    colorField('color-primary', 'Cartes de prix — debut du degrade') +
+    colorField('color-secondary', 'Cartes de prix — fin du degrade') +
+  '</div>';
+
+  html += '<div class="subhead">Fonds et textes</div><div class="grid2">' +
+    colorField('color-page-bg', 'Fond general de la page') +
+    colorField('color-surface', 'Fond des blocs clairs') +
+    colorField('color-soft', 'Fond des encadres') +
+    colorField('color-dark', 'Fond des blocs sombres') +
+    colorField('color-heading', 'Couleur des titres') +
+    colorField('color-text', 'Couleur du texte courant') +
+    colorField('color-muted', 'Couleur des textes secondaires') +
+  '</div>';
+
+  html += '<div class="subhead">Barre de navigation et pied de page</div><div class="grid2">' +
+    colorField('color-nav-bg', 'Fond de la barre du haut') +
+    colorField('color-nav-text', 'Texte de la barre du haut') +
+    colorField('color-footer-bg', 'Fond du pied de page') +
+    colorField('color-footer-text', 'Texte du pied de page') +
+  '</div>';
+
+  html += '<div class="subhead">Bouton WhatsApp</div><div class="grid2">' +
+    colorField('color-whatsapp-1', 'Degrade — depart') +
+    colorField('color-whatsapp-2', 'Degrade — arrivee') +
+  '</div>';
+
+  html += '<div class="subhead">Banniere d\'accueil</div>' +
+    '<div class="field">' +
+      '<label for="hero-src">Image de fond</label>' +
+      '<input type="text" id="hero-src" value="' + esc(heroPath(t['hero-image'])) + '" placeholder="images/Accueil.webp">' +
+      '<div class="acts" style="display:flex;gap:8px;align-items:center;margin-top:4px">' +
+        '<label class="btn btn-ghost up"><span class="up-label">Televerser une image</span><input type="file" accept="image/*" id="hero-upload" hidden></label>' +
+        '<span class="hint">Format paysage, 1600 px de large minimum</span>' +
+      '</div>' +
+    '</div>' +
+    '<div class="grid2">' +
+      rangeField('hero-overlay', 'Assombrissement de l\'image', 0, 0.85, 0.05, '') +
+      selectField('hero-height', 'Hauteur de la banniere', [['70vh','Compacte'],['85vh','Moyenne'],['100vh','Plein ecran']]) +
+      colorField('hero-text', 'Couleur du titre sur l\'image') +
+    '</div>';
+
+  html += '<div class="subhead">Formes et espacements</div><div class="grid2">' +
+    rangeField('radius-sm', 'Arrondi des boutons et images', 0, 24, 1, 'px') +
+    rangeField('radius-lg', 'Arrondi des grandes cartes', 0, 40, 1, 'px') +
+    rangeField('section-padding', 'Hauteur des sections', 2, 9, 0.5, 'rem') +
+    rangeField('gallery-image-height', 'Hauteur des photos de galerie', 160, 440, 10, 'px') +
+    rangeField('hover-lift', 'Soulevement au survol', -16, 0, 1, 'px') +
+    shadowField() +
+  '</div>';
+
+  html += '<div style="margin-top:34px;padding-top:20px;border-top:1px solid var(--zinc-150)">' +
+    '<button class="btn btn-ghost" id="reset-theme">Retablir le design d\'origine</button></div>';
+
+  $('#editor').innerHTML = html;
+  bindDesign();
+}
+
+function colorField(key, label){
+  var value = S.theme[key] || '#000000';
+  return '<div class="field"><label>' + esc(label) + '</label><div class="swatch">' +
+    '<input type="color" data-theme-color="' + key + '" value="' + esc(normalizeHex(value)) + '">' +
+    '<input type="text" data-theme-hex="' + key + '" value="' + esc(value) + '">' +
+  '</div></div>';
+}
+
+function rangeField(key, label, min, max, step, unit){
+  var num = parseFloat(S.theme[key]) || 0;
+  return '<div class="field"><label>' + esc(label) + '</label><div class="slider">' +
+    '<input type="range" data-theme-range="' + key + '" data-unit="' + unit + '" min="' + min + '" max="' + max + '" step="' + step + '" value="' + num + '">' +
+    '<output data-out="' + key + '">' + num + unit + '</output>' +
+  '</div></div>';
+}
+
+function selectField(key, label, options){
+  var current = String(S.theme[key]);
+  return '<div class="field"><label>' + esc(label) + '</label><select data-theme-select="' + key + '">' +
+    options.map(function(opt){
+      return '<option value="' + esc(opt[0]) + '"' + (opt[0] === current ? ' selected' : '') + '>' + esc(opt[1]) + '</option>';
+    }).join('') + '</select></div>';
+}
+
+function fontField(key, label){
+  var current = fontName(S.theme[key]);
+  return '<div class="field"><label>' + esc(label) + '</label><select data-theme-font="' + key + '">' +
+    FONTS.map(function(font){
+      return '<option value="' + esc(font.name) + '"' + (font.name === current ? ' selected' : '') + '>' + esc(font.name) + '</option>';
+    }).join('') + '</select></div>';
+}
+
+function shadowField(){
+  var current = 'soft';
+  Object.keys(SHADOWS).forEach(function(id){ if (SHADOWS[id].card === S.theme['shadow-card']) current = id; });
+  return '<div class="field"><label>Ombre des cartes</label><select id="shadow-select">' +
+    Object.keys(SHADOWS).map(function(id){
+      return '<option value="' + id + '"' + (id === current ? ' selected' : '') + '>' + esc(SHADOWS[id].label) + '</option>';
+    }).join('') + '</select></div>';
+}
+
+function normalizeHex(value){
+  var match = String(value).match(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i);
+  if (!match) return '#000000';
+  if (match[1].length === 3){
+    return '#' + match[1].split('').map(function(c){ return c + c; }).join('');
+  }
+  return value.toLowerCase();
+}
+function fontName(stack){
+  var match = String(stack || '').match(/^'([^']+)'/);
+  return match ? match[1] : 'Poppins';
+}
+function heroPath(value){
+  var match = String(value || '').match(/url\(['"]?(.*?)['"]?\)/);
+  return match ? match[1] : '';
+}
+
+function fontUrl(){
+  var families = [];
+  [fontName(S.theme['font-heading']), fontName(S.theme['font-body'])].forEach(function(name){
+    if (families.indexOf(name) === -1) families.push(name);
+  });
+  var parts = families.map(function(name){
+    var def = FONTS.filter(function(f){ return f.name === name; })[0] || { weights:'400;700' };
+    return 'family=' + name.replace(/ /g, '+') + ':wght@' + def.weights;
+  });
+  return 'https://fonts.googleapis.com/css2?' + parts.join('&') + '&display=swap';
+}
+
+function setTheme(key, value){
+  S.theme[key] = value;
+  refreshDirty();
+  pushPreview();
+}
+
+function bindDesign(){
+  $$('#editor [data-theme-color]').forEach(function(input){
+    input.addEventListener('input', function(){
+      var key = this.dataset.themeColor;
+      setTheme(key, this.value);
+      $('[data-theme-hex="' + key + '"]').value = this.value;
+    });
+  });
+
+  $$('#editor [data-theme-hex]').forEach(function(input){
+    input.addEventListener('input', function(){
+      var key = this.dataset.themeHex;
+      var value = this.value.trim();
+      if (!/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(value)) return;
+      setTheme(key, value);
+      $('[data-theme-color="' + key + '"]').value = normalizeHex(value);
+    });
+  });
+
+  $$('#editor [data-theme-range]').forEach(function(input){
+    input.addEventListener('input', function(){
+      var key = this.dataset.themeRange;
+      var unit = this.dataset.unit;
+      setTheme(key, this.value + unit);
+      $('[data-out="' + key + '"]').textContent = this.value + unit;
+    });
+  });
+
+  $$('#editor [data-theme-select]').forEach(function(input){
+    input.addEventListener('change', function(){ setTheme(this.dataset.themeSelect, this.value); });
+  });
+
+  $$('#editor [data-theme-font]').forEach(function(input){
+    input.addEventListener('change', function(){
+      S.theme[this.dataset.themeFont] = "'" + this.value + "', sans-serif";
+      S.theme._meta = S.theme._meta || {};
+      S.theme._meta.googleFont = fontName(S.theme['font-heading']);
+      S.theme._meta.googleFontUrl = fontUrl();
+      refreshDirty();
+      pushPreview();
+    });
+  });
+
+  var shadowSelect = $('#shadow-select');
+  if (shadowSelect){
+    shadowSelect.addEventListener('change', function(){
+      var preset = SHADOWS[this.value];
+      S.theme['shadow-card'] = preset.card;
+      S.theme['shadow-hover'] = preset.hover;
+      refreshDirty();
+      pushPreview();
+    });
+  }
+
+  $$('#editor [data-preset]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = this.dataset.preset;
+      var preset = PRESETS.filter(function(p){ return p.id === id; })[0];
+      if (!preset) return;
+      Object.keys(preset.values).forEach(function(key){ S.theme[key] = preset.values[key]; });
+      renderDesign();
+      refreshDirty();
+      pushPreview();
+      toast('Theme "' + preset.label + '" applique dans l\'apercu.', 'ok');
+    });
+  });
+
+  $('#hero-src').addEventListener('input', function(){
+    setTheme('hero-image', this.value.trim() ? "url('" + this.value.trim() + "')" : 'none');
+  });
+
+  $('#hero-upload').addEventListener('change', function(){
+    var file = this.files && this.files[0];
+    if (!file) return;
+    if (file.size > 3 * 1024 * 1024){ toast('Image trop lourde (3 Mo maximum).', 'err'); this.value = ''; return; }
+    var label = this.parentNode.querySelector('.up-label');
+    var original = label.textContent;
+    label.textContent = 'Envoi en cours...';
+    var reader = new FileReader();
+    reader.onload = function(){
+      api('/api/upload', { method:'POST', body: JSON.stringify({ filename:file.name, data:String(reader.result) }) })
+        .then(function(res){
+          setTheme('hero-image', "url('" + res.path + "')");
+          renderDesign();
+          toast('Banniere mise a jour : ' + res.path, 'ok');
+        })
+        .catch(function(err){ toast(err.message, 'err'); label.textContent = original; });
+    };
+    reader.readAsDataURL(file);
+  });
+
+  $('#reset-theme').addEventListener('click', function(){
+    if (!confirm("Retablir toutes les valeurs de design d'origine ? Vos textes ne sont pas affectes.")) return;
+    fetch('/theme.json?t=' + Date.now())
+      .then(function(res){ return res.json(); })
+      .then(function(theme){
+        S.theme = theme;
+        renderDesign();
+        refreshDirty();
+        pushPreview();
+        toast('Design d\'origine retabli dans l\'apercu.', 'ok');
+      })
+      .catch(function(){ toast('Impossible de lire theme.json.', 'err'); });
+  });
+}
+
+/* =============================== barre du haut =============================== */
+
+$$('#langs button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    S.lang = this.dataset.lang;
+    $$('#langs button').forEach(function(b){ b.classList.toggle('on', b === btn); });
+    renderEditor();
+    pushPreview();
+  });
+});
+
+$$('#devices button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    $$('#devices button').forEach(function(b){ b.classList.toggle('on', b === btn); });
+    $('#stage').classList.toggle('mobile', this.dataset.device === 'mobile');
+  });
+});
+
+$('#menu-toggle').addEventListener('click', function(){ $('#sidebar').classList.toggle('open'); });
+
+$('#reload-btn').addEventListener('click', function(){
+  if (isDirty() && !confirm('Vos modifications non publiees seront perdues. Continuer ?')) return;
+  var btn = this;
+  btn.classList.add('spin');
+  loadState()
+    .then(function(){ startPreview(); toast('Contenu recharge depuis le serveur.', 'ok'); })
+    .catch(function(err){ toast(err.message, 'err'); })
+    .then(function(){ btn.classList.remove('spin'); });
+});
+
+$('#discard-btn').addEventListener('click', function(){
+  if (!confirm('Annuler toutes les modifications non publiees ?')) return;
+  var base = JSON.parse(S.baseline);
+  S.content = base.c;
+  S.theme = base.t;
+  renderEditor();
+  refreshDirty();
+  pushPreview();
+});
+
+$('#save-btn').addEventListener('click', function(){
+  if (S.saving) return;
+  S.saving = true;
+  var btn = this;
+  btn.disabled = true;
+  btn.textContent = 'Publication...';
+  $('#savebar-text').textContent = 'Envoi vers GitHub...';
+
+  api('/api/save', { method:'POST', body: JSON.stringify({ content:S.content, theme:S.theme }) })
+    .then(function(res){
+      S.baseline = snapshot();
+      toast('Publie (commit ' + res.commit + '). Le site en ligne se met a jour dans 30 a 60 secondes.', 'ok');
+    })
+    .catch(function(err){ toast(err.message, 'err'); })
+    .then(function(){
+      S.saving = false;
+      btn.disabled = false;
+      btn.textContent = 'Publier';
+      $('#savebar-text').textContent = 'Modifications non publiees';
+      refreshDirty();
+    });
+});
+
+window.addEventListener('beforeunload', function(event){
+  if (isDirty()){ event.preventDefault(); event.returnValue = ''; }
+});
+
+/* session deja ouverte ? */
+try {
+  var saved = sessionStorage.getItem('cms-pwd');
+  if (saved){ $('#pwd').value = saved; }
+} catch(e){}
+
+})();
+</script>
+</body>
+</html>

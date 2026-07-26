@@ -1,0 +1,1585 @@
+{
+  "pages": [
+    {
+      "id": "nav",
+      "label": "Navigation",
+      "texts": [
+        {
+          "key": "nav.t1",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t2",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t3",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t4",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t5",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t6",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t7",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t8",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t9",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t10",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t11",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t12",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t13",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "nav.t14",
+          "tag": "a",
+          "section": "Général",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "nav.img1",
+          "label": "Rebero Marnand Piles"
+        }
+      ],
+      "links": [],
+      "embeds": []
+    },
+    {
+      "id": "home",
+      "label": "Accueil",
+      "texts": [
+        {
+          "key": "home.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "home.t2",
+          "tag": "p",
+          "section": "Rebero Marnand Piles",
+          "multiline": false
+        },
+        {
+          "key": "home.t3",
+          "tag": "span",
+          "section": "Rebero Marnand Piles",
+          "multiline": false
+        },
+        {
+          "key": "home.t4",
+          "tag": "h2",
+          "section": "Rebero Marnand Piles",
+          "multiline": false
+        },
+        {
+          "key": "home.t5",
+          "tag": "p",
+          "section": "Découvrez Rebero Marnand Piles",
+          "multiline": false
+        },
+        {
+          "key": "home.t6",
+          "tag": "h2",
+          "section": "Découvrez Rebero Marnand Piles",
+          "multiline": false
+        },
+        {
+          "key": "home.t7",
+          "tag": "p",
+          "section": "Nos Services Premium",
+          "multiline": false
+        },
+        {
+          "key": "home.t8",
+          "tag": "h3",
+          "section": "Nos Services Premium",
+          "multiline": false
+        },
+        {
+          "key": "home.t9",
+          "tag": "p",
+          "section": "Appartements & Chambres",
+          "multiline": false
+        },
+        {
+          "key": "home.t10",
+          "tag": "h3",
+          "section": "Appartements & Chambres",
+          "multiline": false
+        },
+        {
+          "key": "home.t11",
+          "tag": "p",
+          "section": "Salle de Sport",
+          "multiline": false
+        },
+        {
+          "key": "home.t12",
+          "tag": "h3",
+          "section": "Salle de Sport",
+          "multiline": false
+        },
+        {
+          "key": "home.t13",
+          "tag": "p",
+          "section": "Sauna & Spa",
+          "multiline": false
+        },
+        {
+          "key": "home.t14",
+          "tag": "h3",
+          "section": "Sauna & Spa",
+          "multiline": false
+        },
+        {
+          "key": "home.t15",
+          "tag": "p",
+          "section": "Massage",
+          "multiline": false
+        },
+        {
+          "key": "home.t16",
+          "tag": "h3",
+          "section": "Massage",
+          "multiline": false
+        },
+        {
+          "key": "home.t17",
+          "tag": "p",
+          "section": "Restaurant Rooftop",
+          "multiline": false
+        },
+        {
+          "key": "home.t18",
+          "tag": "h3",
+          "section": "Restaurant Rooftop",
+          "multiline": false
+        },
+        {
+          "key": "home.t19",
+          "tag": "p",
+          "section": "Parking Gratuit",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "home.img1",
+          "label": "Rebero Marnand Piles"
+        }
+      ],
+      "links": [
+        {
+          "key": "home.link1",
+          "label": "Réserver Maintenant"
+        }
+      ],
+      "embeds": []
+    },
+    {
+      "id": "apartments",
+      "label": "Appartements",
+      "texts": [
+        {
+          "key": "apartments.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t2",
+          "tag": "p",
+          "section": "Appartements & Chambres",
+          "multiline": true
+        },
+        {
+          "key": "apartments.t3",
+          "tag": "h3",
+          "section": "Appartements & Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t4",
+          "tag": "div",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t5",
+          "tag": "p",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t6",
+          "tag": "li",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t7",
+          "tag": "li",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t8",
+          "tag": "li",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t9",
+          "tag": "li",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t10",
+          "tag": "li",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t11",
+          "tag": "span",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t12",
+          "tag": "h3",
+          "section": "Appartements Équipés",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t13",
+          "tag": "span",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t14",
+          "tag": "span",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t15",
+          "tag": "span",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t16",
+          "tag": "span",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t17",
+          "tag": "span",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t18",
+          "tag": "p",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t19",
+          "tag": "li",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t20",
+          "tag": "li",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t21",
+          "tag": "li",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t22",
+          "tag": "li",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t23",
+          "tag": "li",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t24",
+          "tag": "span",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t25",
+          "tag": "h3",
+          "section": "Chambres",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t26",
+          "tag": "p",
+          "section": "Appartement Moderne",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t27",
+          "tag": "h3",
+          "section": "Appartement Moderne",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t28",
+          "tag": "p",
+          "section": "Chambre avec Vue",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t29",
+          "tag": "h3",
+          "section": "Chambre avec Vue",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t30",
+          "tag": "p",
+          "section": "Appartement de Luxe",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t31",
+          "tag": "h3",
+          "section": "Appartement de Luxe",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t32",
+          "tag": "h4",
+          "section": "Services Inclus",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t33",
+          "tag": "p",
+          "section": "Connexion 5G",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t34",
+          "tag": "h4",
+          "section": "Connexion 5G",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t35",
+          "tag": "p",
+          "section": "Nettoyage",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t36",
+          "tag": "h4",
+          "section": "Nettoyage",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t37",
+          "tag": "p",
+          "section": "Parking",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t38",
+          "tag": "h4",
+          "section": "Parking",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t39",
+          "tag": "p",
+          "section": "Conciergerie",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "apartments.img1",
+          "label": "Appartement moderne"
+        },
+        {
+          "key": "apartments.img2",
+          "label": "Chambre avec vue"
+        },
+        {
+          "key": "apartments.img3",
+          "label": "Appartement de luxe"
+        }
+      ],
+      "links": [
+        {
+          "key": "apartments.link1",
+          "label": "Réserver"
+        },
+        {
+          "key": "apartments.link2",
+          "label": "Réserver"
+        }
+      ],
+      "embeds": []
+    },
+    {
+      "id": "gym",
+      "label": "Salle de Sport",
+      "texts": [
+        {
+          "key": "gym.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "gym.t2",
+          "tag": "p",
+          "section": "Salle de Sport",
+          "multiline": true
+        },
+        {
+          "key": "gym.t3",
+          "tag": "h3",
+          "section": "Salle de Sport",
+          "multiline": false
+        },
+        {
+          "key": "gym.t4",
+          "tag": "p",
+          "section": "Espace Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t5",
+          "tag": "h3",
+          "section": "Espace Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t6",
+          "tag": "p",
+          "section": "Zone de Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t7",
+          "tag": "h3",
+          "section": "Zone de Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t8",
+          "tag": "p",
+          "section": "Espace Fitness",
+          "multiline": false
+        },
+        {
+          "key": "gym.t9",
+          "tag": "h3",
+          "section": "Espace Fitness",
+          "multiline": false
+        },
+        {
+          "key": "gym.t10",
+          "tag": "p",
+          "section": "Équipements Modernes",
+          "multiline": false
+        },
+        {
+          "key": "gym.t11",
+          "tag": "h3",
+          "section": "Équipements Modernes",
+          "multiline": false
+        },
+        {
+          "key": "gym.t12",
+          "tag": "p",
+          "section": "Accès 24h/24",
+          "multiline": false
+        },
+        {
+          "key": "gym.t13",
+          "tag": "h3",
+          "section": "Accès 24h/24",
+          "multiline": false
+        },
+        {
+          "key": "gym.t14",
+          "tag": "p",
+          "section": "Coaching Personnel",
+          "multiline": false
+        },
+        {
+          "key": "gym.t15",
+          "tag": "h3",
+          "section": "Coaching Personnel",
+          "multiline": false
+        },
+        {
+          "key": "gym.t16",
+          "tag": "h4",
+          "section": "Équipements Disponibles",
+          "multiline": false
+        },
+        {
+          "key": "gym.t17",
+          "tag": "li",
+          "section": "Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t18",
+          "tag": "li",
+          "section": "Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t19",
+          "tag": "li",
+          "section": "Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t20",
+          "tag": "li",
+          "section": "Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t21",
+          "tag": "h4",
+          "section": "Cardio",
+          "multiline": false
+        },
+        {
+          "key": "gym.t22",
+          "tag": "li",
+          "section": "Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t23",
+          "tag": "li",
+          "section": "Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t24",
+          "tag": "li",
+          "section": "Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t25",
+          "tag": "li",
+          "section": "Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t26",
+          "tag": "h3",
+          "section": "Musculation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t27",
+          "tag": "p",
+          "section": "Réservez Votre Séance",
+          "multiline": false
+        },
+        {
+          "key": "gym.t28",
+          "tag": "span",
+          "section": "Réservez Votre Séance",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "gym.img1",
+          "label": "Salle de sport moderne"
+        },
+        {
+          "key": "gym.img2",
+          "label": "Zone de musculation"
+        },
+        {
+          "key": "gym.img3",
+          "label": "Espace fitness"
+        }
+      ],
+      "links": [
+        {
+          "key": "gym.link1",
+          "label": "Contacter"
+        }
+      ],
+      "embeds": []
+    },
+    {
+      "id": "sauna",
+      "label": "Sauna",
+      "texts": [
+        {
+          "key": "sauna.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t2",
+          "tag": "p",
+          "section": "Sauna & Spa",
+          "multiline": true
+        },
+        {
+          "key": "sauna.t3",
+          "tag": "h3",
+          "section": "Sauna & Spa",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t4",
+          "tag": "p",
+          "section": "Sauna Traditionnel",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t5",
+          "tag": "h3",
+          "section": "Sauna Traditionnel",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t6",
+          "tag": "p",
+          "section": "Intérieur Luxueux",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t7",
+          "tag": "h3",
+          "section": "Intérieur Luxueux",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t8",
+          "tag": "p",
+          "section": "Espace Détente",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t9",
+          "tag": "h3",
+          "section": "Espace Détente",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t10",
+          "tag": "p",
+          "section": "Santé Cardiovasculaire",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t11",
+          "tag": "h3",
+          "section": "Santé Cardiovasculaire",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t12",
+          "tag": "p",
+          "section": "Détoxification",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t13",
+          "tag": "h3",
+          "section": "Détoxification",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t14",
+          "tag": "p",
+          "section": "Relaxation",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t15",
+          "tag": "h3",
+          "section": "Relaxation",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t16",
+          "tag": "h4",
+          "section": "Caractéristiques du Sauna",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t17",
+          "tag": "li",
+          "section": "Équipements",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t18",
+          "tag": "li",
+          "section": "Équipements",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t19",
+          "tag": "li",
+          "section": "Équipements",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t20",
+          "tag": "li",
+          "section": "Équipements",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t21",
+          "tag": "h4",
+          "section": "Équipements",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t22",
+          "tag": "li",
+          "section": "Services",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t23",
+          "tag": "li",
+          "section": "Services",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t24",
+          "tag": "li",
+          "section": "Services",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t25",
+          "tag": "li",
+          "section": "Services",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t26",
+          "tag": "h3",
+          "section": "Services",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t27",
+          "tag": "p",
+          "section": "Réservez Votre Séance",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t28",
+          "tag": "span",
+          "section": "Réservez Votre Séance",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "sauna.img1",
+          "label": "Sauna traditionnel"
+        },
+        {
+          "key": "sauna.img2",
+          "label": "Intérieur du sauna"
+        },
+        {
+          "key": "sauna.img3",
+          "label": "Espace détente"
+        }
+      ],
+      "links": [
+        {
+          "key": "sauna.link1",
+          "label": "Réserver"
+        }
+      ],
+      "embeds": []
+    },
+    {
+      "id": "massage",
+      "label": "Massage",
+      "texts": [
+        {
+          "key": "massage.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "massage.t2",
+          "tag": "p",
+          "section": "Massage & Spa",
+          "multiline": true
+        },
+        {
+          "key": "massage.t3",
+          "tag": "h3",
+          "section": "Massage & Spa",
+          "multiline": false
+        },
+        {
+          "key": "massage.t4",
+          "tag": "p",
+          "section": "Salle de Massage",
+          "multiline": false
+        },
+        {
+          "key": "massage.t5",
+          "tag": "h3",
+          "section": "Salle de Massage",
+          "multiline": false
+        },
+        {
+          "key": "massage.t6",
+          "tag": "p",
+          "section": "Salle de Traitement",
+          "multiline": false
+        },
+        {
+          "key": "massage.t7",
+          "tag": "h3",
+          "section": "Salle de Traitement",
+          "multiline": false
+        },
+        {
+          "key": "massage.t8",
+          "tag": "p",
+          "section": "Espace Wellness",
+          "multiline": false
+        },
+        {
+          "key": "massage.t9",
+          "tag": "h3",
+          "section": "Espace Wellness",
+          "multiline": false
+        },
+        {
+          "key": "massage.t10",
+          "tag": "p",
+          "section": "Massage Relaxant",
+          "multiline": false
+        },
+        {
+          "key": "massage.t11",
+          "tag": "h3",
+          "section": "Massage Relaxant",
+          "multiline": false
+        },
+        {
+          "key": "massage.t12",
+          "tag": "p",
+          "section": "Massage Sportif",
+          "multiline": false
+        },
+        {
+          "key": "massage.t13",
+          "tag": "h3",
+          "section": "Massage Sportif",
+          "multiline": false
+        },
+        {
+          "key": "massage.t14",
+          "tag": "p",
+          "section": "Massage Aromatique",
+          "multiline": false
+        },
+        {
+          "key": "massage.t15",
+          "tag": "h3",
+          "section": "Massage Aromatique",
+          "multiline": false
+        },
+        {
+          "key": "massage.t16",
+          "tag": "h4",
+          "section": "Nos Services de Massage",
+          "multiline": false
+        },
+        {
+          "key": "massage.t17",
+          "tag": "li",
+          "section": "Massages Thérapeutiques",
+          "multiline": false
+        },
+        {
+          "key": "massage.t18",
+          "tag": "li",
+          "section": "Massages Thérapeutiques",
+          "multiline": false
+        },
+        {
+          "key": "massage.t19",
+          "tag": "li",
+          "section": "Massages Thérapeutiques",
+          "multiline": false
+        },
+        {
+          "key": "massage.t20",
+          "tag": "li",
+          "section": "Massages Thérapeutiques",
+          "multiline": false
+        },
+        {
+          "key": "massage.t21",
+          "tag": "h4",
+          "section": "Massages Thérapeutiques",
+          "multiline": false
+        },
+        {
+          "key": "massage.t22",
+          "tag": "li",
+          "section": "Soins Spécialisés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t23",
+          "tag": "li",
+          "section": "Soins Spécialisés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t24",
+          "tag": "li",
+          "section": "Soins Spécialisés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t25",
+          "tag": "li",
+          "section": "Soins Spécialisés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t26",
+          "tag": "h4",
+          "section": "Soins Spécialisés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t27",
+          "tag": "p",
+          "section": "Thérapeutes Certifiés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t28",
+          "tag": "h4",
+          "section": "Thérapeutes Certifiés",
+          "multiline": false
+        },
+        {
+          "key": "massage.t29",
+          "tag": "p",
+          "section": "Huiles Premium",
+          "multiline": false
+        },
+        {
+          "key": "massage.t30",
+          "tag": "h4",
+          "section": "Huiles Premium",
+          "multiline": false
+        },
+        {
+          "key": "massage.t31",
+          "tag": "p",
+          "section": "Réservation Flexible",
+          "multiline": false
+        },
+        {
+          "key": "massage.t32",
+          "tag": "h4",
+          "section": "Réservation Flexible",
+          "multiline": false
+        },
+        {
+          "key": "massage.t33",
+          "tag": "p",
+          "section": "Hygiène Parfaite",
+          "multiline": false
+        },
+        {
+          "key": "massage.t34",
+          "tag": "h3",
+          "section": "Hygiène Parfaite",
+          "multiline": false
+        },
+        {
+          "key": "massage.t35",
+          "tag": "p",
+          "section": "Réservez Votre Massage",
+          "multiline": false
+        },
+        {
+          "key": "massage.t36",
+          "tag": "span",
+          "section": "Réservez Votre Massage",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "massage.img1",
+          "label": "Salle de massage"
+        },
+        {
+          "key": "massage.img2",
+          "label": "Salle de traitement"
+        },
+        {
+          "key": "massage.img3",
+          "label": "Espace wellness"
+        }
+      ],
+      "links": [
+        {
+          "key": "massage.link1",
+          "label": "Réserver"
+        }
+      ],
+      "embeds": []
+    },
+    {
+      "id": "restaurant",
+      "label": "Restaurant",
+      "texts": [
+        {
+          "key": "restaurant.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t2",
+          "tag": "p",
+          "section": "Restaurant Rooftop",
+          "multiline": true
+        },
+        {
+          "key": "restaurant.t3",
+          "tag": "h3",
+          "section": "Restaurant Rooftop",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t4",
+          "tag": "p",
+          "section": "Vue Panoramique",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t5",
+          "tag": "h3",
+          "section": "Vue Panoramique",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t6",
+          "tag": "p",
+          "section": "Terrasse Élégante",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t7",
+          "tag": "h3",
+          "section": "Terrasse Élégante",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t8",
+          "tag": "p",
+          "section": "Bar à Cocktails",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t9",
+          "tag": "h3",
+          "section": "Bar à Cocktails",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t10",
+          "tag": "p",
+          "section": "Cuisine Internationale",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t11",
+          "tag": "h3",
+          "section": "Cuisine Internationale",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t12",
+          "tag": "p",
+          "section": "Bar Premium",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t13",
+          "tag": "h3",
+          "section": "Bar Premium",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t14",
+          "tag": "p",
+          "section": "Ambiance Nocturne",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t15",
+          "tag": "h3",
+          "section": "Ambiance Nocturne",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t16",
+          "tag": "h4",
+          "section": "Notre Menu",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t17",
+          "tag": "li",
+          "section": "Plats Principaux",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t18",
+          "tag": "li",
+          "section": "Plats Principaux",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t19",
+          "tag": "li",
+          "section": "Plats Principaux",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t20",
+          "tag": "li",
+          "section": "Plats Principaux",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t21",
+          "tag": "h4",
+          "section": "Plats Principaux",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t22",
+          "tag": "li",
+          "section": "Boissons",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t23",
+          "tag": "li",
+          "section": "Boissons",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t24",
+          "tag": "li",
+          "section": "Boissons",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t25",
+          "tag": "li",
+          "section": "Boissons",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t26",
+          "tag": "h4",
+          "section": "Boissons",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t27",
+          "tag": "p",
+          "section": "Vue 360°",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t28",
+          "tag": "h4",
+          "section": "Vue 360°",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t29",
+          "tag": "p",
+          "section": "Coucher de Soleil",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t30",
+          "tag": "h4",
+          "section": "Coucher de Soleil",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t31",
+          "tag": "p",
+          "section": "Musique Live",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t32",
+          "tag": "h4",
+          "section": "Musique Live",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t33",
+          "tag": "p",
+          "section": "WiFi 5G",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t34",
+          "tag": "h3",
+          "section": "WiFi 5G",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t35",
+          "tag": "p",
+          "section": "Réservez Votre Table",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t36",
+          "tag": "span",
+          "section": "Réservez Votre Table",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "restaurant.img1",
+          "label": "Restaurant rooftop"
+        },
+        {
+          "key": "restaurant.img2",
+          "label": "Terrasse restaurant"
+        },
+        {
+          "key": "restaurant.img3",
+          "label": "Bar cocktails"
+        }
+      ],
+      "links": [
+        {
+          "key": "restaurant.link1",
+          "label": "Réserver"
+        }
+      ],
+      "embeds": []
+    },
+    {
+      "id": "contact",
+      "label": "Contact",
+      "texts": [
+        {
+          "key": "contact.t1",
+          "tag": "h1",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "contact.t2",
+          "tag": "p",
+          "section": "Contact & Localisation",
+          "multiline": true
+        },
+        {
+          "key": "contact.t3",
+          "tag": "h3",
+          "section": "Contact & Localisation",
+          "multiline": false
+        },
+        {
+          "key": "contact.t4",
+          "tag": "h4",
+          "section": "Informations de Contact",
+          "multiline": false
+        },
+        {
+          "key": "contact.t5",
+          "tag": "p",
+          "section": "Téléphone",
+          "multiline": false
+        },
+        {
+          "key": "contact.t6",
+          "tag": "h4",
+          "section": "Téléphone",
+          "multiline": false
+        },
+        {
+          "key": "contact.t7",
+          "tag": "p",
+          "section": "WhatsApp",
+          "multiline": false
+        },
+        {
+          "key": "contact.t8",
+          "tag": "h4",
+          "section": "WhatsApp",
+          "multiline": false
+        },
+        {
+          "key": "contact.t9",
+          "tag": "p",
+          "section": "Adresse",
+          "multiline": false
+        },
+        {
+          "key": "contact.t10",
+          "tag": "h4",
+          "section": "Adresse",
+          "multiline": false
+        },
+        {
+          "key": "contact.t11",
+          "tag": "p",
+          "section": "Connexion",
+          "multiline": false
+        },
+        {
+          "key": "contact.t12",
+          "tag": "h3",
+          "section": "Connexion",
+          "multiline": false
+        },
+        {
+          "key": "contact.t13",
+          "tag": "h4",
+          "section": "Services Inclus",
+          "multiline": false
+        },
+        {
+          "key": "contact.t14",
+          "tag": "p",
+          "section": "Service de Nettoyage",
+          "multiline": false
+        },
+        {
+          "key": "contact.t15",
+          "tag": "h4",
+          "section": "Service de Nettoyage",
+          "multiline": false
+        },
+        {
+          "key": "contact.t16",
+          "tag": "p",
+          "section": "Parking Gratuit",
+          "multiline": false
+        },
+        {
+          "key": "contact.t17",
+          "tag": "h4",
+          "section": "Parking Gratuit",
+          "multiline": false
+        },
+        {
+          "key": "contact.t18",
+          "tag": "p",
+          "section": "Accès Salle de Sport",
+          "multiline": false
+        },
+        {
+          "key": "contact.t19",
+          "tag": "h4",
+          "section": "Accès Salle de Sport",
+          "multiline": false
+        },
+        {
+          "key": "contact.t20",
+          "tag": "p",
+          "section": "Service Client",
+          "multiline": false
+        },
+        {
+          "key": "contact.t21",
+          "tag": "h3",
+          "section": "Service Client",
+          "multiline": false
+        },
+        {
+          "key": "contact.t22",
+          "tag": "span",
+          "section": "Notre Localisation",
+          "multiline": false
+        },
+        {
+          "key": "contact.t23",
+          "tag": "h3",
+          "section": "Notre Localisation",
+          "multiline": false
+        },
+        {
+          "key": "contact.t24",
+          "tag": "p",
+          "section": "Contactez-nous Maintenant",
+          "multiline": false
+        },
+        {
+          "key": "contact.t25",
+          "tag": "span",
+          "section": "Contactez-nous Maintenant",
+          "multiline": false
+        },
+        {
+          "key": "contact.t26",
+          "tag": "span",
+          "section": "Contactez-nous Maintenant",
+          "multiline": false
+        }
+      ],
+      "images": [],
+      "links": [
+        {
+          "key": "contact.link1",
+          "label": "Voir sur Google Maps"
+        },
+        {
+          "key": "contact.link2",
+          "label": "WhatsApp"
+        },
+        {
+          "key": "contact.link3",
+          "label": "Appeler"
+        }
+      ],
+      "embeds": [
+        {
+          "key": "contact.embed1",
+          "label": "Carte Google Maps"
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "label": "Pied de page",
+      "texts": [
+        {
+          "key": "footer.t1",
+          "tag": "p",
+          "section": "Général",
+          "multiline": false
+        },
+        {
+          "key": "footer.t2",
+          "tag": "p",
+          "section": "Général",
+          "multiline": false
+        }
+      ],
+      "images": [
+        {
+          "key": "footer.img1",
+          "label": "Rebero Marnand Piles"
+        }
+      ],
+      "links": [],
+      "embeds": []
+    }
+  ]
+}

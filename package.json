@@ -1,0 +1,10 @@
+{
+  "name": "rebero-marnand-piles",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site vitrine Rebero Marnand Piles + CMS integre",
+  "dependencies": {
+    "node-html-parser": "^6.1.13"
+  }
+}
