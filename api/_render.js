@@ -25,6 +25,9 @@ function themeBlock(theme) {
 }
 
 export function render(html, content, theme) {
+  const settings = content.settings || {};
+  const defaultLang = LANGS.includes(settings.defaultLang) ? settings.defaultLang : 'fr';
+
   /* ---------- design ---------- */
   const start = html.indexOf(THEME_START);
   const end = html.indexOf(THEME_END);
@@ -43,7 +46,11 @@ export function render(html, content, theme) {
     LANGS.forEach((lang) => {
       if (typeof entry[lang] === 'string') el.setAttribute(`data-${lang}`, escapeHtml(entry[lang]));
     });
-    const value = typeof entry.fr === 'string' && entry.fr !== '' ? entry.fr : entry.en || '';
+    // Le texte visible est ecrit dans la langue par defaut : le visiteur ne voit
+    // jamais une autre langue clignoter avant que le JavaScript ne s'execute,
+    // et c'est cette langue-la que Google indexe.
+    let value = entry[defaultLang];
+    if (typeof value !== 'string' || value === '') value = entry.fr || entry.en || '';
     el.set_content(escapeHtml(value));
   });
 
@@ -65,8 +72,19 @@ export function render(html, content, theme) {
     if (typeof src === 'string' && src) el.setAttribute('src', src);
   });
 
+  /* ---------- langue par defaut ---------- */
+  const htmlEl = root.querySelector('html');
+  if (htmlEl) htmlEl.setAttribute('lang', defaultLang);
+
+  const selector = root.querySelector('#language-selector');
+  if (selector) {
+    selector.querySelectorAll('option').forEach((opt) => {
+      opt.removeAttribute('selected');
+      if (opt.getAttribute('value') === defaultLang) opt.setAttribute('selected', 'selected');
+    });
+  }
+
   /* ---------- reglages generaux ---------- */
-  const settings = content.settings || {};
   if (settings.title) {
     const title = root.querySelector('title');
     if (title) title.set_content(escapeHtml(settings.title));

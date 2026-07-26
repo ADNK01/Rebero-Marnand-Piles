@@ -524,7 +524,12 @@ function loadState(){
     S.content = data.content;
     S.theme = data.theme;
     S.schema = data.schema;
-    if (!S.content.settings) S.content.settings = { title:'', description:'' };
+    if (!S.content.settings) S.content.settings = { title:'', description:'', defaultLang:'fr' };
+    // on ouvre l'editeur sur la langue d'accueil du site
+    if (LANGS[S.content.settings.defaultLang]) {
+      S.lang = S.content.settings.defaultLang;
+      $$('#langs button').forEach(function(b){ b.classList.toggle('on', b.dataset.lang === S.lang); });
+    }
     S.baseline = snapshot();
     renderSidebar();
     renderEditor();
@@ -588,8 +593,21 @@ function head(title, lede){
 
 function renderSettings(){
   var s = S.content.settings;
+  var current = s.defaultLang || 'fr';
   $('#editor').innerHTML =
-    head('Titre & description', "Ce que voient Google et les reseaux sociaux quand ils partagent votre site. Ces textes n'apparaissent pas sur la page elle-meme.") +
+    head('Reglages generaux', "La langue d'accueil, plus ce que voient Google et les reseaux sociaux quand ils partagent votre site.") +
+    '<div class="subhead">Langue d\'accueil</div>' +
+    '<div class="field">' +
+      '<label for="set-lang">Langue affichee a l\'arrivee sur le site</label>' +
+      '<select id="set-lang">' +
+        ['fr', 'en', 'rw'].map(function(code){
+          return '<option value="' + code + '"' + (code === current ? ' selected' : '') + '>' +
+            esc(LANGS[code].charAt(0).toUpperCase() + LANGS[code].slice(1)) + '</option>';
+        }).join('') +
+      '</select>' +
+      '<span class="hint">Le texte est ecrit directement dans cette langue a la publication : aucun clignotement, et c\'est cette version que Google indexe. Le visiteur peut toujours changer de langue avec le menu FR / EN / RW.</span>' +
+    '</div>' +
+    '<div class="subhead">Reference sur Google</div>' +
     '<div class="field">' +
       '<label for="set-title">Titre de l\'onglet du navigateur</label>' +
       '<input type="text" id="set-title" maxlength="70" value="' + esc(s.title) + '">' +
@@ -603,6 +621,11 @@ function renderSettings(){
 
   $('#set-title').addEventListener('input', function(){ s.title = this.value; refreshDirty(); });
   $('#set-desc').addEventListener('input',  function(){ s.description = this.value; refreshDirty(); });
+  $('#set-lang').addEventListener('change', function(){
+    s.defaultLang = this.value;
+    refreshDirty();
+    toast('Langue d\'accueil : ' + LANGS[this.value] + '. Visible apres publication.', 'ok');
+  });
 }
 
 /* ---------- une page ---------- */

@@ -1,7 +1,8 @@
 {
   "settings": {
     "title": "Rebero Marnand Piles - Luxury Living in Kigali",
-    "description": "Rebero Marnand Piles — appartements et chambres equipes, salle de sport, sauna, massage et restaurant rooftop au coeur de Kigali."
+    "description": "Rebero Marnand Piles — furnished apartments and rooms, gym, sauna, massage and rooftop restaurant in the heart of Kigali.",
+    "defaultLang": "en"
   },
   "texts": {
     "nav.t1": {
