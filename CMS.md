@@ -1,40 +1,38 @@
 # CMS — Rebero Marnand Piles
 
-Interface d'administration accessible sur **`https://votre-site.vercel.app/admin`**.
+Interface d'administration accessible sur **`https://rebero-marnand-piles.vercel.app/admin`**.
 Elle permet de modifier les textes (français, anglais, kinyarwanda), les images, les
 liens et l'apparence du site, sans toucher au code.
 
 ---
 
-## 1. Mise en service (à faire une seule fois)
+## 1. Configuration
 
-### a) Créer un jeton GitHub
+**Déjà en place.** Le projet Vercel `rebero-marnand-piles` porte ces quatre variables
+sur les environnements *Production*, *Preview* et *Development* :
 
-1. Ouvrir <https://github.com/settings/personal-access-tokens/new>
-2. **Token name** : `CMS Rebero Marnand`
-3. **Expiration** : 1 an (ou « No expiration »)
-4. **Repository access** : *Only select repositories* → cocher `Rebero-Marnand-Piles`
-5. **Permissions** → *Repository permissions* → **Contents** : passer sur **Read and write**
-6. Cliquer sur **Generate token** et copier la valeur (elle commence par `github_pat_…`).
-   Elle ne sera plus affichée ensuite.
+| Nom              | Rôle                                                       |
+| ---------------- | ---------------------------------------------------------- |
+| `ADMIN_PASSWORD` | mot de passe de l'écran de connexion `/admin`              |
+| `GITHUB_TOKEN`   | jeton restreint au dépôt, permission *Contents: write*     |
+| `GITHUB_REPO`    | `ADNK01/Rebero-Marnand-Piles`                              |
+| `GITHUB_BRANCH`  | `main`                                                     |
 
-### b) Renseigner les variables sur Vercel
+### Changer le mot de passe
 
-Dans le projet Vercel : **Settings → Environment Variables**. Ajouter ces trois
-variables pour les environnements *Production*, *Preview* et *Development* :
+Vercel → **Settings → Environment Variables** → modifier `ADMIN_PASSWORD`, puis
+**Deployments → … → Redeploy**. Aucune modification de code n'est nécessaire.
 
-| Nom              | Valeur                              |
-| ---------------- | ----------------------------------- |
-| `ADMIN_PASSWORD` | le mot de passe de votre choix      |
-| `GITHUB_TOKEN`   | le jeton copié à l'étape précédente |
-| `GITHUB_REPO`    | `ADNK01/Rebero-Marnand-Piles`       |
+### Renouveler le jeton GitHub
 
-`GITHUB_BRANCH` est facultative (`main` par défaut).
+Le jeton a une date d'expiration. Passée celle-ci, le site public continue de
+fonctionner normalement, mais la publication échoue avec un message explicite. Pour
+en poser un nouveau :
 
-### c) Redéployer
-
-**Deployments → … → Redeploy** sur le dernier déploiement, afin que les variables
-soient prises en compte.
+1. <https://github.com/settings/personal-access-tokens/new>
+2. **Repository access** : *Only select repositories* → `Rebero-Marnand-Piles`
+3. **Permissions** → *Repository permissions* → **Contents** : **Read and write**
+4. Remplacer `GITHUB_TOKEN` dans Vercel, puis redéployer.
 
 ---
 
