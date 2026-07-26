@@ -360,40 +360,44 @@ var S = {
 
 var LANGS = { fr:'francais', en:'anglais', rw:'kinyarwanda' };
 
+/* "param" est le fragment place apres le nom dans l'URL Google Fonts.
+   Les polices variables (Fraunces) exigent une syntaxe a axes multiples. */
 var FONTS = [
-  { name:'Poppins',            weights:'300;400;500;600;700' },
-  { name:'Outfit',             weights:'300;400;500;600;700' },
-  { name:'Manrope',            weights:'300;400;500;600;700' },
-  { name:'DM Sans',            weights:'300;400;500;700'     },
-  { name:'Montserrat',         weights:'300;400;500;600;700' },
-  { name:'Raleway',            weights:'300;400;500;600;700' },
-  { name:'Jost',               weights:'300;400;500;600;700' },
-  { name:'Sora',               weights:'300;400;500;600;700' },
-  { name:'Playfair Display',   weights:'400;500;600;700'     },
-  { name:'Cormorant Garamond', weights:'400;500;600;700'     },
-  { name:'Lora',               weights:'400;500;600;700'     }
+  { name:'Fraunces',           param:'opsz,wght@9..144,300..700', serif:true },
+  { name:'Outfit',             param:'wght@300;400;500;600;700' },
+  { name:'Poppins',            param:'wght@300;400;500;600;700' },
+  { name:'Manrope',            param:'wght@300;400;500;600;700' },
+  { name:'DM Sans',            param:'wght@300;400;500;700'     },
+  { name:'Montserrat',         param:'wght@300;400;500;600;700' },
+  { name:'Raleway',            param:'wght@300;400;500;600;700' },
+  { name:'Jost',               param:'wght@300;400;500;600;700' },
+  { name:'Sora',               param:'wght@300;400;500;600;700' },
+  { name:'Playfair Display',   param:'wght@400;500;600;700', serif:true },
+  { name:'Cormorant Garamond', param:'wght@400;500;600;700', serif:true },
+  { name:'Lora',               param:'wght@400;500;600;700', serif:true }
 ];
 
 var SHADOWS = {
-  none:   { card:'none', hover:'none', label:'Aucune ombre' },
-  soft:   { card:'0 4px 6px rgba(0, 0, 0, 0.1)',   hover:'0 12px 24px rgba(0, 0, 0, 0.12)', label:'Douce (par defaut)' },
-  medium: { card:'0 8px 20px -8px rgba(0, 0, 0, 0.18)', hover:'0 22px 44px -18px rgba(0, 0, 0, 0.28)', label:'Marquee' },
-  flat:   { card:'0 0 0 1px rgba(0, 0, 0, 0.07)',  hover:'0 0 0 1px rgba(0, 0, 0, 0.16)',   label:'Contour fin' }
+  editorial: { card:'none', hover:'0 24px 48px -28px rgba(28, 25, 23, 0.3)', label:'Editoriale (actuelle)' },
+  none:      { card:'none', hover:'none', label:'Aucune ombre' },
+  soft:      { card:'0 4px 6px rgba(0, 0, 0, 0.1)',   hover:'0 12px 24px rgba(0, 0, 0, 0.12)', label:'Douce' },
+  medium:    { card:'0 8px 20px -8px rgba(0, 0, 0, 0.18)', hover:'0 22px 44px -18px rgba(0, 0, 0, 0.28)', label:'Marquee' },
+  flat:      { card:'0 0 0 1px rgba(0, 0, 0, 0.07)',  hover:'0 0 0 1px rgba(0, 0, 0, 0.16)',   label:'Contour fin' }
 };
 
 var PRESETS = [
-  { id:'or', label:'Or & nuit', note:'Le theme actuel',
-    colors:['#d4af37','#667eea','#1a202c'],
-    values:{ 'color-primary':'#667eea','color-secondary':'#764ba2','color-accent':'#d4af37','color-accent-soft':'#f7e98e',
-             'color-page-bg':'#f9fafb','color-surface':'#ffffff','color-soft':'#f3f4f6','color-dark':'#1a202c',
-             'color-heading':'#1a202c','color-text':'#4a5568','color-muted':'#718096',
-             'color-nav-bg':'#ffffff','color-nav-text':'#2d3748','color-footer-bg':'#2d3748','color-footer-text':'#ffffff' } },
-  { id:'sable', label:'Sable & bronze', note:'Chaleureux, hotelier',
-    colors:['#a8763e','#8c6239','#2b2622'],
-    values:{ 'color-primary':'#8c6239','color-secondary':'#5c4028','color-accent':'#a8763e','color-accent-soft':'#e6cfae',
-             'color-page-bg':'#faf7f2','color-surface':'#ffffff','color-soft':'#f2ece2','color-dark':'#2b2622',
-             'color-heading':'#2b2622','color-text':'#5c5349','color-muted':'#8a7f72',
-             'color-nav-bg':'#fffdf9','color-nav-text':'#3a332c','color-footer-bg':'#2b2622','color-footer-text':'#f5efe6' } },
+  { id:'terre', label:'Terre & lumiere', note:'Le theme actuel',
+    colors:['#a8763e','#e0c9a6','#1c1917'],
+    values:{ 'color-primary':'#a8763e','color-secondary':'#8c5a2b','color-accent':'#a8763e','color-accent-soft':'#e0c9a6',
+             'color-page-bg':'#faf8f5','color-surface':'#ffffff','color-soft':'#f2ede5','color-dark':'#1c1917',
+             'color-heading':'#1c1917','color-text':'#57534e','color-muted':'#8a827a',
+             'color-nav-bg':'#faf8f5','color-nav-text':'#1c1917','color-footer-bg':'#1c1917','color-footer-text':'#e7e0d6' } },
+  { id:'nuit', label:'Nuit & laiton', note:'Sombre, spectaculaire',
+    colors:['#b8934f','#3d3833','#12100e'],
+    values:{ 'color-primary':'#b8934f','color-secondary':'#8a6d3a','color-accent':'#b8934f','color-accent-soft':'#e2cb9a',
+             'color-page-bg':'#12100e','color-surface':'#1c1917','color-soft':'#24201c','color-dark':'#0c0a09',
+             'color-heading':'#f2efe9','color-text':'#b8b0a6','color-muted':'#8a8279',
+             'color-nav-bg':'#12100e','color-nav-text':'#f2efe9','color-footer-bg':'#0c0a09','color-footer-text':'#e7e0d6' } },
   { id:'foret', label:'Foret & cuivre', note:'Naturel, apaisant',
     colors:['#c08a4a','#1f4d40','#12241f'],
     values:{ 'color-primary':'#1f4d40','color-secondary':'#12332b','color-accent':'#c08a4a','color-accent-soft':'#e8d3b4',
@@ -784,7 +788,7 @@ function renderDesign(){
   html += '<div class="subhead">Typographie</div><div class="grid2">' +
     fontField('font-heading', 'Police des titres') +
     fontField('font-body', 'Police du texte') +
-    selectField('font-weight-heading', 'Graisse des titres', [['600','Semi-gras'],['700','Gras'],['800','Extra-gras']]) +
+    selectField('font-weight-heading', 'Graisse des titres', [['400','Fin'],['500','Moyen'],['600','Semi-gras'],['700','Gras']]) +
     rangeField('font-size-base', 'Taille du texte', 14, 20, 1, 'px') +
   '</div>';
 
@@ -828,7 +832,7 @@ function renderDesign(){
     '</div>' +
     '<div class="grid2">' +
       rangeField('hero-overlay', 'Assombrissement de l\'image', 0, 0.85, 0.05, '') +
-      selectField('hero-height', 'Hauteur de la banniere', [['70vh','Compacte'],['85vh','Moyenne'],['100vh','Plein ecran']]) +
+      selectField('hero-height', 'Hauteur de la banniere', [['70dvh','Compacte'],['85dvh','Moyenne'],['100dvh','Plein ecran']]) +
       colorField('hero-text', 'Couleur du titre sur l\'image') +
     '</div>';
 
@@ -882,7 +886,9 @@ function fontField(key, label){
 
 function shadowField(){
   var current = 'soft';
-  Object.keys(SHADOWS).forEach(function(id){ if (SHADOWS[id].card === S.theme['shadow-card']) current = id; });
+  Object.keys(SHADOWS).forEach(function(id){
+    if (SHADOWS[id].card === S.theme['shadow-card'] && SHADOWS[id].hover === S.theme['shadow-hover']) current = id;
+  });
   return '<div class="field"><label>Ombre des cartes</label><select id="shadow-select">' +
     Object.keys(SHADOWS).map(function(id){
       return '<option value="' + id + '"' + (id === current ? ' selected' : '') + '>' + esc(SHADOWS[id].label) + '</option>';
@@ -899,7 +905,13 @@ function normalizeHex(value){
 }
 function fontName(stack){
   var match = String(stack || '').match(/^'([^']+)'/);
-  return match ? match[1] : 'Poppins';
+  return match ? match[1] : 'Outfit';
+}
+function fontDef(name){
+  return FONTS.filter(function(f){ return f.name === name; })[0] || { name:name, param:'wght@400;700' };
+}
+function fontStack(name){
+  return "'" + name + "', " + (fontDef(name).serif ? 'serif' : 'sans-serif');
 }
 function heroPath(value){
   var match = String(value || '').match(/url\(['"]?(.*?)['"]?\)/);
@@ -912,8 +924,7 @@ function fontUrl(){
     if (families.indexOf(name) === -1) families.push(name);
   });
   var parts = families.map(function(name){
-    var def = FONTS.filter(function(f){ return f.name === name; })[0] || { weights:'400;700' };
-    return 'family=' + name.replace(/ /g, '+') + ':wght@' + def.weights;
+    return 'family=' + name.replace(/ /g, '+') + ':' + fontDef(name).param;
   });
   return 'https://fonts.googleapis.com/css2?' + parts.join('&') + '&display=swap';
 }
@@ -958,7 +969,7 @@ function bindDesign(){
 
   $$('#editor [data-theme-font]').forEach(function(input){
     input.addEventListener('change', function(){
-      S.theme[this.dataset.themeFont] = "'" + this.value + "', sans-serif";
+      S.theme[this.dataset.themeFont] = fontStack(this.value);
       S.theme._meta = S.theme._meta || {};
       S.theme._meta.googleFont = fontName(S.theme['font-heading']);
       S.theme._meta.googleFontUrl = fontUrl();

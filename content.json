@@ -74,6 +74,11 @@
       "en": "Contact",
       "rw": "Contact"
     },
+    "home.t20": {
+      "fr": "Kigali · Rwanda",
+      "en": "Kigali · Rwanda",
+      "rw": "Kigali · Rwanda"
+    },
     "home.t1": {
       "fr": "Rebero Marnand Piles",
       "en": "Rebero Marnand Piles",
@@ -88,16 +93,6 @@
       "fr": "Réserver Maintenant",
       "en": "Book Now",
       "rw": "Kubana Ubu"
-    },
-    "home.t4": {
-      "fr": "Découvrez Rebero Marnand Piles",
-      "en": "Discover Rebero Marnand Piles",
-      "rw": "Menya Rebero Marnand Piles"
-    },
-    "home.t5": {
-      "fr": "Vivez l'expérience du luxe au cœur de Kigali",
-      "en": "Experience luxury living in the heart of Kigali",
-      "rw": "Wumve uburyohe muri Kigali"
     },
     "home.t6": {
       "fr": "Nos Services Premium",
@@ -168,6 +163,46 @@
       "fr": "Parking sécurisé pour résidents",
       "en": "Secure parking for residents",
       "rw": "Aho gushyingura gifite umutekano"
+    },
+    "home.t21": {
+      "fr": "En images",
+      "en": "In pictures",
+      "rw": "Mu mashusho"
+    },
+    "home.t4": {
+      "fr": "Découvrez Rebero Marnand Piles",
+      "en": "Discover Rebero Marnand Piles",
+      "rw": "Menya Rebero Marnand Piles"
+    },
+    "home.t5": {
+      "fr": "Vivez l'expérience du luxe au cœur de Kigali",
+      "en": "Experience luxury living in the heart of Kigali",
+      "rw": "Wumve uburyohe muri Kigali"
+    },
+    "home.t22": {
+      "fr": "Réservation",
+      "en": "Booking",
+      "rw": "Kubana"
+    },
+    "home.t23": {
+      "fr": "Une visite, et vous saurez",
+      "en": "One visit is all it takes",
+      "rw": "Sura rimwe, uzabimenya"
+    },
+    "home.t24": {
+      "fr": "Écrivez-nous sur WhatsApp : nous répondons dans la journée, en français, en anglais ou en kinyarwanda.",
+      "en": "Message us on WhatsApp — we reply the same day, in French, English or Kinyarwanda.",
+      "rw": "Twandikire kuri WhatsApp: turasubiza kuri uwo munsi, mu gifaransa, icyongereza cyangwa ikinyarwanda."
+    },
+    "home.t25": {
+      "fr": "Nous écrire",
+      "en": "Message us",
+      "rw": "Twandikire"
+    },
+    "home.t26": {
+      "fr": "Voir les logements",
+      "en": "View accommodations",
+      "rw": "Reba amacumbi"
     },
     "apartments.t1": {
       "fr": "Appartements & Chambres",
@@ -1134,15 +1169,15 @@
       "en": "Call",
       "rw": "Hamagara"
     },
-    "footer.t1": {
-      "fr": "© 2026 Rebero Marnand Piles. Tous droits réservés.",
-      "en": "© 2026 Rebero Marnand Piles. All rights reserved.",
-      "rw": "© 2026 Rebero Marnand Piles. Uburenganzira bwose burabitswe."
-    },
     "footer.t2": {
       "fr": "Luxury Living in Kigali",
       "en": "Luxury Living in Kigali",
       "rw": "Ubuzima bwiza muri Kigali"
+    },
+    "footer.t1": {
+      "fr": "© 2026 Rebero Marnand Piles. Tous droits réservés.",
+      "en": "© 2026 Rebero Marnand Piles. All rights reserved.",
+      "rw": "© 2026 Rebero Marnand Piles. Uburenganzira bwose burabitswe."
     }
   },
   "images": {
@@ -1167,6 +1202,7 @@
   },
   "links": {
     "home.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles",
+    "home.link2": "https://wa.me/250788881346",
     "apartments.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver un appartement équipé à 300$ par mois",
     "apartments.link2": "https://wa.me/250788881346?text=Bonjour, je souhaite réserver une chambre (200$/mois ou 30$/nuit)",
     "gym.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur la salle de sport",

@@ -7,7 +7,9 @@
     <title>Rebero Marnand Piles - Luxury Living in Kigali</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link id="cms-font-link" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link id="cms-font-link" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
            JETONS DE DESIGN — pilotes par le CMS (/admin -> onglet Design)
@@ -16,403 +18,469 @@
            ============================================================ */
         /* CMS-THEME-START */
         :root {
-            --font-body: 'Poppins', sans-serif;
-            --font-heading: 'Poppins', sans-serif;
-            --font-size-base: 16px;
-            --font-weight-heading: 700;
-            --color-primary: #667eea;
-            --color-secondary: #764ba2;
-            --color-accent: #d4af37;
-            --color-accent-soft: #f7e98e;
-            --color-page-bg: #f9fafb;
+            --font-body: 'Outfit', sans-serif;
+            --font-heading: 'Fraunces', serif;
+            --font-size-base: 17px;
+            --font-weight-heading: 500;
+            --color-primary: #a8763e;
+            --color-secondary: #8c5a2b;
+            --color-accent: #a8763e;
+            --color-accent-soft: #e0c9a6;
+            --color-page-bg: #faf8f5;
             --color-surface: #ffffff;
-            --color-soft: #f3f4f6;
-            --color-dark: #1a202c;
-            --color-heading: #1a202c;
-            --color-text: #4a5568;
-            --color-muted: #718096;
-            --color-nav-bg: #ffffff;
-            --color-nav-text: #2d3748;
-            --color-footer-bg: #2d3748;
-            --color-footer-text: #ffffff;
+            --color-soft: #f2ede5;
+            --color-dark: #1c1917;
+            --color-heading: #1c1917;
+            --color-text: #57534e;
+            --color-muted: #8a827a;
+            --color-nav-bg: #faf8f5;
+            --color-nav-text: #1c1917;
+            --color-footer-bg: #1c1917;
+            --color-footer-text: #e7e0d6;
             --color-whatsapp-1: #25d366;
             --color-whatsapp-2: #128c7e;
-            --radius-sm: 8px;
-            --radius-lg: 16px;
-            --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+            --radius-sm: 2px;
+            --radius-lg: 4px;
+            --shadow-card: none;
+            --shadow-hover: 0 24px 48px -28px rgba(28, 25, 23, 0.3);
             --hero-image: url('images/Accueil.webp');
-            --hero-overlay: 0.4;
-            --hero-height: 100vh;
+            --hero-overlay: 0.18;
+            --hero-height: 100dvh;
             --hero-text: #ffffff;
-            --section-padding: 4rem;
-            --gallery-image-height: 250px;
-            --hover-lift: -5px;
-            --transition: 0.3s ease;
+            --section-padding: 7rem;
+            --gallery-image-height: 420px;
+            --hover-lift: -4px;
+            --transition: 0.5s cubic-bezier(.16,1,.3,1);
         }
         /* CMS-THEME-END */
 
-        * {
-            font-family: var(--font-body);
-        }
+        * { font-family: var(--font-body); }
 
         body {
             background-color: var(--color-page-bg);
             color: var(--color-text);
             font-size: var(--font-size-base);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
         }
 
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
             color: var(--color-heading);
             font-weight: var(--font-weight-heading);
+            letter-spacing: -.02em;
+            line-height: 1.08;
         }
 
-        /* --- passerelles vers les classes Tailwind utilisees dans la page --- */
+        /* --- passerelles vers les classes Tailwind des autres pages --- */
         .bg-white { background-color: var(--color-surface) !important; }
         .bg-gray-50 { background-color: var(--color-page-bg) !important; }
         .bg-gray-100 { background-color: var(--color-soft) !important; }
         .bg-gray-800, .bg-gray-900 { background-color: var(--color-dark) !important; }
         .text-gray-600 { color: var(--color-text) !important; }
         .text-gray-400, .text-gray-500 { color: var(--color-muted) !important; }
-        .text-white, .text-white h1, .text-white h2, .text-white h3, .text-white p { color: #fff !important; }
-        h1.text-white, h2.text-white, h3.text-white, h4.text-white { color: #fff !important; }
+        .text-white, h1.text-white, h2.text-white, h3.text-white, h4.text-white { color: #fff !important; }
         .py-16 { padding-top: var(--section-padding) !important; padding-bottom: var(--section-padding) !important; }
 
-        nav.bg-white { background-color: var(--color-nav-bg) !important; }
-        nav .nav-item { color: var(--color-nav-text); }
-        footer { background-color: var(--color-footer-bg) !important; color: var(--color-footer-text) !important; }
-        footer p { color: var(--color-footer-text) !important; opacity: .85; }
+        .gradient-bg { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%); }
+        .gold-accent { color: var(--color-accent) !important; }
+        .hover-scale { transition: transform var(--transition); }
+        .hover-scale:hover { transform: scale(1.03); }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+
+        /* ============================ mise en page ============================ */
+
+        .shell { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 4rem); }
+
+        .eyebrow {
+            font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+            font-weight: 500; color: var(--color-accent); font-family: var(--font-body);
         }
 
-        .gold-accent {
-            color: var(--color-accent) !important;
-        }
+        .rule { height: 1px; background: rgba(28,25,23,.13); border: none; margin: 0; }
 
-        .hover-scale {
-            transition: transform var(--transition);
-        }
+        /* ============================ navigation ============================ */
 
-        .hover-scale:hover {
-            transform: scale(1.05);
+        .site-nav {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 50;
+            transition: background-color var(--transition), border-color var(--transition), padding var(--transition);
+            border-bottom: 1px solid transparent; padding: 1.15rem 0;
         }
+        .site-nav.solid {
+            background-color: var(--color-nav-bg);
+            border-bottom-color: rgba(28,25,23,.1);
+            padding: .7rem 0;
+        }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .nav-logo img {
+            height: 46px; width: auto;
+            transition: height var(--transition), filter var(--transition);
+            /* le logo est sombre : on le detache de la photo tant que la barre est transparente */
+            filter: brightness(0) invert(1) drop-shadow(0 1px 6px rgba(0,0,0,.45));
+        }
+        .site-nav.solid .nav-logo img { height: 38px; filter: none; }
 
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active {
-            display: block;
-        }
+        .nav-links { display: none; align-items: center; gap: 2rem; }
+        @media (min-width: 1024px) { .nav-links { display: flex; } }
 
         .nav-item {
-            transition: all var(--transition);
+            position: relative; font-size: .82rem; letter-spacing: .07em; text-transform: uppercase;
+            font-weight: 400; color: #fff; text-decoration: none; padding-bottom: 3px;
+            transition: color var(--transition);
         }
-
-        .nav-item:hover {
-            color: var(--color-accent);
+        .site-nav.solid .nav-item { color: var(--color-nav-text); }
+        .nav-item::after {
+            content: ''; position: absolute; left: 0; bottom: 0; height: 1px; width: 0;
+            background: var(--color-accent); transition: width var(--transition);
         }
+        .nav-item:hover::after, .nav-item.active::after { width: 100%; }
+        .nav-item.active { color: var(--color-accent); }
+        .site-nav.solid .nav-item.active { color: var(--color-accent); }
 
-        .nav-item.active {
-            color: var(--color-accent);
-            border-bottom: 2px solid var(--color-accent);
+        .nav-tools { display: flex; align-items: center; gap: 1rem; }
+        #language-selector {
+            background: transparent; border: 1px solid rgba(255,255,255,.4); color: #fff;
+            font-size: .74rem; letter-spacing: .1em; padding: .35rem .5rem; border-radius: var(--radius-sm);
+            cursor: pointer;
         }
+        .site-nav.solid #language-selector { border-color: rgba(28,25,23,.22); color: var(--color-nav-text); }
+        #language-selector option { color: #1c1917; }
 
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
+        .nav-burger { background: none; border: none; color: #fff; font-size: 1.15rem; cursor: pointer; padding: .25rem; }
+        .site-nav.solid .nav-burger { color: var(--color-nav-text); }
+        @media (min-width: 1024px) { .nav-burger { display: none; } }
+
+        .mobile-menu {
+            display: none; background: var(--color-nav-bg);
+            border-top: 1px solid rgba(28,25,23,.1); margin-top: 1.15rem;
         }
+        .mobile-menu a {
+            display: block; padding: .9rem clamp(1.25rem, 5vw, 4rem); color: var(--color-nav-text);
+            text-decoration: none; font-size: .9rem; letter-spacing: .04em;
+            border-bottom: 1px solid rgba(28,25,23,.07);
+        }
+        .mobile-menu a:hover { color: var(--color-accent); }
 
+        /* ============================ banniere ============================ */
+
+        .hero-section {
+            position: relative; min-height: var(--hero-height);
+            display: flex; align-items: flex-end;
+            background-image:
+                linear-gradient(rgba(28,25,23,var(--hero-overlay)), rgba(28,25,23,var(--hero-overlay))),
+                var(--hero-image);
+            background-size: cover; background-position: center;
+            color: var(--hero-text); overflow: hidden;
+        }
+        /* Voile sombre concentre en bas : lisibilite du texte sans delaver la photo. */
+        .hero-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(28,25,23,.62) 0%, rgba(28,25,23,.22) 42%, transparent 72%);
+            pointer-events: none; z-index: 1;
+        }
+        /* Fondu vers la couleur de page, pour que l'image ne s'arrete pas net. */
+        .hero-section::after {
+            content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 16vh;
+            background: linear-gradient(to bottom, transparent, var(--color-page-bg));
+            pointer-events: none; z-index: 1;
+        }
+        .hero-inner { position: relative; z-index: 2; padding-bottom: clamp(5rem, 14vh, 10rem); padding-top: 8rem; }
+        .hero-mark { height: 62px; width: auto; margin-bottom: 2rem; filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0,0,0,.5)); }
+        .hero-section h1 {
+            color: var(--hero-text) !important;
+            font-size: clamp(2.6rem, 7vw, 5.4rem);
+            max-width: 15ch; margin: .9rem 0 0;
+        }
+        .hero-section .lede {
+            color: rgba(255,255,255,.87); font-size: clamp(1rem, 1.7vw, 1.2rem);
+            max-width: 42ch; margin: 1.6rem 0 2.6rem; font-weight: 300; line-height: 1.65;
+        }
+        .hero-section .eyebrow { color: var(--color-accent-soft); }
+
+        .btn-line {
+            display: inline-flex; align-items: center; gap: .8rem;
+            border: 1px solid rgba(255,255,255,.55); color: #fff; text-decoration: none;
+            padding: .95rem 1.9rem; font-size: .8rem; letter-spacing: .13em; text-transform: uppercase;
+            border-radius: var(--radius-sm); transition: all var(--transition); background: transparent;
+        }
+        .btn-line:hover { background: #fff; color: var(--color-dark); border-color: #fff; }
+        .btn-line i { font-size: 1rem; }
+
+        /* ============================ blocs editoriaux ============================ */
+
+        .band { padding: var(--section-padding) 0; }
+        .band-soft { background: var(--color-soft); }
+        .band-dark { background: var(--color-dark); }
+        .band-dark h2, .band-dark h3 { color: #fff; }
+        .band-dark p { color: rgba(231,224,214,.72); }
+
+        .split {
+            display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+        }
+        @media (min-width: 900px) {
+            .split { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(3rem, 8vw, 7rem); align-items: start; }
+        }
+        .split .aside { padding-top: .5rem; }
+        .statement {
+            font-family: var(--font-heading); font-size: clamp(1.5rem, 3.1vw, 2.35rem);
+            line-height: 1.28; color: var(--color-heading); font-weight: 400; letter-spacing: -.015em;
+            max-width: 24ch;
+        }
+        .statement + p { margin-top: 1.8rem; max-width: 58ch; color: var(--color-text); }
+
+        /* ============================ services ============================ */
+
+        .service-grid { display: grid; grid-template-columns: 1fr; margin-top: 3.5rem; }
+        @media (min-width: 860px) { .service-grid { grid-template-columns: 1fr 1fr; column-gap: clamp(3rem, 7vw, 6rem); } }
+
+        .service {
+            display: grid; grid-template-columns: auto 1fr; gap: 1.5rem;
+            padding: 2.1rem 0; border-top: 1px solid rgba(28,25,23,.13);
+            transition: border-color var(--transition);
+        }
+        .service:hover { border-top-color: var(--color-accent); }
+        .service .num {
+            font-family: var(--font-heading); font-size: .82rem; color: var(--color-accent);
+            padding-top: .45rem; font-variant-numeric: tabular-nums; letter-spacing: .04em;
+        }
+        .service h3 { font-size: 1.35rem; margin: 0 0 .5rem; }
+        .service p { margin: 0; font-size: .95rem; color: var(--color-muted); line-height: 1.65; }
+
+        /* ============================ video ============================ */
+
+        .video-frame {
+            margin-top: 3rem; border-radius: var(--radius-lg); overflow: hidden;
+            background: #000; box-shadow: var(--shadow-hover);
+        }
+        .video-frame video { width: 100%; display: block; }
+
+        /* ============================ appel final ============================ */
+
+        .cta-band { padding: clamp(5rem, 11vh, 8rem) 0; background: var(--color-dark); color: #fff; }
+        .cta-band h2 { color: #fff; font-size: clamp(2rem, 4.4vw, 3.2rem); max-width: 18ch; }
+        .cta-band .eyebrow { color: var(--color-accent); }
+        .cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
+
+        /* ============================ elements des autres pages ============================ */
+
+        .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 1.5rem; }
         .image-card {
-            overflow: hidden;
-            border-radius: var(--radius-sm);
-            box-shadow: var(--shadow-card);
+            overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-card);
             transition: transform var(--transition), box-shadow var(--transition);
             background-color: var(--color-surface);
         }
-
-        .image-card:hover {
-            transform: translateY(var(--hover-lift));
-            box-shadow: var(--shadow-hover);
-        }
-
-        .image-card img {
-            width: 100%;
-            height: var(--gallery-image-height);
-            object-fit: cover;
-        }
+        .image-card:hover { transform: translateY(var(--hover-lift)); box-shadow: var(--shadow-hover); }
+        .image-card img { width: 100%; height: var(--gallery-image-height); object-fit: cover; }
 
         .whatsapp-btn {
-            background: linear-gradient(45deg, var(--color-whatsapp-1), var(--color-whatsapp-2));
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all var(--transition);
+            background: var(--color-dark); color: #fff; padding: .95rem 1.9rem;
+            border-radius: var(--radius-sm); text-decoration: none; display: inline-flex;
+            align-items: center; gap: .7rem; transition: all var(--transition);
+            font-size: .8rem; letter-spacing: .13em; text-transform: uppercase;
         }
-
-        .whatsapp-btn:hover {
-            background: linear-gradient(45deg, var(--color-whatsapp-2), var(--color-whatsapp-1));
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-        }
+        .whatsapp-btn:hover { background: var(--color-accent); color: #fff; transform: translateY(-2px); }
+        .band-dark .whatsapp-btn, .cta-band .whatsapp-btn { background: #fff; color: var(--color-dark); }
+        .band-dark .whatsapp-btn:hover, .cta-band .whatsapp-btn:hover { background: var(--color-accent); color: #fff; }
 
         .price-card {
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
+            background: var(--color-surface); color: var(--color-text);
+            border: 1px solid rgba(28,25,23,.12);
+            padding: 2.75rem 2.25rem; border-radius: var(--radius-lg); text-align: left;
             transition: transform var(--transition), box-shadow var(--transition);
         }
-
-        .price-card h1, .price-card h2, .price-card h3, .price-card h4 { color: #fff; }
-
-        .price-card:hover {
-            transform: translateY(var(--hover-lift));
-            box-shadow: var(--shadow-hover);
-        }
+        .price-card:hover { transform: translateY(var(--hover-lift)); box-shadow: var(--shadow-hover); }
+        .price-card h3 { color: var(--color-heading); }
+        .price-card .gold-accent { font-family: var(--font-heading); }
+        .price-card ul { list-style: none; padding: 0; }
+        .price-card i.fa-home, .price-card i.fa-bed { color: var(--color-accent); }
 
         .feature-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--color-accent), var(--color-accent-soft));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
+            width: 2.9rem; height: 2.9rem; border-radius: 50%;
+            background: var(--color-soft); border: 1px solid rgba(168,118,62,.3);
+            display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;
         }
+        .feature-icon i { color: var(--color-accent) !important; }
 
-        .mobile-menu {
-            display: none;
-        }
+        .map-container { position: relative; width: 100%; height: 460px; border-radius: var(--radius-lg); overflow: hidden; }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
 
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .mobile-menu.active {
-                background: rgba(255, 255, 255, 0.95);
-                backdrop-filter: blur(10px);
-            }
-        }
-
-        .hero-section {
-            height: var(--hero-height);
-            background-image:
-                linear-gradient(rgba(0, 0, 0, var(--hero-overlay)), rgba(0, 0, 0, var(--hero-overlay))),
-                var(--hero-image);
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--hero-text);
-        }
-
-        .hero-section h1,
-        .hero-section p {
-            color: var(--hero-text) !important;
-        }
-
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            border-radius: var(--radius-sm);
-            overflow: hidden;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
+        footer { background-color: var(--color-footer-bg) !important; color: var(--color-footer-text) !important; }
+        /* le logo est sombre : on l'eclaircit pour qu'il ressorte sur le pied de page */
+        footer img { filter: brightness(0) invert(1); opacity: .82; }
 
         /* barre d'edition affichee uniquement en mode apercu CMS */
         body.cms-preview [data-cms]:hover {
             outline: 2px dashed var(--color-accent);
-            outline-offset: 2px;
-            cursor: pointer;
+            outline-offset: 3px; cursor: pointer;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition-duration: .01ms !important; animation-duration: .01ms !important; }
         }
     </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" class="h-16" data-cms-img="nav.img1">
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 desktop-menu">
-                    <a href="#" class="nav-item active" onclick="showPage('home')" data-fr="Accueil" data-en="Home" data-rw="Inyubakwa" data-cms="nav.t1">Accueil</a>
-                    <a href="#" class="nav-item" onclick="showPage('apartments')" data-fr="Appartements" data-en="Apartments" data-rw="Amafenetre" data-cms="nav.t2">Appartements</a>
-                    <a href="#" class="nav-item" onclick="showPage('gym')" data-fr="Salle de Sport" data-en="Gym" data-rw="Ikigo cy'imyitozo" data-cms="nav.t3">Salle de Sport</a>
-                    <a href="#" class="nav-item" onclick="showPage('sauna')" data-fr="Sauna" data-en="Sauna" data-rw="Sauna" data-cms="nav.t4">Sauna</a>
-                    <a href="#" class="nav-item" onclick="showPage('massage')" data-fr="Massage" data-en="Massage" data-rw="Gukandagira" data-cms="nav.t5">Massage</a>
-                    <a href="#" class="nav-item" onclick="showPage('restaurant')" data-fr="Restaurant" data-en="Restaurant" data-rw="Restoran" data-cms="nav.t6">Restaurant</a>
-                    <a href="#" class="nav-item" onclick="showPage('contact')" data-fr="Contact" data-en="Contact" data-rw="Twandikire" data-cms="nav.t7">Contact</a>
-                </div>
-                
-                <!-- Language & Mobile Menu -->
-                <div class="flex items-center space-x-4">
-                    <select id="language-selector" class="text-sm border rounded px-2 py-1" onchange="changeLanguage()">
-                        <option value="fr">FR</option>
-                        <option value="en">EN</option>
-                        <option value="rw">RW</option>
-                    </select>
-                    <button class="md:hidden" onclick="toggleMobileMenu()">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+    <nav class="site-nav" id="site-nav">
+        <div class="shell nav-inner">
+            <div class="nav-logo">
+                <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" data-cms-img="nav.img1">
+            </div>
+
+            <div class="nav-links">
+                    <a href="#" class="nav-item" onclick="showPage('home', this); return false;" data-cms="nav.t1" data-fr="Accueil" data-en="Home" data-rw="Inyubakwa">Accueil</a>
+                    <a href="#" class="nav-item" onclick="showPage('apartments', this); return false;" data-cms="nav.t2" data-fr="Appartements" data-en="Apartments" data-rw="Amafenetre">Appartements</a>
+                    <a href="#" class="nav-item" onclick="showPage('gym', this); return false;" data-cms="nav.t3" data-fr="Salle de Sport" data-en="Gym" data-rw="Ikigo cy'imyitozo">Salle de Sport</a>
+                    <a href="#" class="nav-item" onclick="showPage('sauna', this); return false;" data-cms="nav.t4" data-fr="Sauna" data-en="Sauna" data-rw="Sauna">Sauna</a>
+                    <a href="#" class="nav-item" onclick="showPage('massage', this); return false;" data-cms="nav.t5" data-fr="Massage" data-en="Massage" data-rw="Gukandagira">Massage</a>
+                    <a href="#" class="nav-item" onclick="showPage('restaurant', this); return false;" data-cms="nav.t6" data-fr="Restaurant" data-en="Restaurant" data-rw="Restoran">Restaurant</a>
+                    <a href="#" class="nav-item" onclick="showPage('contact', this); return false;" data-cms="nav.t7" data-fr="Contact" data-en="Contact" data-rw="Twandikire">Contact</a>
+            </div>
+
+            <div class="nav-tools">
+                <select id="language-selector" onchange="changeLanguage()" aria-label="Langue">
+                    <option value="fr">FR</option>
+                    <option value="en">EN</option>
+                    <option value="rw">RW</option>
+                </select>
+                <button class="nav-burger" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden mobile-menu" style="display: none;">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('home')" data-cms="nav.t8" data-fr="Accueil" data-en="Accueil" data-rw="Accueil">Accueil</a>
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('apartments')" data-cms="nav.t9" data-fr="Appartements" data-en="Appartements" data-rw="Appartements">Appartements</a>
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('gym')" data-cms="nav.t10" data-fr="Salle de Sport" data-en="Salle de Sport" data-rw="Salle de Sport">Salle de Sport</a>
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('sauna')" data-cms="nav.t11" data-fr="Sauna" data-en="Sauna" data-rw="Sauna">Sauna</a>
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('massage')" data-cms="nav.t12" data-fr="Massage" data-en="Massage" data-rw="Massage">Massage</a>
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('restaurant')" data-cms="nav.t13" data-fr="Restaurant" data-en="Restaurant" data-rw="Restaurant">Restaurant</a>
-                <a href="#" class="block px-3 py-2 nav-item" onclick="showPage('contact')" data-cms="nav.t14" data-fr="Contact" data-en="Contact" data-rw="Contact">Contact</a>
-            </div>
+
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#" onclick="showPage('home', this); return false;" data-cms="nav.t8" data-fr="Accueil" data-en="Accueil" data-rw="Accueil">Accueil</a>
+            <a href="#" onclick="showPage('apartments', this); return false;" data-cms="nav.t9" data-fr="Appartements" data-en="Appartements" data-rw="Appartements">Appartements</a>
+            <a href="#" onclick="showPage('gym', this); return false;" data-cms="nav.t10" data-fr="Salle de Sport" data-en="Salle de Sport" data-rw="Salle de Sport">Salle de Sport</a>
+            <a href="#" onclick="showPage('sauna', this); return false;" data-cms="nav.t11" data-fr="Sauna" data-en="Sauna" data-rw="Sauna">Sauna</a>
+            <a href="#" onclick="showPage('massage', this); return false;" data-cms="nav.t12" data-fr="Massage" data-en="Massage" data-rw="Massage">Massage</a>
+            <a href="#" onclick="showPage('restaurant', this); return false;" data-cms="nav.t13" data-fr="Restaurant" data-en="Restaurant" data-rw="Restaurant">Restaurant</a>
+            <a href="#" onclick="showPage('contact', this); return false;" data-cms="nav.t14" data-fr="Contact" data-en="Contact" data-rw="Contact">Contact</a>
         </div>
     </nav>
 
     <!-- HOME PAGE -->
   <!-- HOME PAGE -->
 <div id="home" class="page-section active">
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="text-center">
-            <img src="images/Logo accueil.webp" alt="Rebero Marnand Piles" class="h-24 mx-auto mb-6" data-cms-img="home.img1">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4" data-fr="Rebero Marnand Piles" data-en="Rebero Marnand Piles" data-rw="Rebero Marnand Piles" data-cms="home.t1">Rebero Marnand Piles</h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" data-fr="Vivez l'expérience du luxe à Kigali" data-en="Experience Luxury Living in Kigali" data-rw="Wumve uburyohe bwo gutura muri Kigali" data-cms="home.t2">Vivez l'expérience du luxe à Kigali</p>
-            <a href="https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles" class="whatsapp-btn" data-cms-link="home.link1">
+
+    <!-- Banniere -->
+    <header class="hero-section">
+        <div class="shell hero-inner">
+            <img src="images/Logo accueil.webp" alt="Rebero Marnand Piles" class="hero-mark" data-cms-img="home.img1">
+            <p class="eyebrow" data-cms="home.t20" data-fr="Kigali · Rwanda" data-en="Kigali · Rwanda" data-rw="Kigali · Rwanda">Kigali · Rwanda</p>
+            <h1 data-cms="home.t1" data-fr="Rebero Marnand Piles" data-en="Rebero Marnand Piles" data-rw="Rebero Marnand Piles">Rebero Marnand Piles</h1>
+            <p class="lede" data-cms="home.t2" data-fr="Vivez l'expérience du luxe à Kigali" data-en="Experience Luxury Living in Kigali" data-rw="Wumve uburyohe bwo gutura muri Kigali">Vivez l'expérience du luxe à Kigali</p>
+            <a href="https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles" class="btn-line" data-cms-link="home.link1">
                 <i class="fab fa-whatsapp"></i>
-                <span data-fr="Réserver Maintenant" data-en="Book Now" data-rw="Kubana Ubu" data-cms="home.t3">Réserver Maintenant</span>
+                <span data-cms="home.t3" data-fr="Réserver Maintenant" data-en="Book Now" data-rw="Kubana Ubu">Réserver Maintenant</span>
             </a>
         </div>
-    </div>
+    </header>
 
-    <!-- ============================================================ -->
- <div class="py-16 bg-gray-900">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3" data-fr="Découvrez Rebero Marnand Piles" data-en="Discover Rebero Marnand Piles" data-rw="Menya Rebero Marnand Piles" data-cms="home.t4">Découvrez Rebero Marnand Piles</h2>
-                <div class="w-16 h-1 mx-auto rounded-full" style="background:#d4af37;"></div>
+    <!-- Introduction editoriale -->
+    <section class="band">
+        <div class="shell split">
+            <div class="aside">
+                <p class="eyebrow" data-cms="home.t6" data-fr="Nos Services Premium" data-en="Our Premium Services" data-rw="Serivise zacu nziza">Nos Services Premium</p>
             </div>
-
-            <!-- ── OPTION 2 : Fichier vidéo local (.mp4) ─────────────────── -->
-            <!-- Décommentez ce bloc ET commentez le bloc OPTION 1 ci-dessus  -->
-            <div class="rounded-2xl overflow-hidden shadow-2xl">
-                <video 
-                    id="business-video-local"
-                    class="w-full"
-                    controls
-                    poster="images/video-thumbnail.jpg">
-                    <source src="videos/Marnand_Presentation.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture vidéo.
-                </video>
-            </div>
-            <!-- ── FIN OPTION 2 ──────────────────────────────────────────── -->
-
-            <p class="text-center text-gray-400 mt-6 text-sm" data-fr="Vivez l'expérience du luxe au cœur de Kigali" data-en="Experience luxury living in the heart of Kigali" data-rw="Wumve uburyohe muri Kigali" data-cms="home.t5">Vivez l'expérience du luxe au cœur de Kigali</p>
-        </div>
-    </div>
-    <!-- ============================================================ -->
-    <!-- FIN SECTION VIDÉO                                            -->
-    <!-- ============================================================ -->
-
-    <!-- Features Section -->
-    <div class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-fr="Nos Services Premium" data-en="Our Premium Services" data-rw="Serivise zacu nziza" data-cms="home.t6">Nos Services Premium</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto" data-fr="Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel" data-en="Discover all premium services available in our residential complex" data-rw="Menya serivise zose zo hejuru ziboneka mu kigo cyacu" data-cms="home.t7">Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="feature-icon">
-                        <i class="fas fa-home text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2" data-fr="Appartements &amp; Chambres" data-en="Apartments &amp; Rooms" data-rw="Amafenetre n'Ibyumba" data-cms="home.t8">Appartements &amp; Chambres</h3>
-                    <p class="text-gray-600" data-fr="Logements équipés avec connexion 5G" data-en="Fully equipped accommodations with 5G" data-rw="Amafenetre yuzuye na 5G" data-cms="home.t9">Logements équipés avec connexion 5G</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="feature-icon">
-                        <i class="fas fa-dumbbell text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2" data-fr="Salle de Sport" data-en="Fitness Center" data-rw="Ikigo cy'imyitozo" data-cms="home.t10">Salle de Sport</h3>
-                    <p class="text-gray-600" data-fr="Équipements modernes de fitness" data-en="Modern fitness equipment" data-rw="Ibikoresho by'imyitozo bigezweho" data-cms="home.t11">Équipements modernes de fitness</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="feature-icon">
-                        <i class="fas fa-fire text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2" data-fr="Sauna &amp; Spa" data-en="Sauna &amp; Spa" data-rw="Sauna &amp; Spa" data-cms="home.t12">Sauna &amp; Spa</h3>
-                    <p class="text-gray-600" data-fr="Détente et bien-être" data-en="Relaxation and wellness" data-rw="Kuruhuka no kwisuzuma" data-cms="home.t13">Détente et bien-être</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="feature-icon">
-                        <i class="fas fa-hands text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2" data-fr="Massage" data-en="Massage" data-rw="Gukandagira" data-cms="home.t14">Massage</h3>
-                    <p class="text-gray-600" data-fr="Soins thérapeutiques professionnels" data-en="Professional therapeutic treatments" data-rw="Ubuvuzi bw'abahanga" data-cms="home.t15">Soins thérapeutiques professionnels</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="feature-icon">
-                        <i class="fas fa-utensils text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2" data-fr="Restaurant Rooftop" data-en="Rooftop Restaurant" data-rw="Restoran yo hejuru" data-cms="home.t16">Restaurant Rooftop</h3>
-                    <p class="text-gray-600" data-fr="Dining avec vue panoramique" data-en="Dining with panoramic views" data-rw="Kurya ufite amashusho meza" data-cms="home.t17">Dining avec vue panoramique</p>
-                </div>
-                
-                <div class="text-center">
-                    <div class="feature-icon">
-                        <i class="fas fa-car text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2" data-fr="Parking Gratuit" data-en="Free Parking" data-rw="Aho gushyingura ubusa" data-cms="home.t18">Parking Gratuit</h3>
-                    <p class="text-gray-600" data-fr="Parking sécurisé pour résidents" data-en="Secure parking for residents" data-rw="Aho gushyingura gifite umutekano" data-cms="home.t19">Parking sécurisé pour résidents</p>
-                </div>
+            <div>
+                <p class="statement" data-cms="home.t7" data-fr="Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel" data-en="Discover all premium services available in our residential complex" data-rw="Menya serivise zose zo hejuru ziboneka mu kigo cyacu">Découvrez tous les services haut de gamme disponibles dans notre complexe résidentiel</p>
             </div>
         </div>
-    </div>
+
+        <div class="shell">
+            <div class="service-grid">
+                <article class="service">
+                    <span class="num">01</span>
+                    <div>
+                        <h3 data-cms="home.t8" data-fr="Appartements &amp; Chambres" data-en="Apartments &amp; Rooms" data-rw="Amafenetre n'Ibyumba">Appartements &amp; Chambres</h3>
+                        <p data-cms="home.t9" data-fr="Logements équipés avec connexion 5G" data-en="Fully equipped accommodations with 5G" data-rw="Amafenetre yuzuye na 5G">Logements équipés avec connexion 5G</p>
+                    </div>
+                </article>
+                <article class="service">
+                    <span class="num">02</span>
+                    <div>
+                        <h3 data-cms="home.t10" data-fr="Salle de Sport" data-en="Fitness Center" data-rw="Ikigo cy'imyitozo">Salle de Sport</h3>
+                        <p data-cms="home.t11" data-fr="Équipements modernes de fitness" data-en="Modern fitness equipment" data-rw="Ibikoresho by'imyitozo bigezweho">Équipements modernes de fitness</p>
+                    </div>
+                </article>
+                <article class="service">
+                    <span class="num">03</span>
+                    <div>
+                        <h3 data-cms="home.t12" data-fr="Sauna &amp; Spa" data-en="Sauna &amp; Spa" data-rw="Sauna &amp; Spa">Sauna &amp; Spa</h3>
+                        <p data-cms="home.t13" data-fr="Détente et bien-être" data-en="Relaxation and wellness" data-rw="Kuruhuka no kwisuzuma">Détente et bien-être</p>
+                    </div>
+                </article>
+                <article class="service">
+                    <span class="num">04</span>
+                    <div>
+                        <h3 data-cms="home.t14" data-fr="Massage" data-en="Massage" data-rw="Gukandagira">Massage</h3>
+                        <p data-cms="home.t15" data-fr="Soins thérapeutiques professionnels" data-en="Professional therapeutic treatments" data-rw="Ubuvuzi bw'abahanga">Soins thérapeutiques professionnels</p>
+                    </div>
+                </article>
+                <article class="service">
+                    <span class="num">05</span>
+                    <div>
+                        <h3 data-cms="home.t16" data-fr="Restaurant Rooftop" data-en="Rooftop Restaurant" data-rw="Restoran yo hejuru">Restaurant Rooftop</h3>
+                        <p data-cms="home.t17" data-fr="Dining avec vue panoramique" data-en="Dining with panoramic views" data-rw="Kurya ufite amashusho meza">Dining avec vue panoramique</p>
+                    </div>
+                </article>
+                <article class="service">
+                    <span class="num">06</span>
+                    <div>
+                        <h3 data-cms="home.t18" data-fr="Parking Gratuit" data-en="Free Parking" data-rw="Aho gushyingura ubusa">Parking Gratuit</h3>
+                        <p data-cms="home.t19" data-fr="Parking sécurisé pour résidents" data-en="Secure parking for residents" data-rw="Aho gushyingura gifite umutekano">Parking sécurisé pour résidents</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video de presentation -->
+    <section class="band band-soft">
+        <div class="shell split">
+            <div class="aside">
+                <p class="eyebrow" data-cms="home.t21" data-fr="En images" data-en="In pictures" data-rw="Mu mashusho">En images</p>
+            </div>
+            <div>
+                <h2 style="font-size: clamp(1.9rem, 4vw, 3rem); max-width: 16ch;" data-cms="home.t4" data-fr="Découvrez Rebero Marnand Piles" data-en="Discover Rebero Marnand Piles" data-rw="Menya Rebero Marnand Piles">Découvrez Rebero Marnand Piles</h2>
+                <div class="video-frame">
+                    <video id="business-video-local" controls preload="metadata" poster="images/Accueil.webp">
+                        <source src="videos/Marnand_Presentation.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture vidéo.
+                    </video>
+                </div>
+                <p style="margin-top: 1.4rem; font-size: .92rem; color: var(--color-muted);" data-cms="home.t5" data-fr="Vivez l'expérience du luxe au cœur de Kigali" data-en="Experience luxury living in the heart of Kigali" data-rw="Wumve uburyohe muri Kigali">Vivez l'expérience du luxe au cœur de Kigali</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appel a l'action -->
+    <section class="cta-band">
+        <div class="shell split">
+            <div class="aside">
+                <p class="eyebrow" data-cms="home.t22" data-fr="Réservation" data-en="Booking" data-rw="Kubana">Réservation</p>
+            </div>
+            <div>
+                <h2 data-cms="home.t23" data-fr="Une visite, et vous saurez" data-en="One visit is all it takes" data-rw="Sura rimwe, uzabimenya">Une visite, et vous saurez</h2>
+                <p style="color: rgba(231,224,214,.7); max-width: 46ch; margin-top: 1.3rem;" data-cms="home.t24" data-fr="Écrivez-nous sur WhatsApp : nous répondons dans la journée, en français, en anglais ou en kinyarwanda." data-en="Message us on WhatsApp — we reply the same day, in French, English or Kinyarwanda." data-rw="Twandikire kuri WhatsApp: turasubiza kuri uwo munsi, mu gifaransa, icyongereza cyangwa ikinyarwanda.">Écrivez-nous sur WhatsApp : nous répondons dans la journée, en français, en anglais ou en kinyarwanda.</p>
+                <div class="cta-row">
+                    <a href="https://wa.me/250788881346" class="whatsapp-btn" data-cms-link="home.link2">
+                        <i class="fab fa-whatsapp"></i>
+                        <span data-cms="home.t25" data-fr="Nous écrire" data-en="Message us" data-rw="Twandikire">Nous écrire</span>
+                    </a>
+                    <a href="#" class="btn-line" onclick="showPage('apartments', this); return false;">
+                        <span data-cms="home.t26" data-fr="Voir les logements" data-en="View accommodations" data-rw="Reba amacumbi">Voir les logements</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-        <!-- Hero Section -->
-        
-        
-        <!-- Features Section -->
-        
-    
-
-    <!-- APARTMENTS PAGE -->
     <div id="apartments" class="page-section">
         <div class="pt-20 pb-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1050,11 +1118,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" class="h-16 mx-auto mb-4" data-cms-img="footer.img1">
-            <p class="mb-2" data-fr="© 2026 Rebero Marnand Piles. Tous droits réservés." data-en="© 2026 Rebero Marnand Piles. All rights reserved." data-rw="© 2026 Rebero Marnand Piles. Uburenganzira bwose burabitswe." data-cms="footer.t1">© 2026 Rebero Marnand Piles. Tous droits réservés.</p>
-            <p class="text-gray-400" data-fr="Luxury Living in Kigali" data-en="Luxury Living in Kigali" data-rw="Ubuzima bwiza muri Kigali" data-cms="footer.t2">Luxury Living in Kigali</p>
+    <footer style="padding: clamp(3.5rem, 8vh, 5rem) 0 2.5rem;">
+        <div class="shell">
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: space-between;">
+                <img src="https://i.imgur.com/T8jS7QJ.png" alt="Rebero Marnand Piles" style="height: 54px; width: auto;" data-cms-img="footer.img1">
+                <p style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--color-footer-text); margin: 0; letter-spacing: -.01em;" data-cms="footer.t2" data-fr="Luxury Living in Kigali" data-en="Luxury Living in Kigali" data-rw="Ubuzima bwiza muri Kigali">Luxury Living in Kigali</p>
+            </div>
+            <hr class="rule" style="margin: 2.5rem 0 1.5rem; background: rgba(231,224,214,.18);">
+            <p style="font-size: .82rem; color: rgba(231,224,214,.55); margin: 0;" data-cms="footer.t1" data-fr="© 2026 Rebero Marnand Piles. Tous droits réservés." data-en="© 2026 Rebero Marnand Piles. All rights reserved." data-rw="© 2026 Rebero Marnand Piles. Uburenganzira bwose burabitswe.">© 2026 Rebero Marnand Piles. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1157,31 +1228,37 @@
         };
 
         // Navigation functions
-        function showPage(pageId) {
-            // Hide all pages
+        function showPage(pageId, trigger) {
+            const target = document.getElementById(pageId);
+            if (!target) return;
+
             document.querySelectorAll('.page-section').forEach(section => {
                 section.classList.remove('active');
             });
-            
-            // Show selected page
-            document.getElementById(pageId).classList.add('active');
-            
-            // Update navigation active state
+            target.classList.add('active');
+
+            // Etat actif de la navigation : deduit de la page, pas du clic,
+            // pour que les liens du corps de page mettent aussi le menu a jour.
             document.querySelectorAll('.nav-item').forEach(item => {
-                item.classList.remove('active');
+                const onclick = item.getAttribute('onclick') || '';
+                item.classList.toggle('active', onclick.indexOf("'" + pageId + "'") !== -1);
             });
-            event.target.classList.add('active');
-            
-            // Close mobile menu
+
             document.getElementById('mobile-menu').style.display = 'none';
-            
-            // Scroll to top
             window.scrollTo(0, 0);
+            syncNav();
         }
 
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // La barre reste transparente au-dessus de la banniere, puis se solidifie.
+        function syncNav() {
+            const nav = document.getElementById('site-nav');
+            const onHome = document.getElementById('home').classList.contains('active');
+            nav.classList.toggle('solid', !onHome || window.scrollY > 80);
         }
 
         // Language change function
@@ -1196,16 +1273,22 @@
 
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
-            // Set default language
             changeLanguage();
-            
-            // Handle mobile menu clicks
-            document.querySelectorAll('#mobile-menu .nav-item').forEach(item => {
+            syncNav();
+
+            document.querySelectorAll('#mobile-menu a').forEach(item => {
                 item.addEventListener('click', function() {
                     document.getElementById('mobile-menu').style.display = 'none';
                 });
             });
+
+            document.querySelectorAll('.nav-item').forEach(item => {
+                const onclick = item.getAttribute('onclick') || '';
+                if (onclick.indexOf("'home'") !== -1) item.classList.add('active');
+            });
         });
+
+        window.addEventListener('scroll', syncNav, { passive: true });
     </script>
     <!-- Pont d'apercu CMS : inactif sur le site public, actif seulement dans /admin -->
     <script src="cms/site-cms.js" defer></script>

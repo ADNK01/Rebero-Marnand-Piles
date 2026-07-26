@@ -105,7 +105,7 @@
         {
           "key": "home.t1",
           "tag": "h1",
-          "section": "Général",
+          "section": "Kigali · Rwanda",
           "multiline": false
         },
         {
@@ -123,7 +123,7 @@
         {
           "key": "home.t4",
           "tag": "h2",
-          "section": "Rebero Marnand Piles",
+          "section": "En images",
           "multiline": false
         },
         {
@@ -134,8 +134,8 @@
         },
         {
           "key": "home.t6",
-          "tag": "h2",
-          "section": "Découvrez Rebero Marnand Piles",
+          "tag": "p",
+          "section": "Nos Services Premium",
           "multiline": false
         },
         {
@@ -215,6 +215,48 @@
           "tag": "p",
           "section": "Parking Gratuit",
           "multiline": false
+        },
+        {
+          "key": "home.t20",
+          "tag": "p",
+          "section": "Kigali · Rwanda",
+          "multiline": false
+        },
+        {
+          "key": "home.t21",
+          "tag": "p",
+          "section": "En images",
+          "multiline": false
+        },
+        {
+          "key": "home.t22",
+          "tag": "p",
+          "section": "Réservation",
+          "multiline": false
+        },
+        {
+          "key": "home.t23",
+          "tag": "h2",
+          "section": "Réservation",
+          "multiline": false
+        },
+        {
+          "key": "home.t24",
+          "tag": "p",
+          "section": "Une visite, et vous saurez",
+          "multiline": true
+        },
+        {
+          "key": "home.t25",
+          "tag": "span",
+          "section": "Une visite, et vous saurez",
+          "multiline": false
+        },
+        {
+          "key": "home.t26",
+          "tag": "span",
+          "section": "Une visite, et vous saurez",
+          "multiline": false
         }
       ],
       "images": [
@@ -227,6 +269,10 @@
         {
           "key": "home.link1",
           "label": "Réserver Maintenant"
+        },
+        {
+          "key": "home.link2",
+          "label": "Nous écrire"
         }
       ],
       "embeds": []
