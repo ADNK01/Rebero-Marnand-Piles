@@ -197,6 +197,33 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .media .acts{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
 .media .acts .up{font-size:.78rem}
 
+/* videos */
+.vid{padding:16px 0;border-bottom:1px solid var(--zinc-100)}
+.vid > label{font-size:.8rem;font-weight:500;color:var(--zinc-600)}
+.vid .modes{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 4px}
+.vid .modes label{
+  display:flex;align-items:center;gap:7px;font-size:.8rem;padding:8px 13px;cursor:pointer;
+  border:1px solid var(--zinc-200);border-radius:var(--radius-sm);background:#fff;transition:.15s var(--ease);
+}
+.vid .modes label:hover{background:var(--zinc-50)}
+.vid .modes label.on{border-color:var(--accent-line);background:var(--accent-soft);color:var(--accent);font-weight:500}
+.vid .modes input{accent-color:var(--accent);margin:0}
+.vid fieldset{border:0;padding:0;margin:14px 0 0;opacity:.45;transition:opacity .2s var(--ease)}
+.vid fieldset.on{opacity:1}
+.vid .sub{font-size:.75rem;font-weight:500;color:var(--zinc-500);margin-bottom:6px;letter-spacing:.01em}
+.vid .acts{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
+.vid .acts .up{font-size:.78rem}
+.vid .hint{font-size:.76rem;color:var(--zinc-400)}
+.vid .prog{height:6px;border-radius:99px;background:var(--zinc-100);overflow:hidden;margin-top:10px;display:none}
+.vid .prog.on{display:block}
+.vid .prog i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s var(--ease)}
+.vid .live{
+  display:flex;gap:8px;align-items:flex-start;margin-top:16px;padding:10px 12px;
+  background:var(--zinc-50);border:1px solid var(--zinc-150);border-radius:var(--radius-sm);
+  font-size:.78rem;color:var(--zinc-600);line-height:1.5;
+}
+.vid .live b{color:var(--zinc-800);font-weight:500}
+
 /* apercu */
 .preview-pane{background:var(--zinc-100);border-left:1px solid var(--zinc-150);display:flex;flex-direction:column;min-width:0}
 .preview-bar{display:flex;align-items:center;gap:9px;padding:9px 14px;border-bottom:1px solid var(--zinc-150);background:#fff}
@@ -245,6 +272,7 @@ select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='ht
 .menu-toggle{display:none}
 @media(max-width:760px){.menu-toggle{display:inline-flex}}
 </style>
+  <script src="/cms/blob-client.js"></script>
 </head>
 <body>
 
@@ -525,6 +553,7 @@ function loadState(){
     S.theme = data.theme;
     S.schema = data.schema;
     if (!S.content.settings) S.content.settings = { title:'', description:'', defaultLang:'fr' };
+    if (!S.content.videos) S.content.videos = {};
     // on ouvre l'editeur sur la langue d'accueil du site
     if (LANGS[S.content.settings.defaultLang]) {
       S.lang = S.content.settings.defaultLang;
@@ -553,7 +582,7 @@ function renderSidebar(){
 
   html += '<div class="group">Pages du site</div>';
   S.schema.pages.forEach(function(page){
-    var count = page.texts.length + page.images.length + page.links.length + page.embeds.length;
+    var count = page.texts.length + page.images.length + page.links.length + page.embeds.length + (page.videos || []).length;
     html += navButton(page.id, page.label, count,
       '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 4h16v16H4z"/><path d="M4 9h16"/></svg>');
   });
@@ -638,7 +667,9 @@ function renderPage(pageId){
   var html = head(page.label,
     'Textes affiches en ' + LANGS[S.lang] + '. Changez de langue en haut a droite. Cliquez sur un element dans l\'apercu pour aller directement au champ correspondant.');
 
-  if (!page.texts.length && !page.images.length && !page.links.length){
+  var pageVideos = page.videos || [];
+
+  if (!page.texts.length && !page.images.length && !page.links.length && !pageVideos.length){
     html += '<div class="empty">Rien a modifier sur cette section.</div>';
   }
 
@@ -654,6 +685,11 @@ function renderPage(pageId){
   if (page.images.length){
     html += '<div class="subhead">Images</div>';
     page.images.forEach(function(img){ html += mediaRow(img); });
+  }
+
+  if (pageVideos.length){
+    html += '<div class="subhead">Video</div>';
+    pageVideos.forEach(function(video){ html += videoRow(video); });
   }
 
   if (page.links.length){
@@ -710,6 +746,87 @@ function mediaRow(img){
   '</div>';
 }
 
+/* ---------- video ----------
+   Deux sources au choix : un fichier televerse (Vercel Blob) ou un lien
+   YouTube / Vimeo. Les deux champs restent visibles et conservent leur valeur ;
+   le bouton radio decide seulement de celle qui part en ligne. */
+
+var VIDEO_MAX = 500 * 1024 * 1024;
+
+function videoEntry(key){
+  var raw = S.content.videos ? S.content.videos[key] : null;
+  if (typeof raw === 'string'){
+    var isEmbed = /youtu\.?be|vimeo\.com/.test(raw);
+    raw = { mode: isEmbed ? 'link' : 'file', file: isEmbed ? '' : raw, link: isEmbed ? raw : '', poster: '' };
+  }
+  if (!raw || typeof raw !== 'object') raw = {};
+  var entry = {
+    mode: raw.mode === 'link' ? 'link' : 'file',
+    file: typeof raw.file === 'string' ? raw.file : '',
+    link: typeof raw.link === 'string' ? raw.link : '',
+    poster: typeof raw.poster === 'string' ? raw.poster : ''
+  };
+  if (!S.content.videos) S.content.videos = {};
+  S.content.videos[key] = entry;
+  return entry;
+}
+
+function videoLive(entry){
+  var chosen = entry.mode === 'link' ? entry.link : entry.file;
+  var fallback = entry.mode === 'link' ? entry.file : entry.link;
+  var used = (chosen || '').trim() || (fallback || '').trim();
+  if (!used) return 'Aucune video : le bloc sera masque sur le site.';
+  var repli = !(chosen || '').trim() ? ' (le champ choisi est vide, on utilise l\'autre)' : '';
+  if (/youtu\.?be|vimeo\.com/.test(used)) return 'Lecteur integre &rsaquo; ' + esc(used) + repli;
+  return 'Fichier video &rsaquo; ' + esc(used) + repli;
+}
+
+function videoRow(video){
+  var entry = videoEntry(video.key);
+  var fileMode = entry.mode !== 'link';
+
+  return '<div class="vid" data-video="' + esc(video.key) + '">' +
+    '<label>' + esc(video.label) + '</label>' +
+
+    '<div class="modes">' +
+      '<label class="' + (fileMode ? 'on' : '') + '">' +
+        '<input type="radio" name="mode-' + esc(video.key) + '" value="file" data-key="' + esc(video.key) + '" data-kind="video-mode"' + (fileMode ? ' checked' : '') + '>' +
+        'Fichier televerse' +
+      '</label>' +
+      '<label class="' + (fileMode ? '' : 'on') + '">' +
+        '<input type="radio" name="mode-' + esc(video.key) + '" value="link" data-key="' + esc(video.key) + '" data-kind="video-mode"' + (fileMode ? '' : ' checked') + '>' +
+        'Lien YouTube / Vimeo' +
+      '</label>' +
+    '</div>' +
+
+    '<fieldset class="' + (fileMode ? 'on' : '') + '" data-pane="file">' +
+      '<div class="sub">Fichier video</div>' +
+      '<input type="text" data-key="' + esc(video.key) + '" data-kind="video-file" value="' + esc(entry.file) + '" placeholder="videos/ma-video.mp4 ou https://...">' +
+      '<div class="acts">' +
+        '<label class="btn btn-ghost up"><span class="up-label">Televerser une video</span>' +
+          '<input type="file" accept="video/mp4,video/webm,video/quicktime,video/*" data-video-upload="' + esc(video.key) + '" hidden>' +
+        '</label>' +
+        '<span class="hint">MP4, WebM ou MOV &mdash; 500 Mo maximum</span>' +
+      '</div>' +
+      '<div class="prog"><i></i></div>' +
+      '<span class="hint" style="display:block;margin-top:9px">Au-dela de 25 Mo environ, le quota de transfert gratuit de Vercel (10 Go/mois) part vite et les visiteurs sur donnees mobiles attendent longtemps : compressez la video, ou passez par un lien YouTube.</span>' +
+    '</fieldset>' +
+
+    '<fieldset class="' + (fileMode ? '' : 'on') + '" data-pane="link">' +
+      '<div class="sub">Lien YouTube ou Vimeo</div>' +
+      '<input type="text" data-key="' + esc(video.key) + '" data-kind="video-link" value="' + esc(entry.link) + '" placeholder="https://www.youtube.com/watch?v=... ou https://vimeo.com/...">' +
+      '<span class="hint" style="display:block;margin-top:9px">Collez le lien de partage tel quel. Aucune limite de taille ni de trafic, et la qualite s\'adapte a la connexion du visiteur.</span>' +
+    '</fieldset>' +
+
+    '<fieldset class="on">' +
+      '<div class="sub">Image affichee avant lecture (fichier uniquement)</div>' +
+      '<input type="text" data-key="' + esc(video.key) + '" data-kind="video-poster" value="' + esc(entry.poster) + '" placeholder="images/Accueil.webp">' +
+    '</fieldset>' +
+
+    '<div class="live"><span>&#9432;</span><span>En ligne : <b data-live>' + videoLive(entry) + '</b></span></div>' +
+  '</div>';
+}
+
 function linkRow(link){
   return '<div class="row">' +
     '<div class="meta"><span class="tag">lien</span><span>' + esc(link.label) + '</span>' +
@@ -740,6 +857,9 @@ function bindPage(page){
         S.content.links[key] = this.value;
       } else if (kind === 'embed'){
         S.content.embeds[key] = this.value.trim();
+      } else if (kind === 'video-file' || kind === 'video-link' || kind === 'video-poster'){
+        videoEntry(key)[kind.slice(6)] = this.value.trim();
+        refreshVideoRow(key);
       }
       refreshDirty();
       pushPreview();
@@ -753,6 +873,107 @@ function bindPage(page){
   $$('#editor [data-upload]').forEach(function(input){
     input.addEventListener('change', function(){ handleUpload(this); });
   });
+
+  $$('#editor [data-kind="video-mode"]').forEach(function(input){
+    input.addEventListener('change', function(){
+      if (!this.checked) return;
+      videoEntry(this.dataset.key).mode = this.value;
+      refreshVideoRow(this.dataset.key);
+      refreshDirty();
+      pushPreview();
+    });
+  });
+
+  $$('#editor [data-video-upload]').forEach(function(input){
+    input.addEventListener('change', function(){ handleVideoUpload(this); });
+  });
+}
+
+/** Met a jour l'etat visuel d'un bloc video sans redessiner tout l'editeur
+    (redessiner ferait perdre le focus du champ en cours de frappe). */
+function refreshVideoRow(key){
+  var row = $('#editor [data-video="' + key + '"]');
+  if (!row) return;
+  var entry = videoEntry(key);
+  var fileMode = entry.mode !== 'link';
+
+  row.querySelectorAll('.modes label').forEach(function(label){
+    var radio = label.querySelector('input');
+    label.classList.toggle('on', radio.value === entry.mode);
+  });
+  row.querySelectorAll('fieldset[data-pane]').forEach(function(pane){
+    pane.classList.toggle('on', (pane.dataset.pane === 'file') === fileMode);
+  });
+
+  var fileInput = row.querySelector('[data-kind="video-file"]');
+  if (fileInput && fileInput !== document.activeElement && fileInput.value !== entry.file){
+    fileInput.value = entry.file;
+  }
+
+  var live = row.querySelector('[data-live]');
+  if (live) live.innerHTML = videoLive(entry);
+}
+
+function handleVideoUpload(input){
+  var file = input.files && input.files[0];
+  if (!file) return;
+  input.value = '';
+
+  if (file.size > VIDEO_MAX){
+    toast('Video trop lourde (' + (Math.round(file.size / 1048576)) + ' Mo). Maximum 500 Mo.', 'err');
+    return;
+  }
+  if (!window.VercelBlobClient || !window.VercelBlobClient.upload){
+    toast("Le module de televersement n'a pas pu etre charge (cms/blob-client.js). Rechargez la page.", 'err');
+    return;
+  }
+
+  var key = input.dataset.videoUpload;
+  var row = $('#editor [data-video="' + key + '"]');
+  var label = row.querySelector('.up-label');
+  var bar = row.querySelector('.prog');
+  var fill = row.querySelector('.prog i');
+  var original = label.textContent;
+
+  label.textContent = 'Envoi en cours...';
+  bar.classList.add('on');
+  fill.style.width = '0%';
+
+  if (file.size > 25 * 1048576){
+    toast('Video de ' + Math.round(file.size / 1048576) + ' Mo : l\'envoi peut prendre plusieurs minutes. Ne fermez pas cet onglet.');
+  }
+
+  window.VercelBlobClient
+    .upload('videos/' + file.name, file, {
+      access: 'public',
+      handleUploadUrl: '/api/video-token',
+      clientPayload: S.password,
+      contentType: file.type || 'video/mp4',
+      // decoupe le fichier en plusieurs parties envoyees en parallele, avec
+      // reprise des parties en echec : indispensable au-dela de 100 Mo
+      multipart: file.size > 8 * 1048576,
+      onUploadProgress: function(event){
+        fill.style.width = Math.round(event.percentage) + '%';
+        label.textContent = 'Envoi ' + Math.round(event.percentage) + '%';
+      }
+    })
+    .then(function(result){
+      var entry = videoEntry(key);
+      entry.file = result.url;
+      entry.mode = 'file';
+      toast('Video televersee. Cliquez sur Publier pour la mettre en ligne.', 'ok');
+      refreshVideoRow(key);
+      refreshDirty();
+      pushPreview();
+    })
+    .catch(function(err){
+      toast('Televersement impossible : ' + String((err && err.message) || err), 'err');
+    })
+    .then(function(){
+      label.textContent = original;
+      bar.classList.remove('on');
+      fill.style.width = '0%';
+    });
 }
 
 function handleUpload(input){
