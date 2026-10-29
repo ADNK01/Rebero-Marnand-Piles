@@ -64,6 +64,107 @@
     });
   }
 
+  /* ---- videos ----
+     Jumeau de api/_video.js : toute modification la-bas doit etre reportee ici,
+     sinon l'apercu de /admin ne correspondra plus au site publie. */
+
+  var YOUTUBE = /(?:youtube(?:-nocookie)?\.com\/(?:watch\?(?:[^#]*&)?v=|embed\/|shorts\/|live\/|v\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/;
+  var VIMEO = /vimeo\.com\/(?:video\/)?(\d+)/;
+  var MIME = {
+    mp4: 'video/mp4',
+    m4v: 'video/mp4',
+    webm: 'video/webm',
+    ogv: 'video/ogg',
+    ogg: 'video/ogg',
+    mov: 'video/quicktime'
+  };
+
+  function normalizeVideo(entry) {
+    if (typeof entry === 'string') {
+      var isEmbed = YOUTUBE.test(entry) || VIMEO.test(entry);
+      return {
+        mode: isEmbed ? 'link' : 'file',
+        file: isEmbed ? '' : entry,
+        link: isEmbed ? entry : '',
+        poster: ''
+      };
+    }
+    if (!entry || typeof entry !== 'object') return { mode: 'file', file: '', link: '', poster: '' };
+    return {
+      mode: entry.mode === 'link' ? 'link' : 'file',
+      file: typeof entry.file === 'string' ? entry.file.trim() : '',
+      link: typeof entry.link === 'string' ? entry.link.trim() : '',
+      poster: typeof entry.poster === 'string' ? entry.poster.trim() : ''
+    };
+  }
+
+  function videoSource(entry) {
+    var v = normalizeVideo(entry);
+    var preferred = v.mode === 'link' ? v.link : v.file;
+    return preferred || (v.mode === 'link' ? v.file : v.link) || '';
+  }
+
+  function embedUrl(url) {
+    var yt = YOUTUBE.exec(url);
+    if (yt) return 'https://www.youtube-nocookie.com/embed/' + yt[1] + '?rel=0&modestbranding=1&playsinline=1';
+    var vm = VIMEO.exec(url);
+    if (vm) return 'https://player.vimeo.com/video/' + vm[1] + '?dnt=1';
+    return null;
+  }
+
+  function attr(value) {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  function videoMarkup(entry, fallbackPoster) {
+    var v = normalizeVideo(entry);
+    var src = videoSource(entry);
+    if (!src) return '';
+
+    var embed = embedUrl(src);
+    if (embed) {
+      return '<iframe src="' + attr(embed) + '" title="Video de presentation" loading="lazy" ' +
+        'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" ' +
+        'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    }
+
+    var clean = src.split(/[?#]/)[0];
+    var ext = clean.slice(clean.lastIndexOf('.') + 1).toLowerCase();
+    var type = MIME[ext] || 'video/mp4';
+    var poster = v.poster || fallbackPoster || '';
+
+    return '<video id="business-video-local" controls preload="metadata"' +
+      (poster ? ' poster="' + attr(poster) + '"' : '') + '>' +
+      '<source src="' + attr(src) + '" type="' + attr(type) + '">' +
+      'Votre navigateur ne supporte pas la lecture vidéo.' +
+      '</video>';
+  }
+
+  function applyVideos(videos) {
+    if (!videos) return;
+    document.querySelectorAll('[data-cms-video]').forEach(function (el) {
+      var key = el.getAttribute('data-cms-video');
+      if (!Object.prototype.hasOwnProperty.call(videos, key)) return;
+
+      if (!el.hasAttribute('data-cms-poster-initial')) {
+        var first = el.querySelector('video');
+        el.setAttribute('data-cms-poster-initial', (first && first.getAttribute('poster')) || '');
+      }
+
+      var html = videoMarkup(videos[key], el.getAttribute('data-cms-poster-initial'));
+
+      // On ne reecrit le lecteur que s'il a reellement change : sinon chaque
+      // frappe au clavier relancerait le chargement de la video dans l'apercu.
+      if (el.getAttribute('data-cms-rendered') === html) return;
+      el.setAttribute('data-cms-rendered', html);
+      el.innerHTML = html;
+    });
+  }
+
   function applyLinks(links) {
     if (!links) return;
     document.querySelectorAll('[data-cms-link]').forEach(function (el) {
@@ -113,6 +214,7 @@
     var content = msg.content || {};
     applyTexts(content.texts);
     applyImages(content.images);
+    applyVideos(content.videos);
     applyLinks(content.links);
     applyEmbeds(content.embeds);
     if (msg.page) showSection(msg.page);

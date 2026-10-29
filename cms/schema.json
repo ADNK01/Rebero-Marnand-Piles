@@ -95,6 +95,7 @@
           "label": "Rebero Marnand Piles"
         }
       ],
+      "videos": [],
       "links": [],
       "embeds": []
     },
@@ -263,6 +264,12 @@
         {
           "key": "home.img1",
           "label": "Rebero Marnand Piles"
+        }
+      ],
+      "videos": [
+        {
+          "key": "home.video1",
+          "label": "Video de presentation (section « En images »)"
         }
       ],
       "links": [
@@ -530,6 +537,7 @@
           "label": "Appartement de luxe"
         }
       ],
+      "videos": [],
       "links": [
         {
           "key": "apartments.link1",
@@ -729,6 +737,7 @@
           "label": "Espace fitness"
         }
       ],
+      "videos": [],
       "links": [
         {
           "key": "gym.link1",
@@ -924,6 +933,7 @@
           "label": "Espace détente"
         }
       ],
+      "videos": [],
       "links": [
         {
           "key": "sauna.link1",
@@ -1167,6 +1177,7 @@
           "label": "Espace wellness"
         }
       ],
+      "videos": [],
       "links": [
         {
           "key": "massage.link1",
@@ -1410,6 +1421,7 @@
           "label": "Bar cocktails"
         }
       ],
+      "videos": [],
       "links": [
         {
           "key": "restaurant.link1",
@@ -1580,6 +1592,7 @@
         }
       ],
       "images": [],
+      "videos": [],
       "links": [
         {
           "key": "contact.link1",
@@ -1624,6 +1637,7 @@
           "label": "Rebero Marnand Piles"
         }
       ],
+      "videos": [],
       "links": [],
       "embeds": []
     }
