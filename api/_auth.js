@@ -5,11 +5,19 @@ import crypto from 'node:crypto';
  * Renvoie null si tout va bien, sinon un message d'erreur.
  */
 export function checkPassword(req) {
+  return checkPasswordValue(req.headers['x-cms-password']);
+}
+
+/**
+ * Meme verification, mais sur une valeur quelconque : le televersement de
+ * video passe par le SDK Vercel Blob, qui ne permet pas d'ajouter un en-tete
+ * et transmet donc le mot de passe dans le corps de la requete.
+ */
+export function checkPasswordValue(provided) {
   const expected = process.env.ADMIN_PASSWORD;
   if (!expected) {
     return "Le mot de passe d'administration n'est pas configure sur Vercel (variable ADMIN_PASSWORD).";
   }
-  const provided = req.headers['x-cms-password'];
   if (typeof provided !== 'string' || provided.length === 0) {
     return 'Mot de passe manquant.';
   }

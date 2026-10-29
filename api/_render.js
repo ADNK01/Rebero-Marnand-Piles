@@ -7,6 +7,7 @@
  * un pur fichier statique.
  */
 import { parse } from 'node-html-parser';
+import { videoMarkup } from './_video.js';
 
 const LANGS = ['fr', 'en', 'rw'];
 const THEME_START = '/* CMS-THEME-START */';
@@ -64,6 +65,16 @@ export function render(html, content, theme) {
   root.querySelectorAll('[data-cms-link]').forEach((el) => {
     const href = links[el.getAttribute('data-cms-link')];
     if (typeof href === 'string' && href) el.setAttribute('href', href);
+  });
+
+  const videos = content.videos || {};
+  root.querySelectorAll('[data-cms-video]').forEach((el) => {
+    const key = el.getAttribute('data-cms-video');
+    if (!Object.prototype.hasOwnProperty.call(videos, key)) return;
+    // Le poster deja present dans index.html sert de repli si le CMS n'en fixe pas.
+    const existing = el.querySelector('video');
+    const fallbackPoster = existing ? existing.getAttribute('poster') || '' : '';
+    el.set_content(videoMarkup(videos[key], fallbackPoster));
   });
 
   const embeds = content.embeds || {};
