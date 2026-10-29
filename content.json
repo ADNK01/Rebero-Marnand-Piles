@@ -1201,6 +1201,14 @@
     "restaurant.img3": "https://10thandterrace.agencydominion.net/uploads/2024/04/10th-and-terrace-cheers-800x800.jpg",
     "footer.img1": "https://i.imgur.com/T8jS7QJ.png"
   },
+  "videos": {
+    "home.video1": {
+      "mode": "file",
+      "file": "videos/Marnand_Presentation.mp4",
+      "link": "",
+      "poster": "images/Accueil.webp"
+    }
+  },
   "links": {
     "home.link1": "https://wa.me/250788881346?text=Bonjour, je souhaite avoir plus d'informations sur Rebero Marnand Piles",
     "home.link2": "https://wa.me/250788881346",

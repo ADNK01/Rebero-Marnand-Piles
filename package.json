@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Site vitrine Rebero Marnand Piles + CMS integre",
   "dependencies": {
+    "@vercel/blob": "^2.8.2",
     "node-html-parser": "^6.1.13"
   }
 }
