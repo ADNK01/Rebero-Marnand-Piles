@@ -24,11 +24,28 @@ Une cinquième variable est nécessaire pour le téléversement des vidéos :
 | ----------------------- | -------------------------------------------------------- |
 | `BLOB_READ_WRITE_TOKEN` | accès au stockage Vercel Blob où atterrissent les vidéos |
 
-Elle n'est pas à saisir à la main : dans Vercel, **Storage → Create Database →
-Blob**, nommez le store (`videos` par exemple), reliez-le au projet
-`rebero-marnand-piles`, puis redéployez. Vercel ajoute la variable tout seul.
+Elle n'est pas à saisir à la main, mais la création du store comporte **deux
+pièges**, tous deux irrattrapables ou invisibles :
+
+1. Dans Vercel, **Storage → Create Storage → Blob**. À l'écran *Create Blob
+   Store*, l'accès est sur **Private** par défaut : il faut choisir
+   **Public**. Un store privé exige un jeton pour lire chaque fichier, donc la
+   vidéo ne serait pas lisible par les visiteurs — et Vercel l'écrit
+   lui-même : *« le mode d'accès ne peut pas être changé après création »*. Un
+   store privé est donc à refaire de zéro.
+2. Une fois le store créé, **Connect to Project** → choisir
+   `rebero-marnand-piles` → **cocher « Add a read-write token env var to this
+   connection »**, décochée par défaut. Sans elle, Vercel ne pose que
+   `BLOB_STORE_ID` et `BLOB_WEBHOOK_PUBLIC_KEY`, et le téléversement échoue.
+   La liste affichée dans la fenêtre doit montrer les trois variables, dont
+   `BLOB_READ_WRITE_TOKEN`.
+
+Puis **redéployer** : les variables d'environnement ne sont lues qu'au moment
+du build, donc le déploiement en cours ne les voit pas.
+
 Tant que ce store n'existe pas, le reste du CMS fonctionne normalement et seul
 le bouton « Téléverser une vidéo » répond par un message d'erreur explicite.
+Le store en place s'appelle `medias-public`.
 
 ### Changer le mot de passe
 
