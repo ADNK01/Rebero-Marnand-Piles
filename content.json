@@ -1204,7 +1204,7 @@
   "videos": {
     "home.video1": {
       "mode": "file",
-      "file": "videos/Marnand_Presentation.mp4",
+      "file": "https://or87fnblkfyve1gv.public.blob.vercel-storage.com/videos/Marnand_Presentation-zj7ziEo7DIwS9i9pn4ApZqImyJ3B22.mp4",
       "link": "",
       "poster": "images/Accueil.webp"
     }
