@@ -257,6 +257,8 @@
         .video-frame video { width: 100%; display: block; }
         .video-frame iframe { width: 100%; aspect-ratio: 16 / 9; display: block; border: 0; }
         .video-frame:empty { display: none; }
+        /* Sur les pages interieures, tout le bloc disparait tant qu'aucune video n'est choisie dans le CMS. */
+        .video-band:has(.video-frame:empty) { display: none; }
 
         /* ============================ appel final ============================ */
 
@@ -479,12 +481,31 @@
     </section>
 </div>
     <div id="apartments" class="page-section">
-        <div class="pt-20 pb-16">
+        <div class="pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h1 class="text-4xl font-bold mb-4" data-fr="Appartements &amp; Chambres" data-en="Accommodation , Apartments &amp; Rooms" data-rw="Amafenetre n'Ibyumba" data-cms="apartments.t1">Accommodation , Apartments &amp; Rooms</h1>
                     <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Nos logements modernes et entièrement équipés offrent tout le confort nécessaire avec connexion 5G, service de nettoyage inclus et parking gratuit pour les résidents." data-en="Our modern and fully equipped accommodations offer all necessary comfort with 5G connection, cleaning service included and free parking for residents." data-rw="Amafenetre yacu agezweho kandi yuzuye ibikoresho atanga uburyohe bukomeye hamwe na 5G, serivise yo gusukura harimo n'aho gushyingura kubusa." data-cms="apartments.t2">Our modern and fully equipped accommodations offer all necessary comfort with 5G connection, cleaning service included and free parking for residents.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Video de presentation (meme bloc qu'a l'accueil) -->
+        <section class="band band-soft video-band">
+            <div class="shell split">
+                <div class="aside">
+                    <p class="eyebrow" data-cms="apartments.t40" data-fr="En images" data-en="In pictures" data-rw="Mu mashusho">In pictures</p>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.9rem, 4vw, 3rem); max-width: 16ch;" data-cms="apartments.t41" data-fr="Visitez les appartements" data-en="Tour the apartments" data-rw="Sura amacumbi">Tour the apartments</h2>
+                    <div class="video-frame" data-cms-video="apartments.video1"></div>
+                    <p style="margin-top: 1.4rem; font-size: .92rem; color: var(--color-muted);" data-cms="apartments.t42" data-fr="Un aperçu des espaces avant votre réservation" data-en="A look inside before you book" data-rw="Reba imbere mbere yo kubana">A look inside before you book</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Pricing Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -582,12 +603,31 @@
 
     <!-- GYM PAGE -->
     <div id="gym" class="page-section">
-        <div class="pt-20 pb-16">
+        <div class="pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h1 class="text-4xl font-bold mb-4" data-fr="Salle de Sport" data-en="Fitness Center" data-rw="Ikigo cy'imyitozo" data-cms="gym.t1">Fitness Center</h1>
                     <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Notre salle de sport moderne est équipée des derniers équipements de fitness pour vous aider à maintenir votre forme physique. Accessible 24h/24 pour tous les résidents." data-en="Our modern fitness center is equipped with the latest fitness equipment to help you maintain your physical fitness. Accessible 24/7 for all residents." data-rw="Ikigo cyacu gishya cy'imyitozo gifite ibikoresho bigezweho byo kwimenyereza kugira ngo bikagufashe kubungabunga imbaraga. Kibonetse 24/7 ku baba muri RMP." data-cms="gym.t2">Our modern fitness center is equipped with the latest fitness equipment to help you maintain your physical fitness. Accessible 24/7 for all residents.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Video de presentation (meme bloc qu'a l'accueil) -->
+        <section class="band band-soft video-band">
+            <div class="shell split">
+                <div class="aside">
+                    <p class="eyebrow" data-cms="gym.t29" data-fr="En images" data-en="In pictures" data-rw="Mu mashusho">In pictures</p>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.9rem, 4vw, 3rem); max-width: 16ch;" data-cms="gym.t30" data-fr="La salle de sport en vidéo" data-en="The fitness center on video" data-rw="Ikigo cy'imyitozo mu mashusho">The fitness center on video</h2>
+                    <div class="video-frame" data-cms-video="gym.video1"></div>
+                    <p style="margin-top: 1.4rem; font-size: .92rem; color: var(--color-muted);" data-cms="gym.t31" data-fr="Les équipements, accessibles 24h/24" data-en="The equipment, accessible 24/7" data-rw="Ibikoresho, biboneka 24/7">The equipment, accessible 24/7</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Image Gallery -->
                 <div class="image-gallery mb-8">
@@ -675,12 +715,31 @@
 
     <!-- SAUNA PAGE -->
     <div id="sauna" class="page-section">
-        <div class="pt-20 pb-16">
+        <div class="pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h1 class="text-4xl font-bold mb-4" data-fr="Sauna &amp; Spa" data-en="Sauna &amp; Spa" data-rw="Sauna &amp; Spa" data-cms="sauna.t1">Sauna &amp; Spa</h1>
                     <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Découvrez notre sauna traditionnel et nos espaces de bien-être conçus pour vous offrir une expérience de relaxation unique. Un havre de paix au cœur de Kigali." data-en="Discover our traditional sauna and wellness spaces designed to offer you a unique relaxation experience. A haven of peace in the heart of Kigali." data-rw="Menya sauna yacu gakondo n'amazu yo kwisuzuma yateguriwe kukuha ubunyangamugayo bwihariye bwo kuruhuka. Ahantu ho kuruhuka hagati ya Kigali." data-cms="sauna.t2">Discover our traditional sauna and wellness spaces designed to offer you a unique relaxation experience. A haven of peace in the heart of Kigali.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Video de presentation (meme bloc qu'a l'accueil) -->
+        <section class="band band-soft video-band">
+            <div class="shell split">
+                <div class="aside">
+                    <p class="eyebrow" data-cms="sauna.t29" data-fr="En images" data-en="In pictures" data-rw="Mu mashusho">In pictures</p>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.9rem, 4vw, 3rem); max-width: 16ch;" data-cms="sauna.t30" data-fr="Le sauna en vidéo" data-en="The sauna on video" data-rw="Sauna mu mashusho">The sauna on video</h2>
+                    <div class="video-frame" data-cms-video="sauna.video1"></div>
+                    <p style="margin-top: 1.4rem; font-size: .92rem; color: var(--color-muted);" data-cms="sauna.t31" data-fr="Un moment de détente au cœur de Kigali" data-en="A moment of relaxation in the heart of Kigali" data-rw="Umwanya wo kuruhuka hagati ya Kigali">A moment of relaxation in the heart of Kigali</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Image Gallery -->
                 <div class="image-gallery mb-8">
@@ -768,12 +827,31 @@
 
     <!-- MASSAGE PAGE -->
     <div id="massage" class="page-section">
-        <div class="pt-20 pb-16">
+        <div class="pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h1 class="text-4xl font-bold mb-4" data-fr="Massage &amp; Spa" data-en="Massage &amp; Spa" data-rw="Gukandagira &amp; Spa" data-cms="massage.t1">Massage &amp; Spa</h1>
                     <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Offrez-vous une expérience de massage thérapeutique dans nos salles de traitement professionnelles. Nos masseurs qualifiés vous proposent une gamme complète de soins pour votre bien-être." data-en="Treat yourself to a therapeutic massage experience in our professional treatment rooms. Our qualified masseurs offer you a complete range of treatments for your well-being." data-rw="Wiyugurishe ubunyangamugayo bwo gukandagira mu byumba byacu by'ubuvuzi. Abavuzi bacu b'impeta bakuha ubuvuzi bwuzuye ku buzima bwawe." data-cms="massage.t2">Treat yourself to a therapeutic massage experience in our professional treatment rooms. Our qualified masseurs offer you a complete range of treatments for your well-being.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Video de presentation (meme bloc qu'a l'accueil) -->
+        <section class="band band-soft video-band">
+            <div class="shell split">
+                <div class="aside">
+                    <p class="eyebrow" data-cms="massage.t37" data-fr="En images" data-en="In pictures" data-rw="Mu mashusho">In pictures</p>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.9rem, 4vw, 3rem); max-width: 16ch;" data-cms="massage.t38" data-fr="L'espace massage en vidéo" data-en="The massage area on video" data-rw="Ahantu ho gukandagira mu mashusho">The massage area on video</h2>
+                    <div class="video-frame" data-cms-video="massage.video1"></div>
+                    <p style="margin-top: 1.4rem; font-size: .92rem; color: var(--color-muted);" data-cms="massage.t39" data-fr="Nos salles de soins et nos massages" data-en="Our treatment rooms and massages" data-rw="Ibyumba byacu byo kwisuzuma">Our treatment rooms and massages</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Image Gallery -->
                 <div class="image-gallery mb-8">
@@ -885,12 +963,31 @@
 
     <!-- RESTAURANT PAGE -->
     <div id="restaurant" class="page-section">
-        <div class="pt-20 pb-16">
+        <div class="pt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h1 class="text-4xl font-bold mb-4" data-fr="Restaurant Rooftop" data-en="Rooftop Restaurant" data-rw="Restoran yo hejuru" data-cms="restaurant.t1">Rooftop Restaurant</h1>
                     <p class="text-gray-600 max-w-3xl mx-auto" data-fr="Savourez une expérience culinaire unique dans notre restaurant rooftop avec vue panoramique sur Kigali. Cuisine internationale et locale, bar à cocktails et ambiance exceptionnelle." data-en="Enjoy a unique culinary experience in our rooftop restaurant with panoramic views of Kigali. International and local cuisine, cocktail bar and exceptional atmosphere." data-rw="Wumve ubunyangamugayo bwo kurya mu restoran yacu yo hejuru ufite amashusho ya Kigali. Ibiryo mpuzamahanga n'iby'aha, bar ya cocktail n'ikirere kidasanzwe." data-cms="restaurant.t2">Enjoy a unique culinary experience in our rooftop restaurant with panoramic views of Kigali. International and local cuisine, cocktail bar and exceptional atmosphere.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- Video de presentation (meme bloc qu'a l'accueil) -->
+        <section class="band band-soft video-band">
+            <div class="shell split">
+                <div class="aside">
+                    <p class="eyebrow" data-cms="restaurant.t37" data-fr="En images" data-en="In pictures" data-rw="Mu mashusho">In pictures</p>
+                </div>
+                <div>
+                    <h2 style="font-size: clamp(1.9rem, 4vw, 3rem); max-width: 16ch;" data-cms="restaurant.t38" data-fr="Le restaurant en vidéo" data-en="The restaurant on video" data-rw="Restoran mu mashusho">The restaurant on video</h2>
+                    <div class="video-frame" data-cms-video="restaurant.video1"></div>
+                    <p style="margin-top: 1.4rem; font-size: .92rem; color: var(--color-muted);" data-cms="restaurant.t39" data-fr="L'ambiance du rooftop et sa vue sur Kigali" data-en="The rooftop atmosphere and its view over Kigali" data-rw="Hejuru hamwe n'amashusho ya Kigali">The rooftop atmosphere and its view over Kigali</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pb-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 <!-- Image Gallery -->
                 <div class="image-gallery mb-8">
