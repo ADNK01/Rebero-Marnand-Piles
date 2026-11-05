@@ -521,6 +521,24 @@
           "tag": "p",
           "section": "Conciergerie",
           "multiline": false
+        },
+        {
+          "key": "apartments.t40",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t41",
+          "tag": "h2",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "apartments.t42",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": true
         }
       ],
       "images": [
@@ -537,7 +555,12 @@
           "label": "Appartement de luxe"
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "key": "apartments.video1",
+          "label": "Video de la section Appartements (bloc « En images »)"
+        }
+      ],
       "links": [
         {
           "key": "apartments.link1",
@@ -721,6 +744,24 @@
           "tag": "span",
           "section": "Réservez Votre Séance",
           "multiline": false
+        },
+        {
+          "key": "gym.t29",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t30",
+          "tag": "h2",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "gym.t31",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": true
         }
       ],
       "images": [
@@ -737,7 +778,12 @@
           "label": "Espace fitness"
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "key": "gym.video1",
+          "label": "Video de la section Salle de Sport (bloc « En images »)"
+        }
+      ],
       "links": [
         {
           "key": "gym.link1",
@@ -917,6 +963,24 @@
           "tag": "span",
           "section": "Réservez Votre Séance",
           "multiline": false
+        },
+        {
+          "key": "sauna.t29",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t30",
+          "tag": "h2",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "sauna.t31",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": true
         }
       ],
       "images": [
@@ -933,7 +997,12 @@
           "label": "Espace détente"
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "key": "sauna.video1",
+          "label": "Video de la section Sauna (bloc « En images »)"
+        }
+      ],
       "links": [
         {
           "key": "sauna.link1",
@@ -1161,6 +1230,24 @@
           "tag": "span",
           "section": "Réservez Votre Massage",
           "multiline": false
+        },
+        {
+          "key": "massage.t37",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "massage.t38",
+          "tag": "h2",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "massage.t39",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": true
         }
       ],
       "images": [
@@ -1177,7 +1264,12 @@
           "label": "Espace wellness"
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "key": "massage.video1",
+          "label": "Video de la section Massage (bloc « En images »)"
+        }
+      ],
       "links": [
         {
           "key": "massage.link1",
@@ -1405,6 +1497,24 @@
           "tag": "span",
           "section": "Réservez Votre Table",
           "multiline": false
+        },
+        {
+          "key": "restaurant.t37",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t38",
+          "tag": "h2",
+          "section": "Video de presentation",
+          "multiline": false
+        },
+        {
+          "key": "restaurant.t39",
+          "tag": "p",
+          "section": "Video de presentation",
+          "multiline": true
         }
       ],
       "images": [
@@ -1421,7 +1531,12 @@
           "label": "Bar cocktails"
         }
       ],
-      "videos": [],
+      "videos": [
+        {
+          "key": "restaurant.video1",
+          "label": "Video de la section Restaurant (bloc « En images »)"
+        }
+      ],
       "links": [
         {
           "key": "restaurant.link1",
