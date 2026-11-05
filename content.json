@@ -1179,6 +1179,81 @@
       "fr": "© 2026 Rebero Marnand Piles. Tous droits réservés.",
       "en": "© 2026 Rebero Marnand Piles. All rights reserved.",
       "rw": "© 2026 Rebero Marnand Piles. Uburenganzira bwose burabitswe."
+    },
+    "apartments.t40": {
+      "fr": "En images",
+      "en": "In pictures",
+      "rw": "Mu mashusho"
+    },
+    "apartments.t41": {
+      "fr": "Visitez les appartements",
+      "en": "Tour the apartments",
+      "rw": "Sura amacumbi"
+    },
+    "apartments.t42": {
+      "fr": "Un aperçu des espaces avant votre réservation",
+      "en": "A look inside before you book",
+      "rw": "Reba imbere mbere yo kubana"
+    },
+    "gym.t29": {
+      "fr": "En images",
+      "en": "In pictures",
+      "rw": "Mu mashusho"
+    },
+    "gym.t30": {
+      "fr": "La salle de sport en vidéo",
+      "en": "The fitness center on video",
+      "rw": "Ikigo cy'imyitozo mu mashusho"
+    },
+    "gym.t31": {
+      "fr": "Les équipements, accessibles 24h/24",
+      "en": "The equipment, accessible 24/7",
+      "rw": "Ibikoresho, biboneka 24/7"
+    },
+    "sauna.t29": {
+      "fr": "En images",
+      "en": "In pictures",
+      "rw": "Mu mashusho"
+    },
+    "sauna.t30": {
+      "fr": "Le sauna en vidéo",
+      "en": "The sauna on video",
+      "rw": "Sauna mu mashusho"
+    },
+    "sauna.t31": {
+      "fr": "Un moment de détente au cœur de Kigali",
+      "en": "A moment of relaxation in the heart of Kigali",
+      "rw": "Umwanya wo kuruhuka hagati ya Kigali"
+    },
+    "massage.t37": {
+      "fr": "En images",
+      "en": "In pictures",
+      "rw": "Mu mashusho"
+    },
+    "massage.t38": {
+      "fr": "L'espace massage en vidéo",
+      "en": "The massage area on video",
+      "rw": "Ahantu ho gukandagira mu mashusho"
+    },
+    "massage.t39": {
+      "fr": "Nos salles de soins et nos massages",
+      "en": "Our treatment rooms and massages",
+      "rw": "Ibyumba byacu byo kwisuzuma"
+    },
+    "restaurant.t37": {
+      "fr": "En images",
+      "en": "In pictures",
+      "rw": "Mu mashusho"
+    },
+    "restaurant.t38": {
+      "fr": "Le restaurant en vidéo",
+      "en": "The restaurant on video",
+      "rw": "Restoran mu mashusho"
+    },
+    "restaurant.t39": {
+      "fr": "L'ambiance du rooftop et sa vue sur Kigali",
+      "en": "The rooftop atmosphere and its view over Kigali",
+      "rw": "Hejuru hamwe n'amashusho ya Kigali"
     }
   },
   "images": {
@@ -1207,6 +1282,36 @@
       "file": "https://or87fnblkfyve1gv.public.blob.vercel-storage.com/videos/Marnand_Presentation-zj7ziEo7DIwS9i9pn4ApZqImyJ3B22.mp4",
       "link": "https://youtu.be/ks69tmMJ2M4",
       "poster": "images/Accueil.webp"
+    },
+    "apartments.video1": {
+      "mode": "link",
+      "file": "",
+      "link": "",
+      "poster": ""
+    },
+    "gym.video1": {
+      "mode": "link",
+      "file": "",
+      "link": "",
+      "poster": ""
+    },
+    "sauna.video1": {
+      "mode": "link",
+      "file": "",
+      "link": "",
+      "poster": ""
+    },
+    "massage.video1": {
+      "mode": "link",
+      "file": "",
+      "link": "",
+      "poster": ""
+    },
+    "restaurant.video1": {
+      "mode": "link",
+      "file": "",
+      "link": "",
+      "poster": ""
     }
   },
   "links": {
